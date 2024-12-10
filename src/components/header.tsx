@@ -8,10 +8,15 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <h1 className="text-xl font-bold text-gray-800">My Portfolio</h1>
+        <Link
+          href="/"
+          className="text-2xl font-extrabold text-gray-900 hover:text-gray-600 transition"
+        >
+          My Portfolio
+        </Link>
         <nav>
           <ul className="flex space-x-6">
-            {links.map((link) => (
+            {links?.map((link) => (
               <li key={link.name}>
                 <Link
                   href={link.href}
