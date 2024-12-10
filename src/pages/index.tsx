@@ -47,8 +47,13 @@ export default function Home() {
         />
       </div>
       <PortfolioLayout>
-        <main className="flex flex-col items-center justify-center h-screen text-center z-10 relative px-6">
-          <div className="mb-8 animate-fadeIn"></div>
+        <main className="flex flex-col items-start justify-center h-screen text-center z-10 relative px-6">
+          <div className="mb-8 animate-slideInFromLeft">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 ml-8">
+              Hello, I am Shruti Dhungana
+            </h1>
+          </div>
+         
         </main>
       </PortfolioLayout>
     </div>
