@@ -9,4 +9,5 @@ export type SocialMediaLink = {
   name: string;
   url: string;
   icon: ReactNode;
+  hoverColor: string;
 };
