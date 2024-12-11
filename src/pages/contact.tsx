@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import PortfolioLayout from "@/components/layout";
 
-type ContactProps = {
-    
+type ContactProps = {};
+
+const Contact: React.FC<ContactProps> = () => {
+  return (
+    <PortfolioLayout>
+      <div>Contact</div>
+    </PortfolioLayout>
+  );
 };
-
-const Contact:React.FC<ContactProps> = () => {
-    
-    return <div>Contacts Page</div>;
-}
 export default Contact;
