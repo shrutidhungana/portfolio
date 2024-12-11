@@ -1,6 +1,5 @@
-import Header from "@/components/header";
+
 import Image from "next/image";
-import {links} from '@/config'
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { SocialMediaLink } from "@/types";
 import PortfolioLayout from "@/components/layout";
@@ -36,16 +35,7 @@ const socialMediaLinks: SocialMediaLink[] = [
 export default function Home() {
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src="/background.png"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-20"
-          priority
-        />
-      </div>
+      
       <PortfolioLayout>
         <main className="flex flex-col items-start justify-center h-screen text-center z-10 relative px-6">
           <div className="mb-8 animate-slideInFromLeft">

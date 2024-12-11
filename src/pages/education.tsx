@@ -1,16 +1,16 @@
 import React from 'react';
 import PortfolioLayout from '@/components/layout';
 
-type ExperienceProps = {
+type educationProps = {
     
 };
 
-const Experience:React.FC<ExperienceProps> = () => {
+const Education:React.FC<educationProps> = () => {
     
     return (
       <PortfolioLayout>
-        <div>Experience Page</div>
+        <div>Education</div>
       </PortfolioLayout>
     );
 }
-export default Experience;
+export default Education;
