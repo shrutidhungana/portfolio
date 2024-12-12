@@ -8,7 +8,8 @@ import Icosahedron from "@/components/SVG/icosahedron";
 import Cuboid from "@/components/SVG/cuboid";
 import Prism from "@/components/SVG/prism";
 import Sphere from "@/components/SVG/sphere";
-import Typewriter  from "typewriter-effect";
+import Typewriter from "typewriter-effect";
+import Link from "next/link"; 
 
 const socialMediaLinks: SocialMediaLink[] = [
   {
@@ -96,6 +97,15 @@ export default function Home() {
                 </a>
               ))}
             </div>
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/about"
+              passHref
+              className="inline-block px-6 py-3 mt-6 text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full text-lg font-semibold transform transition-transform duration-300 hover:scale-105 hover:opacity-90"
+            >
+              About Me
+            </Link>
           </div>
         </main>
       </div>
