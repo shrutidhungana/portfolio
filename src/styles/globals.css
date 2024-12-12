@@ -2,30 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeIn {
+/* Ensure the body and html fill the viewport and hide overflow */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Hide scrollbar */
+}
+
+.text-dark-gray {
+  color: #2F4F4F; /* Dark gray text color */
+}
+
+/* Rotate Animation */
+@keyframes rotateSlow {
   0% {
-    opacity: 0;
+    transform: rotate(0deg);
   }
   100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotateSlow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+/* WordArt Effect */
+.wordArtText {
+  background: linear-gradient(45deg, #7a3bdb, #a16bda);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  font-weight: 900;
+}
+
+.wordArtText:hover {
+  color: #7a3bdb;
+  -webkit-background-clip: unset;
+  background: unset;
+}
+
+/* Broken Glass effect for Shruti Dhungana */
+@keyframes brokenGlass {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(20deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
     opacity: 1;
   }
 }
 
-@keyframes slideInFromBottom {
+.brokenGlass {
+  animation: brokenGlass 1s ease-in-out;
+}
+
+/* Flower-like Animation for WordArt */
+@keyframes flowerEffect {
   0% {
-    transform: translateY(20px);
+    transform: scale(0) rotate(0deg);
     opacity: 0;
   }
   100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.flowerEffect {
+  animation: flowerEffect 1.5s ease-in-out forwards;
+}
+
+/* Fade-in right for social media links */
+@keyframes fadeInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate__fadeInRight {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+/* Delay for animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out;
+.animate__fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
 }
 
-.animate-slideInFromBottom {
-  animation: slideInFromBottom 1s ease-out;
+/* Perspective for 3D cube-like effect */
+.group:hover span {
+  margin-right: 5rem; /* Increase gap dynamically on hover */
 }
+
+/* Transition for smooth gap adjustment */
+.group span {
+  margin-right: 0;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+/* Transition for hover animation */
+.group span > span {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
