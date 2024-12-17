@@ -1,5 +1,4 @@
-import { FaLinkedin, FaGithub} from "react-icons/fa";
-import { SocialMediaLink } from "@/types";
+
 import PortfolioLayout from "@/components/layout";
 import Cone from "@/components/SVG/cone";
 import Cylinder from "@/components/SVG/cylinder";
@@ -10,22 +9,7 @@ import Prism from "@/components/SVG/prism";
 import Sphere from "@/components/SVG/sphere";
 import Typewriter from "typewriter-effect";
 import Link from "next/link"; 
-
-const socialMediaLinks: SocialMediaLink[] = [
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/shruti-dhungana-2ab9901b5",
-    icon: <FaLinkedin />,
-    hoverColor: "hover:text-blue-700",
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/shrutidhungana",
-    icon: <FaGithub size={30} />,
-    hoverColor: "hover:text-blue-700",
-  },
-  
-];
+import { socialMediaLinks } from "@/config";
 
 export default function Home() {
   return (
