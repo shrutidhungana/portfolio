@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 type HeaderProps = {
   links: { name: string; href: string; icon: ReactNode }[];

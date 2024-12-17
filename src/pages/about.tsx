@@ -17,11 +17,11 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl font-bold text-center mt-8 mb-4 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]"
+          className="text-3xl font-bold text-center mt-8  text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]"
         >
           About Me
         </motion.h1>
-
+        <div className="w-full border-t-2 border-white"></div>
         {/* Content */}
         <div className="flex flex-grow">
           {/* Left Section */}
@@ -30,7 +30,7 @@ const About: React.FC = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "Creative Problem Solver",
+                    "Critical Thinker",
                     "Detail-Oriented",
                     "Effective Collaborator",
                     "Adaptable and Quick Learner",

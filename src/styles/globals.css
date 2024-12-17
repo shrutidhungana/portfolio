@@ -171,3 +171,43 @@ button {
 .rotate-animation {
   animation: rotate360 1.5s ease-in-out;
 }
+
+.icon-color {
+  color: #4b5563; /* Tailwind's gray-600 */
+}
+
+.icon-hover-color:hover {
+  color: #ffffff; /* White on hover */
+}
+
+.social-media-hover-color:hover{
+  color: #1D4ED8
+}
+
+.code-color{
+  color:#7a3bdb
+}
+
+.lightbulb-color{
+  color: #ffcc00
+}
+
+.book-color{
+color: #4CAF50
+}
+
+.movie-color{
+color: #E91E63
+}
+
+.envelope-color{
+color: #FF00FF
+}
+
+.email{
+  text-decoration: underline;
+}
+
+.email:hover{
+color: #E91E63
+}
