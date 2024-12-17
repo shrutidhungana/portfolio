@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ComponentType, useState } from "react";
+import { ReactNode, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 type HeaderProps = {
-  links: { name: string; href: string; icon: ComponentType }[];
+  links: { name: string; href: string; icon: ReactNode }[];
 };
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               menuOpen ? "translate-x-0" : "-translate-x-full"
             } lg:transform-none transition-transform duration-300`}
           >
-            {links.map((link) => (
+            {links?.map((link) => (
               <li key={link.name} className="relative group">
                 <Link
                   href={link.href}
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                 >
                   {/* Icon with Background */}
                   <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full group-hover:bg-indigo-500 transition duration-300">
-                    <link.icon className="text-gray-600 group-hover:text-white transition duration-300" />
+                    {link.icon}
                   </div>
 
                   {/* Name (Hidden on large screens, shown on hover) */}

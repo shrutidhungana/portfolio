@@ -1,9 +1,9 @@
-import { ReactNode, ComponentType } from "react";
+import { ReactNode } from "react";
 
 export type NavLink = {
   name: string;
   href: string;
-  icon: ComponentType;
+  icon: ReactNode;
 };
 
 export type SocialMediaLink = {
@@ -11,4 +11,11 @@ export type SocialMediaLink = {
   url: string;
   icon: ReactNode;
   hoverColor: string;
+};
+
+export type ListItem = {
+  id: number;
+  icon: ReactNode;
+  text: ReactNode;
+  contact?: string;
 };
