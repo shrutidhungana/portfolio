@@ -12,3 +12,5 @@ export const links: NavLink[] = [
   { name: "Projects", href: "/projects", icon: GoProject },
   { name: "Contact", href: "/contact", icon: CiMail },
 ];
+
+

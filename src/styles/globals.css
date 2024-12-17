@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 /* Ensure the body and html fill the viewport and hide overflow */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   overflow: hidden; /* Hide scrollbar */
 }
 
 .text-dark-gray {
-  color: #2F4F4F; /* Dark gray text color */
+  color: #2f4f4f; /* Dark gray text color */
 }
 
 /* Rotate Animation */
@@ -34,12 +35,15 @@ html, body {
   color: transparent;
   position: relative;
   font-weight: 900;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  background-clip: text;
 }
 
 .wordArtText:hover {
   color: #7a3bdb;
   -webkit-background-clip: unset;
   background: unset;
+  background-clip: unset;
 }
 
 /* Broken Glass effect for Shruti Dhungana */
@@ -127,8 +131,45 @@ html, body {
   transition: all 0.3s ease-in-out;
 }
 
+.text-dark-gray {
+  color: #333333; 
+}
 
+button {
+  transition: all 0.3s ease-in-out;
+}
 
+/* Typewriter text styling */
+.typewriter-text {
+  font-weight: bold;
+  color: #333333;
+}
 
+/* Fade-in Animation for List */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
 
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate360 1.5s ease-in-out;
+}
