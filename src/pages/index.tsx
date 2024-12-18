@@ -41,7 +41,7 @@ export default function Home() {
 
             {/* WordArt with flower-like animation */}
             <h3 className="text-5xl font-extrabold capitalize wordArtText mb-6 animate__animated animate__fadeIn animate__delay-2s flowerEffect">
-              Fullstack Developer with focus on Frontend(React)
+              Fullstack Developer 
             </h3>
 
             {/* Typewriter effect for soft skills */}

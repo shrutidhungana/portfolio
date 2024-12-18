@@ -1,4 +1,4 @@
-import { NavLink, ListItem, SocialMediaLink } from "@/types";
+import { NavLink, ListItem, SocialMediaLink, EducationItem } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
 import { MdCastForEducation, MdLightbulbOutline } from "react-icons/md";
@@ -110,3 +110,27 @@ export const listItems: ListItem[] = [
     ),
   },
 ];
+
+ export const educationData: EducationItem[] = [
+   {
+     id: 1,
+     year: "upto 2015",
+     title: "School Level",
+     institution: "Daffodil Boarding School",
+     location: "Saraswatinagar, Kathmandu, Nepal",
+   },
+   {
+     id: 2,
+     year: "2015–2017",
+     title: "High School",
+     institution: "National School of Sciences",
+     location: "Lainchaur, Kathmandu, Nepal",
+   },
+   {
+     id: 3,
+     year: "2017-2022",
+     title: "Bachelor's Of Science In Computer Science",
+     institution: "Kathmandu University",
+     location: "Dhulikhel, Kavre, Nepal",
+   },
+ ];

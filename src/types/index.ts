@@ -19,3 +19,11 @@ export type ListItem = {
   text: ReactNode;
   contact?: string;
 };
+
+export type EducationItem = {
+  id: number;
+  year: string;
+  title: string;
+  institution: string;
+  location: string;
+};
