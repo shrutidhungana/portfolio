@@ -3,14 +3,14 @@ import PortfolioLayout from "@/components/layout";
 import GraduationCap from "@/components/SVG/graduationCap";
 import { educationData } from "@/config";
 import { motion } from "framer-motion";
-import Image from "next/image"; // Import next/image for optimization
+import Image from "next/image";
 
 const Education: React.FC = () => {
   return (
     <PortfolioLayout>
       {/* Gradient Background */}
       <div className="min-h-screen py-10 bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
           {/* Header and Education Cards */}
           <div className="w-full">
             {/* Header */}
@@ -27,8 +27,14 @@ const Education: React.FC = () => {
             {/* Education Cards */}
             <div className="space-y-6">
               {educationData?.map((edu, index) => (
-                <div
+                <motion.div
                   key={edu?.id}
+                  initial={{
+                    x: index % 2 === 0 ? "-100%" : "100%",
+                    opacity: 0,
+                  }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 * index, duration: 0.8 }}
                   className={`p-6 rounded-lg shadow-md border-l-4 flex items-center ${
                     index % 2 === 0
                       ? "bg-[#CCCCFF] border-blue-400" // Arbitrary color for the background
@@ -42,7 +48,7 @@ const Education: React.FC = () => {
 
                   {/* Text Content */}
                   <div className="ml-4">
-                    <p className="text-sm text-orange-500 font-semibold">
+                    <p className="text-sm text-[#7a3bdb] font-semibold">
                       {edu.year}
                     </p>
                     <h2 className="text-xl font-bold text-gray-800">
@@ -53,20 +59,26 @@ const Education: React.FC = () => {
                       📍 {edu.location}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Image on the Right */}
-          <div className="hidden lg:block w-1/3 ml-6">
-            <Image
-              src="/education.png" 
-              alt="Education"
-              width={500}
-              height={500}
-              className="rounded-lg shadow-lg"
-            />
+          <div className="hidden lg:block lg:w-1/3 lg:ml-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              <Image
+                src="/education.png"
+                alt="Education"
+                width={500}
+                height={500}
+                className="rounded-lg shadow-lg flowerEffect"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

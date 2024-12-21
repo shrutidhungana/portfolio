@@ -211,3 +211,18 @@ color: #FF00FF
 .email:hover{
 color: #E91E63
 }
+
+@keyframes cardAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card-animation {
+  animation: cardAnimation 1s ease-out forwards;
+}
