@@ -1,6 +1,6 @@
 import React from "react";
 import PortfolioLayout from "@/components/layout";
-import Briefcase from "@/components/SVG/briefcase";
+import Briefcase from "@/components/SVG/Experience/briefcase";
 import { experienceData } from "@/config";
 import { motion } from "framer-motion";
 import Image from "next/image";
