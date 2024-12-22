@@ -111,26 +111,50 @@ export const listItems: ListItem[] = [
   },
 ];
 
- export const educationData: EducationItem[] = [
-   {
-     id: 1,
-     year: "upto 2015",
-     title: "School Level",
-     institution: "Daffodil Boarding School",
-     location: "Saraswatinagar, Kathmandu, Nepal",
-   },
-   {
-     id: 2,
-     year: "2015–2017",
-     title: "High School",
-     institution: "National School of Sciences",
-     location: "Lainchaur, Kathmandu, Nepal",
-   },
-   {
-     id: 3,
-     year: "2017-2022",
-     title: "Bachelor's Of Science In Computer Science",
-     institution: "Kathmandu University",
-     location: "Dhulikhel, Kavre, Nepal",
-   },
- ];
+export const educationData: EducationItem[] = [
+  {
+    id: 1,
+    year: "upto 2015",
+    title: "School Level",
+    institution: "Daffodil Boarding School",
+    location: "Saraswatinagar, Kathmandu, Nepal",
+  },
+  {
+    id: 2,
+    year: "2015–2017",
+    title: "High School",
+    institution: "National School of Sciences",
+    location: "Lainchaur, Kathmandu, Nepal",
+  },
+  {
+    id: 3,
+    year: "2017-2022",
+    title: "Bachelor's Of Science In Computer Science",
+    institution: "Kathmandu University",
+    location: "Dhulikhel, Kavre, Nepal",
+  },
+];
+
+export const experienceData: EducationItem[] = [
+  {
+    id: 1,
+    year: "Jan 2022-March 2022",
+    title: "React Developer Intern",
+    institution: "Prixa Technologies",
+    location: "Jawalakhel, Lalitpur, Nepal",
+  },
+  {
+    id: 2,
+    year: "Nov 2022-Feb 2023",
+    title: "Frontend Developer Intern",
+    institution: "Treeleaf Technologies",
+    location: "Sankhamul, Kathmandu,Nepal",
+  },
+  {
+    id: 3,
+    year: "Feb 2023-July 2024",
+    title: "Frontend (React) Developer",
+    institution: "Digital Anka Pvt ltd (Varicon)",
+    location: "Pulchowk, Lalitpur, Nepal (Australia)",
+  },
+];
