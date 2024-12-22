@@ -11,7 +11,9 @@ import {
   FaLightbulb,
   FaLinkedin,
   FaGithub,
+ 
 } from "react-icons/fa";
+
 
 export const links: NavLink[] = [
   {
@@ -158,3 +160,5 @@ export const experienceData: EducationItem[] = [
     location: "Pulchowk, Lalitpur, Nepal (Australia)",
   },
 ];
+
+

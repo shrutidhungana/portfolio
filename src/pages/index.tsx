@@ -1,12 +1,12 @@
 
 import PortfolioLayout from "@/components/layout";
-import Cone from "@/components/SVG/cone";
-import Cylinder from "@/components/SVG/cylinder";
-import Ring from "@/components/SVG/ring";
-import Icosahedron from "@/components/SVG/icosahedron";
-import Cuboid from "@/components/SVG/cuboid";
-import Prism from "@/components/SVG/prism";
-import Sphere from "@/components/SVG/sphere";
+import Cone from "@/components/SVG/Homepage/cone";
+import Cylinder from "@/components/SVG/Homepage/cylinder";
+import Ring from "@/components/SVG/Homepage/ring";
+import Icosahedron from "@/components/SVG/Homepage/icosahedron";
+import Cuboid from "@/components/SVG/Homepage/cuboid";
+import Prism from "@/components/SVG/Homepage/prism";
+import Sphere from "@/components/SVG/Homepage/sphere";
 import Typewriter from "typewriter-effect";
 import Link from "next/link"; 
 import { socialMediaLinks } from "@/config";
