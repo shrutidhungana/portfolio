@@ -11,6 +11,7 @@ export type SocialMediaLink = {
   url: string;
   icon: ReactNode;
   hoverColor: string;
+  iconColor?: string;
 };
 
 export type ListItem = {

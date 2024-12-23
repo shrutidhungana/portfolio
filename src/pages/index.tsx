@@ -10,6 +10,7 @@ import Sphere from "@/components/SVG/Homepage/sphere";
 import Typewriter from "typewriter-effect";
 import Link from "next/link"; 
 import { socialMediaLinks } from "@/config";
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
 
             {/* WordArt with flower-like animation */}
             <h3 className="text-5xl font-extrabold capitalize wordArtText mb-6 animate__animated animate__fadeIn animate__delay-2s flowerEffect">
-              Fullstack Developer 
+              Fullstack Developer
             </h3>
 
             {/* Typewriter effect for soft skills */}
@@ -82,13 +83,24 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="mt-8">
-            <Link
-              href="/about"
-              passHref
-              className="inline-block px-6 py-3 mt-6 text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full text-lg font-semibold transform transition-transform duration-300 hover:scale-105 hover:opacity-90"
-            >
-              About Me
+          <div className="mt-8 flex justify-center space-x-4">
+            <Link href="/about" passHref>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="mt-4 px-6 py-2 rounded-full bg-[#333333] text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+              >
+                About Me
+              </motion.button>
+            </Link>
+            <Link href="/contact" passHref>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="mt-4 px-6 py-2 rounded-full bg-[#333333] text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+              >
+                Contact
+              </motion.button>
             </Link>
           </div>
         </main>
