@@ -316,19 +316,19 @@ export const contactData: ContactData[] = [
 export const contactFormData: ContactFormData[] = [
   {
     id: 1,
-    name: "Name",
+    name: "name",
     label: "Name",
     placeholder: "Your Name",
   },
   {
     id: 2,
-    name: "E-mail",
+    name: "email",
     label: "E-mail",
     placeholder: "Your E-mail",
   },
   {
     id: 3,
-    name: "Message",
+    name: "message",
     label: "Message",
     placeholder: "Type your Message",
   },
