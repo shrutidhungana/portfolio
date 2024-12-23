@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { ContactFormData } from "@/types";
 import emailjs from "@emailjs/browser";
-import useToast from "@/hooks/useToast"; // Import useToast hook
+import useToast from "@/hooks/useToast"; 
+    import Button from "../Button";
 
 type ContactFormProps = {
   data: ContactFormData[];
@@ -102,13 +103,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
           )}
         </div>
       ))}
-      <button
+      <Button
+        text="Send Message"
         type="submit"
-        className="flex items-center justify-center w-full px-6 py-3 text-white bg-gradient-to-r from-[#7a3bdb] to-[#5e2a9d] rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300"
-      >
-        Send Message
-        <FaArrowRight className="ml-2" />
-      </button>
+        icon={<FaArrowRight />}
+        className="flex items-center justify-center w-full px-6 py-3 text-white  rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300"
+      />
     </form>
   );
 };

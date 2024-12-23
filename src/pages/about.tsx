@@ -5,6 +5,7 @@ import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { listItems } from "@/config";
+import Button from "@/components/Button";
 
 const About: React.FC = () => {
   return (
@@ -90,13 +91,10 @@ const About: React.FC = () => {
 
             {/* Button */}
             <Link href="/contact" passHref>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="px-6 py-2 rounded-full bg-[#7a3bdb] text-white hover:bg-[#5a28a5] transition"
-              >
-                Contact Me
-              </motion.button>
+              <Button
+                text="Contact Me"
+                className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+              />
             </Link>
           </div>
 
@@ -168,13 +166,10 @@ const About: React.FC = () => {
 
               {/* Animated Button */}
               <Link href="/contact" passHref>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="mt-4 px-6 py-2 rounded-full bg-[#333333] text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
-                >
-                  Contact Me
-                </motion.button>
+                <Button
+                  text="Contact"
+                  className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+                />
               </Link>
             </div>
           </div>

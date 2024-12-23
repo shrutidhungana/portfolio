@@ -14,16 +14,15 @@ const Contact: React.FC = () => {
           <h1 className="text-4xl font-bold text-[#7a3bdb] wordArtText mb-2">
             Contact
           </h1>
-          <h3 className="text-2xl font-semibold text-[#FF8C00] mb-6 mt-2 text-center">
+          <p className="text-xl font-normal text-[#FF8C00] mb-6 mt-2 text-center">
             Get In Touch
-          </h3>
-         
+          </p>
+
           <div className="flex flex-col md:flex-row md:space-x-48 space-y-8 md:space-y-0">
             {" "}
             {/* Increased space here from md:space-x-16 to md:space-x-32 */}
             {/* Left Side - Contact Data */}
             <div className="flex-1 space-y-4">
-             
               <ContactData data={contactData} />
               <div className="flex space-x-6 mt-6 justify-center md:justify-start">
                 {socialMediaLinks.map((link) => (
@@ -48,7 +47,6 @@ const Contact: React.FC = () => {
             </div>
             {/* Right Side - Contact Form */}
             <div className="flex-1">
-             
               <ContactForm data={contactFormData} />
             </div>
           </div>
