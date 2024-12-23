@@ -4,29 +4,50 @@ import { contactData, contactFormData, socialMediaLinks } from "@/config";
 import ContactData from "@/components/Contact/contactData";
 import ContactForm from "@/components/Contact/contactForm";
 import Image from "next/image";
-
+import { motion } from "framer-motion"; // Import motion
 
 const Contact: React.FC = () => {
   return (
     <PortfolioLayout>
       <div className="min-h-screen bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3] py-16">
         <div className="max-w-screen-lg mx-auto px-4 text-center mt-8">
-          <h1 className="text-4xl font-bold text-[#7a3bdb] wordArtText mb-2">
+          <motion.h1
+            className="text-4xl font-bold text-[#7a3bdb] wordArtText mb-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
             Contact
-          </h1>
-          <p className="text-xl font-normal text-[#FF8C00] mb-6 mt-2 text-center">
+          </motion.h1>
+          <motion.h3
+            className="text-2xl font-semibold text-[#FF8C00] mb-6 mt-2"
+            initial={{ opacity: 0, rotate: 360 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            transition={{ duration: 1 }}
+          >
             Get In Touch
-          </p>
+          </motion.h3>
 
           <div className="flex flex-col md:flex-row md:space-x-48 space-y-8 md:space-y-0">
-            {" "}
-            {/* Increased space here from md:space-x-16 to md:space-x-32 */}
-            {/* Left Side - Contact Data */}
             <div className="flex-1 space-y-4">
-              <ContactData data={contactData} />
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <ContactData data={contactData} />
+              </motion.div>
+
               <div className="flex space-x-6 mt-6 justify-center md:justify-start">
                 {socialMediaLinks.map((link) => (
-                  <div key={link.name} className="flex items-center space-x-2">
+                  <motion.div
+                    key={link.name}
+                    className="flex items-center space-x-2"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                  >
                     <a
                       href={link.url}
                       target="_blank"
@@ -41,19 +62,25 @@ const Contact: React.FC = () => {
                         {link.icon}
                       </span>
                     </a>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
-            {/* Right Side - Contact Form */}
-            <div className="flex-1">
+
+            <motion.div
+              className="flex-1"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
               <ContactForm data={contactFormData} />
-            </div>
+            </motion.div>
           </div>
         </div>
+
         <div className="hidden lg:block absolute bottom-4 right-4">
           <Image
-            src="/contact.png" // Replace with your image path
+            src="/contact.png"
             alt="Decorative Contact Image"
             width={150}
             height={150}
