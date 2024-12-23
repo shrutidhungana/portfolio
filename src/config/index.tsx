@@ -1,4 +1,4 @@
-import { NavLink, ListItem, SocialMediaLink, EducationItem, SkillSection } from "@/types";
+import { NavLink, ListItem, SocialMediaLink, EducationItem, SkillSection, ContactData, ContactFormData } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
 import { MdCastForEducation, MdLightbulbOutline } from "react-icons/md";
@@ -11,9 +11,10 @@ import {
   FaLightbulb,
   FaLinkedin,
   FaGithub,
- 
+  FaPhoneAlt,
 } from "react-icons/fa";
 import { SiShadcnui } from "react-icons/si";
+import { FaLocationDot } from "react-icons/fa6";
 import CSS from "@/components/SVG/Skills/css";
 import Firebase from "@/components/SVG/Skills/firebase";
 import Git from "@/components/SVG/Skills/git";
@@ -266,6 +267,62 @@ export const skillsData: SkillSection[] = [
         icon: <Node className="text-2xl" />,
       },
     ],
+  },
+];
+
+
+export const contactData: ContactData[] = [
+  {
+    id: 1,
+    icon: <FaLocationDot />,
+    name: "Location",
+    text: [
+      "6, Nagarkot, Changunarayan, Bhaktapur",
+      "8, Guheshwori, Kathmandu, Nepal",
+    ], // Using an array for multiple locations
+    iconColor: "#F39C12",
+  },
+  {
+    id: 2,
+    icon: <FaPhoneAlt />,
+    name: "Phone",
+    text: "+977-9861495261",
+    iconColor: "#E74C3C",
+  },
+  {
+    id: 3,
+    icon: <FaEnvelope />,
+    name: "Email",
+    text: (
+      <a
+        href="mailto:shrutidhungana123@gmail.com"
+        className="email  transition"
+      >
+        shrutidhungana123@gmail.com
+      </a>
+    ),
+    iconColor: "#2980B9",
+  },
+];
+
+export const contactFormData: ContactFormData[] = [
+  {
+    id: 1,
+    name: "Name",
+    label: "Name",
+    placeholder: "Your Name",
+  },
+  {
+    id: 2,
+    name: "E-mail",
+    label: "E-mail",
+    placeholder: "Your E-mail",
+  },
+  {
+    id: 3,
+    name: "Message",
+    label: "Message",
+    placeholder: "Type your Message",
   },
 ];
 
