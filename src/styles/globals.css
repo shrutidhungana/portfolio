@@ -226,3 +226,52 @@ color: #E91E63
 .card-animation {
   animation: cardAnimation 1s ease-out forwards;
 }
+
+@keyframes splitAnimation {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.split-animation {
+  animation: splitAnimation 1s ease-out;
+}
+
+/* Smooth Left to Right for Name */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+/* Wheel animation for icon */
+@keyframes wheelRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel-rotation {
+  animation: wheelRotation 1.5s linear infinite;
+}
