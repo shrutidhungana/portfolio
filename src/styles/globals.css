@@ -275,3 +275,35 @@ color: #B0E0E6
 .wheel-rotation {
   animation: wheelRotation 1.5s linear infinite;
 }
+
+/* Additional styles for form and text animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+@keyframes buttonMotion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.buttonMotion {
+  animation: buttonMotion 1s ease-in-out infinite;
+}
