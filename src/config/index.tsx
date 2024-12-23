@@ -188,7 +188,7 @@ export const skillsData: SkillSection[] = [
       },
       {
         name: "CSS",
-        icon: <CSS className="text-2xl" />,
+        icon: <CSS className="text-2xl mb-2 mt-2" />,
       },
       {
         name: "JavaScript",
