@@ -39,3 +39,18 @@ export type SkillSection = {
   sectionTitle: string;
   items: SkillItem[];
 };
+
+export type ContactData = {
+  id: number;
+  icon: ReactNode;
+  name: string;
+  text: string | string[]| ReactNode;
+  iconColor: string;
+};
+
+export type ContactFormData = {
+  id: number;
+  name: string;
+  label: string;
+  placeholder: string;
+}
