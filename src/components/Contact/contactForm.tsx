@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { ContactFormData } from "@/types";
 import emailjs from "@emailjs/browser";
+import useToast from "@/hooks/useToast"; // Import useToast hook
 
 type ContactFormProps = {
   data: ContactFormData[];
@@ -14,17 +15,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
     message: "",
   });
 
- const handleChange = (
-   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
- ) => {
-   const { name, value } = e.target;
-   setFormData((prevFormData) => ({
-     ...prevFormData,
-     [name]: value,
-   }));
- };
+  const { success, error } = useToast(); // Destructure success and error from the hook
 
-
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +43,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
 
   const processEmail = async (templateParams: any) => {
     try {
-      const response = await emailjs.send(
+      await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         templateParams,
@@ -50,7 +51,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
         }
       );
-      console.log("Email sent successfully!", response);
+      success("Email sent successfully!"); // Show success toast
 
       // Clear form data after successful email send
       setFormData({
@@ -58,8 +59,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
         email: "",
         message: "",
       });
-    } catch (error) {
-      console.error("Error sending email:", error);
+    } catch (err) {
+      error("Error sending email: " + err); // Show error toast
     }
   };
 
