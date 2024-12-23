@@ -1,4 +1,4 @@
-import { NavLink, ListItem, SocialMediaLink, EducationItem } from "@/types";
+import { NavLink, ListItem, SocialMediaLink, EducationItem, SkillSection } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
 import { MdCastForEducation, MdLightbulbOutline } from "react-icons/md";
@@ -13,6 +13,22 @@ import {
   FaGithub,
  
 } from "react-icons/fa";
+import { SiShadcnui } from "react-icons/si";
+import CSS from "@/components/SVG/Skills/css";
+import Firebase from "@/components/SVG/Skills/firebase";
+import Git from "@/components/SVG/Skills/git";
+import GitHub from "@/components/SVG/Skills/gitHub";
+import HTML from "@/components/SVG/Skills/html";
+import Jira from "@/components/SVG/Skills/jira";
+import Javascript from "@/components/SVG/Skills/js";
+import Material from "@/components/SVG/Skills/materialUI";
+import MongoDB from "@/components/SVG/Skills/mongoDB";
+import Next from "@/components/SVG/Skills/next";
+import Node from "@/components/SVG/Skills/node";
+import ReactSVG from "@/components/SVG/Skills/react";
+import Tailwind from "@/components/SVG/Skills/tailwind";
+import Typescript from "@/components/SVG/Skills/ts";
+import Express from "@/components/SVG/Skills/express";
 
 
 export const links: NavLink[] = [
@@ -158,6 +174,98 @@ export const experienceData: EducationItem[] = [
     title: "Frontend (React) Developer",
     institution: "Digital Anka Pvt ltd (Varicon)",
     location: "Pulchowk, Lalitpur, Nepal (Australia)",
+  },
+];
+
+export const skillsData: SkillSection[] = [
+  {
+    id: 1,
+    sectionTitle: "Languages",
+    items: [
+      {
+        name: "HTML",
+        icon: <HTML className="text-2xl" />,
+      },
+      {
+        name: "CSS",
+        icon: <CSS className="text-2xl" />,
+      },
+      {
+        name: "JavaScript",
+        icon: <Javascript className="text-2xl" />,
+      },
+      {
+        name: "TypeScript",
+        icon: <Typescript className="text-2xl" />,
+      },
+    ],
+  },
+  {
+    id: 2,
+    sectionTitle: "Libraries and Frameworks",
+    items: [
+      {
+        name: "React",
+        icon: <ReactSVG className="text-2xl" />,
+      },
+      {
+        name: "Next",
+        icon: <Next className="text-2xl" />,
+      },
+      {
+        name: "Material UI",
+        icon: <Material className="text-2xl" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <Tailwind className="text-2xl" />,
+      },
+      {
+        name: "ShadCN",
+        icon: <SiShadcnui className="text-2xl mb-4 mt-2" />,
+      },
+
+      {
+        name: "Express",
+        icon: <Express className="text-2xl" />,
+      },
+    ],
+  },
+  {
+    id: 3,
+    sectionTitle: "Version Controls",
+    items: [
+      {
+        name: "Git",
+        icon: <Git className="text-2xl" />,
+      },
+      {
+        name: "GitHub",
+        icon: <GitHub className="text-2xl" />,
+      },
+    ],
+  },
+  {
+    id: 4,
+    sectionTitle: "Tools",
+    items: [
+      {
+        name: "Firebase",
+        icon: <Firebase className="text-2xl" />,
+      },
+      {
+        name: "Jira",
+        icon: <Jira className="text-2xl" />,
+      },
+      {
+        name: "MongoDB",
+        icon: <MongoDB className="text-2xl" />,
+      },
+      {
+        name: "Node",
+        icon: <Node className="text-2xl" />,
+      },
+    ],
   },
 ];
 

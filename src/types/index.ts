@@ -27,3 +27,15 @@ export type EducationItem = {
   institution: string;
   location: string;
 };
+
+export type SkillItem = {
+  name: string;
+  icon: ReactNode;
+
+};
+
+export type SkillSection = {
+  id: number;
+  sectionTitle: string;
+  items: SkillItem[];
+};
