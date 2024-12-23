@@ -1,4 +1,12 @@
-import { NavLink, ListItem, SocialMediaLink, EducationItem, SkillSection, ContactData, ContactFormData } from "@/types";
+import {
+  NavLink,
+  ListItem,
+  SocialMediaLink,
+  EducationItem,
+  SkillSection,
+  ContactData,
+  ContactFormData,
+} from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
 import { MdCastForEducation, MdLightbulbOutline } from "react-icons/md";
@@ -30,7 +38,6 @@ import ReactSVG from "@/components/SVG/Skills/react";
 import Tailwind from "@/components/SVG/Skills/tailwind";
 import Typescript from "@/components/SVG/Skills/ts";
 import Express from "@/components/SVG/Skills/express";
-
 
 export const links: NavLink[] = [
   {
@@ -80,15 +87,17 @@ export const links: NavLink[] = [
 export const socialMediaLinks: SocialMediaLink[] = [
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/shruti-dhungana-2ab9901b5",
+    url: "https://www.linkedin.com/in/shruti-dhungana-2ab9901b5/",
     icon: <FaLinkedin />,
     hoverColor: "social-media-hover-color",
+    iconColor: "#0077B5",
   },
   {
     name: "GitHub",
     url: "https://github.com/shrutidhungana",
     icon: <FaGithub size={30} />,
     hoverColor: "social-media-hover-color",
+    iconColor: "#B2BEB5",
   },
 ];
 
@@ -270,7 +279,6 @@ export const skillsData: SkillSection[] = [
   },
 ];
 
-
 export const contactData: ContactData[] = [
   {
     id: 1,
@@ -325,5 +333,3 @@ export const contactFormData: ContactFormData[] = [
     placeholder: "Type your Message",
   },
 ];
-
-
