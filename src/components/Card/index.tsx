@@ -34,24 +34,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
         {/* Links Section */}
         <div className="p-4 flex justify-between items-center">
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-gray-700 hover:text-gray-900 space-x-2"
-          >
-            <FaGithub size={20} />
-            <span className="hidden sm:inline">GitHub</span>
-          </a>
-          <a
-            href={website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-gray-700 hover:text-gray-900 space-x-2"
-          >
-            <FaExternalLinkAlt size={20} />
-            <span className="hidden sm:inline">Website</span>
-          </a>
+          <div className="flex items-center space-x-4">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center text-gray-700 hover:text-gray-900 space-x-2"
+            >
+              <FaGithub size={20} />
+              <span className="text-sm group-hover:inline hidden">GitHub</span>
+            </a>
+            <a
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center text-gray-700 hover:text-gray-900 space-x-2"
+            >
+              <FaExternalLinkAlt size={20} />
+              <span className="text-sm group-hover:inline hidden">Website</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

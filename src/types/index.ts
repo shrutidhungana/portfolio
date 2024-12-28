@@ -56,10 +56,16 @@ export type ContactFormData = {
   placeholder: string;
 }
 
+export type Details = {
+  icon: ReactNode;
+  text: string;
+};
+
 export type ProjectsData = {
   id: number;
   title: string;
   image: string;
   github: string;
   website: string;
+  details?: Array<Details>
 };

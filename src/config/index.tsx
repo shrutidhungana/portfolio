@@ -21,8 +21,11 @@ import {
   FaLinkedin,
   FaGithub,
   FaPhoneAlt,
+  FaShoppingCart,
+  FaGamepad,
+  FaClone,
 } from "react-icons/fa";
-import { SiShadcnui } from "react-icons/si";
+import { SiCreatereactapp, SiShadcnui, SiStyledcomponents, SiVite } from "react-icons/si";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import CSS from "@/components/SVG/Skills/css";
@@ -350,6 +353,36 @@ export const projectData: ProjectsData[] = [
     image: "/projects/trendhive.png",
     github: "https://github.com/shrutidhungana/trendhive",
     website: "https://e-commerce-hazel-iota-68.vercel.app/",
+    details: [
+      {
+        icon: <FaShoppingCart />,
+        text: "E-commerce website that allows users to browse and purchase products online.",
+      },
+      {
+        icon: <MongoDB className="text-2xl" />,
+        text: "MongoDB",
+      },
+      {
+        icon: <Express className="text-2xl" />,
+        text: "Express",
+      },
+      {
+        icon: <Next className="text-2xl" />,
+        text: "Next.js",
+      },
+      {
+        icon: <Node className="text-2xl" />,
+        text: "Node.js",
+      },
+      {
+        icon: <Tailwind className="text-2xl" />,
+        text: "Tailwind CSS",
+      },
+      {
+        icon: <Typescript className="text-2xl" />,
+        text: "TypeScript",
+      },
+    ],
   },
   {
     id: 2,
@@ -357,6 +390,32 @@ export const projectData: ProjectsData[] = [
     image: "/projects/leetclone.png",
     github: "https://github.com/shrutidhungana/leetclone",
     website: "https://leetcode-clone-ashen.vercel.app/",
+    details: [
+      {
+        icon: <FaClone className="text-2xl" />,
+        text: "Clone of Leetcode, a popular platform for practicing coding problems and preparing for interviews.",
+      },
+      {
+        icon: <Next className="text-2xl" />,
+        text: "Next.js",
+      },
+      {
+        icon: <Tailwind className="text-2xl" />,
+        text: "Tailwind CSS",
+      },
+      {
+        icon: <Typescript className="text-2xl" />,
+        text: "TypeScript",
+      },
+      {
+        icon: <Firebase className="text-2xl" />,
+        text: "Firebase",
+      },
+      {
+        icon: <SiShadcnui className="text-2xl" />,
+        text: "ShadCN",
+      },
+    ],
   },
   {
     id: 3,
@@ -364,34 +423,97 @@ export const projectData: ProjectsData[] = [
     image: "/projects/tic-tac-toe.png",
     github: "https://github.com/shrutidhungana/tic-tac-toe",
     website: "https://shrutidhungana.github.io/tic-tac-toe",
+    details: [
+      {
+        icon: <FaGamepad className="text-2xl" />,
+        text: "A simple Tic Tac Toe app built with React.",
+      },
+      {
+        icon: <ReactSVG className="text-2xl" />,
+        text: "React",
+      },
+      {
+        icon: <SiVite className="text-2xl" />,
+        text: "Vite",
+      },
+      {
+        icon: <Typescript className="text-2xl" />,
+        text: "TypeScript",
+      },
+      {
+        icon: <CSS className="text-2xl" />,
+        text: "CSS",
+      },
+    ],
   },
+
   {
     id: 4,
-    title: "Sociopedia",
-    image: "/projects/sociopedia.png",
-    github: "https://github.com/shrutidhungana/sociopedia",
-    website: "https://social-media-gamma-six.vercel.app/",
-  },
-  {
-    id: 5,
     title: "Shopping Cart",
     image: "/projects/shopping-cart.png",
     github: "https://github.com/shrutidhungana/shopping-cart",
     website: "https://shrutidhungana.github.io/shopping-cart/",
+    details: [
+      {
+        icon: <FaShoppingCart className="text-2xl" />,
+        text: "A shopping cart app built in React using data from Fakestore API to add items to the cart.",
+      },
+      {
+        icon: <ReactSVG className="text-2xl" />,
+        text: "React",
+      },
+      {
+        icon: <Javascript className="text-2xl" />,
+        text: "JavaScript",
+      },
+      {
+        icon: <SiCreatereactapp className="text-2xl" />,
+        text: "Create React App",
+      },
+      {
+        icon: <CSS className="text-2xl" />,
+        text: "CSS",
+      },
+    ],
   },
   {
-    id: 6,
+    id: 5,
     title: "Movie Mania",
     image: "/projects/movie-mania.png",
     github: "https://github.com/shrutidhungana/Movie-Mania",
     website: "https://shrutidhungana.github.io/Movie-Mania/",
+    details: [
+      {
+        icon: <FaFilm className="text-2xl" />,
+        text: "A movie search app that allows users to search and explore movies.",
+      },
+      {
+        icon: <ReactSVG className="text-2xl" />,
+        text: "React",
+      },
+      {
+        icon: <Javascript className="text-2xl" />,
+        text: "JavaScript",
+      },
+      {
+        icon: <SiStyledcomponents className="text-2xl" />,
+        text: "Styled Components",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Khana Sansar",
+    image: "/projects/khana-sansar.png",
+    github: "https://github.com/shrutidhungana/khanasansar",
+    website: "https://khanasansar.vercel.app/",
   },
   {
     id: 7,
     title: "Calculator",
     image: "/projects/calculator.png",
     github: "https://github.com/shrutidhungana/calculator",
-    website: "https://github.com/shrutidhungana/calculator",
+    website: "https://shrutidhungana.github.io/calculator/",
   },
   {
     id: 8,
@@ -402,6 +524,13 @@ export const projectData: ProjectsData[] = [
   },
   {
     id: 9,
+    title: "Sociopedia",
+    image: "/projects/sociopedia.png",
+    github: "https://github.com/shrutidhungana/sociopedia",
+    website: "https://social-media-gamma-six.vercel.app/",
+  },
+  {
+    id: 10,
     title: "React Theme",
     image: "/projects/react-theme.png",
     github: "https://github.com/shrutidhungana/react-theme",
