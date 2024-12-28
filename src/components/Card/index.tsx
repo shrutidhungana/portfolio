@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 type ProjectCardProps = {
@@ -15,32 +16,43 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   website,
 }) => {
   return (
-    <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-6 text-center">
-      <h3 className="text-[#FF8C00] text-xl font-semibold mb-4">{title}</h3>
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-40 object-cover mb-4 rounded-md"
-      />
-      <div className="flex space-x-4">
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center space-x-2 text-gray-600 hover:text-[#7a3bdb] transition"
-        >
-          <FaGithub />
-          <span className="hidden md:block">GitHub</span>
-        </a>
-        <a
-          href={website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center space-x-2 text-gray-600 hover:text-[#7a3bdb] transition"
-        >
-          <FaExternalLinkAlt />
-          <span className="hidden md:block">Website</span>
-        </a>
+    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+      <div className="bg-gradient-to-tr from-[#FDEBD0] to-[#F9D7E3] rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition duration-300 relative">
+        {/* Image Section */}
+        <div className="relative w-full h-48 overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-300 group-hover:scale-105"
+          />
+          {/* Title Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <h3 className="text-white text-lg font-bold">{title}</h3>
+          </div>
+        </div>
+        {/* Links Section */}
+        <div className="p-4 flex justify-between items-center">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-700 hover:text-gray-900 space-x-2"
+          >
+            <FaGithub size={20} />
+            <span className="hidden sm:inline">GitHub</span>
+          </a>
+          <a
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-700 hover:text-gray-900 space-x-2"
+          >
+            <FaExternalLinkAlt size={20} />
+            <span className="hidden sm:inline">Website</span>
+          </a>
+        </div>
       </div>
     </div>
   );
