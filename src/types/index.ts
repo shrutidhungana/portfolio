@@ -55,3 +55,11 @@ export type ContactFormData = {
   label: string;
   placeholder: string;
 }
+
+export type ProjectsData = {
+  id: number;
+  title: string;
+  image: string;
+  github: string;
+  website: string;
+};

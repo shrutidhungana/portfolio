@@ -6,6 +6,7 @@ import {
   SkillSection,
   ContactData,
   ContactFormData,
+  ProjectsData,
 } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
@@ -23,6 +24,7 @@ import {
 } from "react-icons/fa";
 import { SiShadcnui } from "react-icons/si";
 import { FaLocationDot } from "react-icons/fa6";
+import { IoMdDownload } from "react-icons/io";
 import CSS from "@/components/SVG/Skills/css";
 import Firebase from "@/components/SVG/Skills/firebase";
 import Git from "@/components/SVG/Skills/git";
@@ -80,6 +82,13 @@ export const links: NavLink[] = [
     href: "/contact",
     icon: (
       <CiMail className="icon-color icon-hover-color transition duration-300" />
+    ),
+  },
+  {
+    name: "Resume",
+    href: "/resume",
+    icon: (
+      <IoMdDownload className="icon-color icon-hover-color transition duration-300" />
     ),
   },
 ];
@@ -331,5 +340,71 @@ export const contactFormData: ContactFormData[] = [
     name: "message",
     label: "Message",
     placeholder: "Type your Message",
+  },
+];
+
+export const projectData: ProjectsData[] = [
+  {
+    id: 1,
+    title: "Trend Hive",
+    image: "/projects/trendhive.png",
+    github: "https://github.com/shrutidhungana/trendhive",
+    website: "https://e-commerce-hazel-iota-68.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Leet Clone",
+    image: "/projects/leetclone.png",
+    github: "https://github.com/shrutidhungana/leetclone",
+    website: "https://leetcode-clone-ashen.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Tic Tac Toe",
+    image: "/projects/tic-tac-toe.png",
+    github: "https://github.com/shrutidhungana/tic-tac-toe",
+    website: "https://shrutidhungana.github.io/tic-tac-toe",
+  },
+  {
+    id: 4,
+    title: "Sociopedia",
+    image: "/projects/sociopedia.png",
+    github: "https://github.com/shrutidhungana/sociopedia",
+    website: "https://social-media-gamma-six.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "Shopping Cart",
+    image: "/projects/shopping-cart.png",
+    github: "https://github.com/shrutidhungana/shopping-cart",
+    website: "https://shrutidhungana.github.io/shopping-cart/",
+  },
+  {
+    id: 6,
+    title: "Movie Mania",
+    image: "/projects/movie-mania.png",
+    github: "https://github.com/shrutidhungana/Movie-Mania",
+    website: "https://shrutidhungana.github.io/Movie-Mania/",
+  },
+  {
+    id: 7,
+    title: "Calculator",
+    image: "/projects/calculator.png",
+    github: "https://github.com/shrutidhungana/calculator",
+    website: "https://github.com/shrutidhungana/calculator",
+  },
+  {
+    id: 8,
+    title: "Indecision App",
+    image: "/projects/indecision-app.png",
+    github: "https://github.com/shrutidhungana/indecision-app",
+    website: "https://shrutidhungana.github.io/indecision-app/",
+  },
+  {
+    id: 9,
+    title: "React Theme",
+    image: "/projects/react-theme.png",
+    github: "https://github.com/shrutidhungana/react-theme",
+    website: "https://shrutidhungana.github.io/react-theme/",
   },
 ];
