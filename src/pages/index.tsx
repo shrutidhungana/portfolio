@@ -12,6 +12,7 @@ import Link from "next/link";
 import { socialMediaLinks } from "@/config";
 import { motion } from 'framer-motion';
 import Button from "@/components/Button";
+import { FaDownload } from "react-icons/fa";
 
 export default function Home() {
    const handleResumeDownload = () => {

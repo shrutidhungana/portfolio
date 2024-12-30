@@ -187,10 +187,10 @@ export const educationData: EducationItem[] = [
 export const experienceData: EducationItem[] = [
   {
     id: 1,
-    year: "Jan 2022-March 2022",
-    title: "React Developer Intern",
-    institution: "Prixa Technologies",
-    location: "Jawalakhel, Lalitpur, Nepal",
+    year: "Feb 2023-July 2024",
+    title: "Frontend (React) Developer",
+    institution: "Digital Anka Pvt ltd (Varicon)",
+    location: "Pulchowk, Lalitpur, Nepal (Australia)",
   },
   {
     id: 2,
@@ -199,12 +199,13 @@ export const experienceData: EducationItem[] = [
     institution: "Treeleaf Technologies",
     location: "Sankhamul, Kathmandu,Nepal",
   },
+
   {
     id: 3,
-    year: "Feb 2023-July 2024",
-    title: "Frontend (React) Developer",
-    institution: "Digital Anka Pvt ltd (Varicon)",
-    location: "Pulchowk, Lalitpur, Nepal (Australia)",
+    year: "Jan 2022-March 2022",
+    title: "React Developer Intern",
+    institution: "Prixa Technologies",
+    location: "Jawalakhel, Lalitpur, Nepal",
   },
 ];
 
