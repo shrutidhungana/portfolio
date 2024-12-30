@@ -173,7 +173,7 @@ button {
 }
 
 .icon-color {
-  color: #4b5563; /* Tailwind's gray-600 */
+  color: white; /* Tailwind's gray-600 */
 }
 
 .icon-hover-color:hover {

@@ -14,6 +14,12 @@ import { motion } from 'framer-motion';
 import Button from "@/components/Button";
 
 export default function Home() {
+   const handleResumeDownload = () => {
+     const link = document.createElement("a");
+     link.href = "/Shruti_Dhungana_Resume.pdf"; // Path to the resume in public folder
+     link.download = "Shruti_Dhungana_Resume.pdf";
+     link.click();
+   };
   return (
     <PortfolioLayout>
       <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3] pb-20">
@@ -85,18 +91,17 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 flex justify-center space-x-4">
-            <Link href="/about" passHref>
-              <Button
-                text="About Me"
-                className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
-              />
-            </Link>
             <Link href="/contact" passHref>
               <Button
                 text="Contact"
                 className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
               />
             </Link>
+            <Button
+              text="Download Resume"
+              onClick={handleResumeDownload}
+              className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+            />
           </div>
         </main>
       </div>
