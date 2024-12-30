@@ -11,14 +11,20 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 left-0 w-full bg-indigo-800 backdrop-blur-md shadow-md z-50">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+    <header className="sticky top-0 left-0 w-full bg-gradient-to-r from-indigo-800 to-purple-900 backdrop-blur-md shadow-xl z-50">
+      <div className="container mx-auto flex justify-between items-center py-5 px-8">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-2xl font-extrabold text-white hover:text-indigo-300 transition"
-        >
-          My Portfolio
+        <Link href="/" className="flex items-center space-x-3">
+          <Image
+            src="/favicon.png" // Replace with the path to your image
+            alt="Logo"
+            width={45}
+            height={45}
+            className="rounded-full"
+          />
+          <span className="text-3xl font-bold text-white tracking-wide">
+            My Portfolio
+          </span>
         </Link>
 
         {/* Hamburger Menu (Mobile) */}
@@ -32,29 +38,24 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         {/* Navigation Links */}
         <nav>
           <ul
-            className={`flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0 absolute lg:static top-16 left-0 w-full lg:w-auto bg-indigo-800 lg:bg-transparent shadow-lg lg:shadow-none transform ${
+            className={`flex flex-col lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0 absolute lg:static top-16 left-0 w-full lg:w-auto bg-gradient-to-r from-indigo-800 to-purple-900 lg:bg-transparent shadow-xl lg:shadow-none transform ${
               menuOpen ? "translate-x-0" : "-translate-x-full"
             } lg:transform-none transition-transform duration-300`}
           >
             {links?.map((link) => (
-              <li key={link.name} className="relative group">
+              <li key={link.name} className="relative">
                 <Link
                   href={link.href}
                   className="flex items-center text-gray-300 transition duration-300"
                   onClick={() => setMenuOpen(false)} // Close menu on link click
                 >
                   {/* Icon with Background */}
-                  <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full group-hover:bg-indigo-500 transition duration-300">
+                  <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-700 rounded-full shadow-lg">
                     {link.icon}
                   </div>
 
-                  {/* Name (Hidden on large screens, shown on hover) */}
-                  <span className="ml-2 text-base text-gray-300 lg:hidden">
-                    {link.name}
-                  </span>
-                  <span className="hidden lg:inline-block lg:ml-2 lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transform transition-all duration-300 ease-in-out text-white">
-                    {link.name}
-                  </span>
+                  {/* Name */}
+                  <span className="ml-3 text-lg text-white">{link.name}</span>
                 </Link>
               </li>
             ))}
@@ -66,4 +67,3 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
 };
 
 export default Header;
-
