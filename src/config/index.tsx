@@ -373,7 +373,7 @@ export const projectData: ProjectsData[] = [
         text: "E-commerce website that allows users to browse and purchase products online.",
       },
       {
-        icon: <MdDescription />,
+        icon: <MdDescription className="text-2xl" />,
         text: "It has two sections user and admin. Both have their own features. While user can buy, review and add any products, admin can add, edit, delete products and feature image. Also, a particular user can see particular order while admin can see all products. ",
       },
       {
@@ -418,8 +418,8 @@ export const projectData: ProjectsData[] = [
         text: "Clone of Leetcode, a popular platform for practicing coding problems and preparing for interviews.",
       },
       {
-        icon: <MdDescription />,
-        text: "In the homepage it has 10 problems that are in the leetcode. Once you click on any of problems  ",
+        icon: <MdDescription className="text-2xl" />,
+        text: "In the homepage it has 10 problems that are in the leetcode. Once you click on any of problems you go inside the solving area where there are two split sections. In the left side there are description,examples, constrains etc. While in the right there is a code editor and test cases. Run, and Submit button constitute the footer. Talking about header there is Problem List in the center and on clicking these button you can go to next or previous problems. ",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -459,6 +459,10 @@ export const projectData: ProjectsData[] = [
         text: "A simple Tic Tac Toe app built with React.",
       },
       {
+        icon: <MdDescription className="text-2xl" />,
+        text: "A game where the one playing noughts ('O') and computer is crosses ('X') where either you or a computer can win.",
+      },
+      {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
@@ -491,6 +495,10 @@ export const projectData: ProjectsData[] = [
       {
         icon: <FaShoppingCart className="text-2xl" />,
         text: "A shopping cart app built in React using data from Fakestore API to add items to the cart.",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "In this app I have use data from fakeStore API.The homepage shows different categories of items along with it's price and Add To Cart button. After you add to cart: you can increase and decrease the tity and remove it from cart.",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -526,6 +534,10 @@ export const projectData: ProjectsData[] = [
         text: "A movie search app that allows users to search and explore movies.",
       },
       {
+        icon: <MdDescription className="text-2xl" />,
+        text: "A movie app where you can search for different movies and series in different languages. On clicking each movies, you get IMDB Rating, year the movie released, language, Rated, Release date, run time, Genre, Director, Actors and plot.",
+      },
+      {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
@@ -553,6 +565,10 @@ export const projectData: ProjectsData[] = [
       {
         icon: <FaHome className="text-2xl" />, // A more relevant icon for food/recipe
         text: "An app that helps you book home in different sectors.",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "A full-stack MERN application for booking and exploring properties based on unique categories like Beachfront, Windmills, Iconic Cities, Countryside, and Islands. It has features to become a host, Property list, trip list, wish list etc.",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -600,6 +616,10 @@ export const projectData: ProjectsData[] = [
         text: "A food recipe app built in React that uses the MealDB API to help users search and find recipes for their preferred dishes.",
       },
       {
+        icon: <MdDescription className="text-2xl" />,
+        text: "A food recipe app built with the MealDB API, Vite, React, and Bootstrap. It offers a variety of recipes across categories like Chicken, Dessert, Lamb, Miscellaneous, Pasta, and Pork. Users can select dishes from these sections (e.g., Chicken) to view meal options like burgers, Ayem Percik, Nutty Chicken Curry, and Tandoori Chicken. Clicking on a dish shows its recipe, including ingredients, measurements, and instructions.",
+      },
+      {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
@@ -629,6 +649,10 @@ export const projectData: ProjectsData[] = [
         text: "A simple calculator app to perform arithmetic operations.",
       },
       {
+        icon: <MdDescription className="text-2xl" />,
+        text: "The calculator has features such as addition, subtraction, multiplication, division, decimal and all.",
+      },
+      {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
@@ -656,6 +680,10 @@ export const projectData: ProjectsData[] = [
       {
         icon: <FcDecision className="text-2xl" />,
         text: "An app where computer decides what to do for you.",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "An app made with react.js and scss where you can enter your task and let the computer decide what you should do. There is place for entering your options and when you click the what should I do button the computer decides what you should do from the options. If you don't have any options remaining then the what should I do button is disabled. You can remove the individual task as well by clicking the remove button at the side of the things you want to do.You can also remove all the option by clicking remove all button.The name given for the app is Indecision as it decides what you have to do. ",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -689,6 +717,10 @@ export const projectData: ProjectsData[] = [
       {
         icon: <IoShareSocial className="text-2xl" />,
         text: "A full-stack social media app to post your thoughts, make friends etc..",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "This is a simple social media app built using the MERN stack (MongoDB, Express, React, Node) with Material UI V5 for styling. The app features a login page where users can register or log in with a username and password. Upon login, users are taken to the home page, which includes a header with a title, a placeholder search bar, and a theme toggle for dark and light modes. The left side displays profile information (profile picture, username, and friends count), and users can visit their profile page to manage friends. The central area allows users to create posts with images, and the right side shows sponsors and a friend list. The app also allows liking posts, with additional features disabled for now.",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -730,6 +762,10 @@ export const projectData: ProjectsData[] = [
       {
         icon: <FaAffiliatetheme className="text-2xl" />,
         text: "An app to toggle between light and dark theme.",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "A simple app build with react.js and simple CSS. Here in the right, we have a sun like icon and if you click on the icon, you can see the theme of the page being changed. For the light theme we have filled icon and white background color with text written in black and for dark theme we have sun icon and black background color with text written in white also the space containing the icon has gray color in the darker theme.",
       },
       {
         icon: <FaCode className="text-2xl" />,
