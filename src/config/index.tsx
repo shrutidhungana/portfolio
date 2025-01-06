@@ -10,7 +10,11 @@ import {
 } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
-import { MdCastForEducation, MdLightbulbOutline } from "react-icons/md";
+import {
+  MdCastForEducation,
+  MdDescription,
+  MdLightbulbOutline,
+} from "react-icons/md";
 import {
   FaRegUser,
   FaCode,
@@ -26,6 +30,7 @@ import {
   FaClone,
   FaUtensils,
   FaCalculator,
+  FaHome,
 } from "react-icons/fa";
 import {
   SiCreatereactapp,
@@ -368,6 +373,10 @@ export const projectData: ProjectsData[] = [
         text: "E-commerce website that allows users to browse and purchase products online.",
       },
       {
+        icon: <MdDescription />,
+        text: "It has two sections user and admin. Both have their own features. While user can buy, review and add any products, admin can add, edit, delete products and feature image. Also, a particular user can see particular order while admin can see all products. ",
+      },
+      {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
@@ -407,6 +416,10 @@ export const projectData: ProjectsData[] = [
       {
         icon: <FaClone className="text-2xl" />,
         text: "Clone of Leetcode, a popular platform for practicing coding problems and preparing for interviews.",
+      },
+      {
+        icon: <MdDescription />,
+        text: "In the homepage it has 10 problems that are in the leetcode. Once you click on any of problems  ",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -532,6 +545,51 @@ export const projectData: ProjectsData[] = [
   },
   {
     id: 6,
+    title: "Dream Home ",
+    image: "/projects/dream-home.png",
+    github: "https://github.com/shrutidhungana/dream-home",
+    website: "https://dream-home-gamma.vercel.app/",
+    details: [
+      {
+        icon: <FaHome className="text-2xl" />, // A more relevant icon for food/recipe
+        text: "An app that helps you book home in different sectors.",
+      },
+      {
+        icon: <FaCode className="text-2xl" />,
+        text: "It is built in following tools and languages:",
+      },
+      {
+        icon: <ReactSVG className="text-xl" />,
+        text: "React",
+      },
+      {
+        icon: <Javascript className="text-xl" />,
+        text: "JavaScript",
+      },
+      {
+        icon: <SiVite className="text-xl" />,
+        text: "Vite",
+      },
+      {
+        icon: <MongoDB className="text-xl" />,
+        text: "MongoDB",
+      },
+      {
+        icon: <Express className="text-xl" />,
+        text: "Express",
+      },
+      {
+        icon: <Node className="text-xl" />,
+        text: "Node.js",
+      },
+      {
+        icon: <Material className="text-xl" />,
+        text: "Material UI",
+      },
+    ],
+  },
+  {
+    id: 7,
     title: "Khana Sansar",
     image: "/projects/khana-sansar.png",
     github: "https://github.com/shrutidhungana/khanasansar",
@@ -560,7 +618,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Calculator",
     image: "/projects/calculator.png",
     github: "https://github.com/shrutidhungana/calculator",
@@ -589,7 +647,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Indecision App",
     image: "/projects/indecision-app.png",
     github: "https://github.com/shrutidhungana/indecision-app",
@@ -622,7 +680,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Sociopedia",
     image: "/projects/sociopedia.png",
     github: "https://github.com/shrutidhungana/sociopedia",
@@ -663,7 +721,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: "React Theme",
     image: "/projects/react-theme.png",
     github: "https://github.com/shrutidhungana/react-theme",
