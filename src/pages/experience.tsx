@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PortfolioLayout from "@/components/layout";
 import Briefcase from "@/components/SVG/Experience/briefcase";
 import { experienceData } from "@/config";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Button from "@/components/Button"; // Import Button component
+import { FaTimes } from "react-icons/fa"; // Import Close Icon
 
 const Experience: React.FC = () => {
+  // State to track which experience details are expanded
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleDetails = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index); // Toggle the expansion
+  };
+
   return (
     <PortfolioLayout>
       {/* Gradient Background */}
@@ -76,37 +85,43 @@ const Experience: React.FC = () => {
                       📍 {exp.location}
                     </p>
 
-                    {/* Details Section with Enhanced Description */}
-                    <div className="mt-4">
-                      {exp.details?.map((detail, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-start mb-4 space-x-3"
-                        >
-                          {/* Icon for detail */}
-                          <div className="text-[#7a3bdb] text-lg">
-                            {detail.icon}
-                          </div>
-                          <div className="text-gray-600 text-sm sm:text-base hover:text-[#7a3bdb] transition duration-300 ease-in-out">
-                            {/* Making Description More Attractive with Bullet Points */}
-                            <p className="mb-2 leading-relaxed">
-                              {detail.description
-                                .split(".")
-                                .map((sentence, index) => (
-                                  <span key={index} className="block ml-4">
-                                    {sentence.trim()}
-                                    {sentence &&
-                                      index <
-                                        detail.description.split(".").length -
-                                          1 &&
-                                      "."}
-                                  </span>
-                                ))}
+                    {/* View Details Button */}
+                    {expandedIndex !== index && (
+                      <Button
+                        text="View Details"
+                        onClick={() => toggleDetails(index)}
+                        className="mt-4"
+                      />
+                    )}
+
+                    {/* Details Section */}
+                    {expandedIndex === index && (
+                      <div className="mt-4 space-y-4">
+                        {exp.details?.map((detail, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start mb-4 space-x-3"
+                          >
+                            {/* Icon for detail */}
+                            <div className="text-[#7a3bdb]">{detail.icon}</div>
+                            <p className="text-gray-600 text-sm">
+                              {detail.description}
                             </p>
                           </div>
+                        ))}
+
+                        {/* Close Icon */}
+                        <div className="text-right">
+                          <button
+                            onClick={() => toggleDetails(index)}
+                            className="text-[#7a3bdb] text-sm"
+                          >
+                            <FaTimes className="inline-block mr-2" />
+                            Close
+                          </button>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
