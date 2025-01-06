@@ -13,7 +13,7 @@ const Resume: React.FC<ProjectsProps> = () => {
   // Load and render PDF on the canvas
   useEffect(() => {
     const loadPDF = async () => {
-      const pdf = await pdfjsLib.getDocument("/Shruti_Dhungana_Resume.pdf")
+      const pdf = await pdfjsLib.getDocument("/Shruti_Dhungana_Full_Stack_Developer.pdf")
         .promise;
       setNumPages(pdf.numPages);
 
@@ -69,7 +69,7 @@ const Resume: React.FC<ProjectsProps> = () => {
             </motion.h1>
 
             <motion.a
-              href="/Shruti_Dhungana_Resume.pdf"
+              href="/Shruti_Dhungana_Full_Stack_Developer.pdf"
               download
               className="flex items-center bg-[#7a3bdb] text-[#FDEBD0] hover:bg-[#333333] hover:text-white py-2 px-6 rounded-lg shadow-lg transition"
               initial={{ opacity: 0 }}
