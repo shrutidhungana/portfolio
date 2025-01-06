@@ -66,7 +66,7 @@ const ProjectDetailsDialog: React.FC<ProjectDetailsDialogProps> = ({
         </motion.div>
 
         {/* Styling for details[0] and details[1] */}
-        {project?.details?.slice(0, 2).map((detail, index) => (
+        {project?.details?.slice(0, 3).map((detail, index) => (
           <motion.div
             key={index}
             className="flex items-center space-x-3 mt-4"
@@ -91,7 +91,7 @@ const ProjectDetailsDialog: React.FC<ProjectDetailsDialogProps> = ({
 
         {/* Styling for Tags (details[2] onward) */}
         <div className="flex flex-wrap gap-3 mt-4">
-          {project?.details?.slice(2).map((detail) => (
+          {project?.details?.slice(3)?.map((detail) => (
             <motion.div
               key={detail.text} // Use unique key instead of index
               className="flex items-center space-x-1 p-0.5 text-sm rounded-full shadow-md transition hover:shadow-lg hover:scale-105"
