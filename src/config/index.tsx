@@ -7,6 +7,7 @@ import {
   ContactData,
   ContactFormData,
   ProjectsData,
+  ExperienceItem
 } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
@@ -31,6 +32,7 @@ import {
   FaUtensils,
   FaCalculator,
   FaHome,
+  FaLaptopCode,
 } from "react-icons/fa";
 import {
   SiCreatereactapp,
@@ -189,13 +191,20 @@ export const educationData: EducationItem[] = [
   },
 ];
 
-export const experienceData: EducationItem[] = [
+export const experienceData: ExperienceItem[] = [
   {
     id: 1,
     year: "Feb 2023-July 2024",
     title: "Frontend (React) Developer",
     institution: "Digital Anka Pvt ltd (Varicon)",
     location: "Pulchowk, Lalitpur, Nepal (Australia)",
+    details: [
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "As a React developer at Varicon, I enhanced several critical modules, including Equipment, Daily Cost Tracking, and Subcontract. I implemented an Archive feature with advanced filtering, improved data visibility with unqualified equipment counts and status indicators, and streamlined navigation in the Daily Cost Tracking module. I also developed an automatic logout feature for security and designed the entire Subcontract module from scratch, incorporating features like contract management and claims linkage, all while ensuring seamless user experiences using React, Hooks, and Material UI.",
+      },
+    ],
   },
   {
     id: 2,
@@ -203,6 +212,13 @@ export const experienceData: EducationItem[] = [
     title: "Frontend Developer Intern",
     institution: "Treeleaf Technologies",
     location: "Sankhamul, Kathmandu,Nepal",
+    details: [
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "During my frontend internship, I gained hands-on experience with HTML, CSS, JavaScript, and React, working on projects like splash pages, to-do apps, task managers, and quiz applications. This allowed me to learn the fundamentals of web development and understand how these technologies come together to create dynamic, interactive user interfaces.",
+      },
+    ],
   },
 
   {
@@ -211,6 +227,13 @@ export const experienceData: EducationItem[] = [
     title: "React Developer Intern",
     institution: "Prixa Technologies",
     location: "Jawalakhel, Lalitpur, Nepal",
+    details: [
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "During my React developer internship, I worked on the Laxmi Bank App, which featured a splash page, calculator, custom keyboard, and bank statement section, helping me grasp React fundamentals and improve my CSS skills. I also created the Movie-Mania website using the Opendb API and a weather app with real-time data. These projects allowed me to enhance my skills in API integration, state management, and UI development, making the internship a highly valuable learning experience.",
+      },
+    ],
   },
 ];
 

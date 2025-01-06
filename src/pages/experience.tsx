@@ -64,7 +64,7 @@ const Experience: React.FC = () => {
                   </div>
 
                   {/* Text Content */}
-                  <div className="ml-4">
+                  <div className="ml-4 w-full">
                     <p className="text-sm text-[#7a3bdb] font-semibold">
                       {exp.year}
                     </p>
@@ -75,6 +75,38 @@ const Experience: React.FC = () => {
                     <p className="text-gray-500 italic text-sm mt-1">
                       📍 {exp.location}
                     </p>
+
+                    {/* Details Section with Enhanced Description */}
+                    <div className="mt-4">
+                      {exp.details?.map((detail, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-start mb-4 space-x-3"
+                        >
+                          {/* Icon for detail */}
+                          <div className="text-[#7a3bdb] text-lg">
+                            {detail.icon}
+                          </div>
+                          <div className="text-gray-600 text-sm sm:text-base hover:text-[#7a3bdb] transition duration-300 ease-in-out">
+                            {/* Making Description More Attractive with Bullet Points */}
+                            <p className="mb-2 leading-relaxed">
+                              {detail.description
+                                .split(".")
+                                .map((sentence, index) => (
+                                  <span key={index} className="block ml-4">
+                                    {sentence.trim()}
+                                    {sentence &&
+                                      index <
+                                        detail.description.split(".").length -
+                                          1 &&
+                                      "."}
+                                  </span>
+                                ))}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}

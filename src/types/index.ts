@@ -27,6 +27,21 @@ export type EducationItem = {
   title: string;
   institution: string;
   location: string;
+  
+};
+
+export type ExperienceDetails = {
+  icon: ReactNode;
+  description: string;
+};
+
+export type ExperienceItem = {
+  id: number;
+  year: string;
+  title: string;
+  institution: string;
+  location: string;
+  details: Array<ExperienceDetails>
 };
 
 export type SkillItem = {
@@ -67,5 +82,5 @@ export type ProjectsData = {
   image: string;
   github: string;
   website: string;
-  details?: Array<Details>
+  details: Array<Details>
 };
