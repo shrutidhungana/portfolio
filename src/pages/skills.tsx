@@ -24,7 +24,7 @@ const Skills: React.FC = () => {
         {skillsData?.map((section) => (
           <div key={section.id} className="mb-12">
             <motion.h2
-              className="text-2xl font-semibold text-[#FF8C00] mb-6 text-center"
+              className="text-2xl font-semibold text-[#283593] mb-6 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}

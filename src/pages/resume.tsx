@@ -1,58 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import PortfolioLayout from "@/components/layout";
 import { motion } from "framer-motion"; // For animations
-import * as pdfjsLib from "pdfjs-dist/webpack";
 import { FaDownload } from "react-icons/fa";
 
 type ProjectsProps = {};
 
 const Resume: React.FC<ProjectsProps> = () => {
-  const [numPages, setNumPages] = useState<number>(0);
-  const [pages, setPages] = useState<any[]>([]); // Store rendered pages here
-
-  // Load and render PDF on the canvas
-  useEffect(() => {
-    const loadPDF = async () => {
-      const pdf = await pdfjsLib.getDocument("/Shruti_Dhungana_Full_Stack_Developer.pdf")
-        .promise;
-      setNumPages(pdf.numPages);
-
-      // Create an array of promises to render all pages
-      const renderPages = [];
-      for (let i = 1; i <= pdf.numPages; i++) {
-        renderPages.push(renderPage(pdf, i));
-      }
-
-      // Wait for all pages to be rendered
-      const renderedPages = await Promise.all(renderPages);
-      setPages(renderedPages);
-    };
-
-    loadPDF();
-  }, []);
-
-  // Render each PDF page as a canvas element
-  const renderPage = async (pdf: any, pageNum: number) => {
-    const page = await pdf.getPage(pageNum);
-    const viewport = page.getViewport({ scale: 1.5 }); // Adjust scale as needed
-
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-
-    if (context) {
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-
-      // Render PDF page onto the canvas
-      await page.render({
-        canvasContext: context,
-        viewport: viewport,
-      }).promise;
-    }
-
-    return canvas;
-  };
-
   return (
     <PortfolioLayout>
       <div className="min-h-screen bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3] text-[#333333]">
@@ -80,28 +33,29 @@ const Resume: React.FC<ProjectsProps> = () => {
             </motion.a>
           </div>
 
-          {/* Render all pages dynamically */}
-          <div className="w-full max-w-4xl mb-8">
-            {pages.map((page, index) => (
-              <motion.div
-                key={index}
-                className="mb-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: index * 0.3 }} // Delay each page's animation
+          {/* Full-Page PDF Display */}
+          <div className="w-full h-screen mb-8">
+            <motion.div
+              className="mb-8 w-full h-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              {/* Full-page PDF Display without the viewer */}
+              <object
+                data="/Shruti_Dhungana_Full_Stack_Developer.pdf"
+                type="application/pdf"
+                className="w-full h-full"
               >
-                <div className="canvas-container">
-                  <canvas
-                    ref={(el) => {
-                      if (el) {
-                        el.replaceWith(page); // Replace canvas with the rendered page
-                      }
-                    }}
-                    className="w-full"
-                  />
-                </div>
-              </motion.div>
-            ))}
+                <p>
+                  Your browser does not support PDFs.{" "}
+                  <a href="/Shruti_Dhungana_Full_Stack_Developer.pdf">
+                    Download the PDF
+                  </a>
+                  .
+                </p>
+              </object>
+            </motion.div>
           </div>
         </div>
       </div>

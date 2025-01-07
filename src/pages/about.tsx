@@ -47,7 +47,7 @@ const About: React.FC = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="text-2xl sm:text-3xl font-bold"
+              className="text-2xl sm:text-3xl tracking-wide font-bold"
             >
               Shruti Dhungana
             </motion.h1>
@@ -94,6 +94,7 @@ const About: React.FC = () => {
               <Button
                 text="Contact Me"
                 className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+                aria-label="Contact Me Button"
               />
             </Link>
           </div>

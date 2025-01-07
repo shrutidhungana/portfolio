@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
             Contact
           </motion.h1>
           <motion.h3
-            className="text-2xl font-semibold text-[#FF8C00] mb-6 mt-2"
+            className="text-2xl font-semibold text-[##283593] mb-6 mt-2"
             initial={{ opacity: 0, rotate: 360 }}
             animate={{ opacity: 1, rotate: 0 }}
             transition={{ duration: 1 }}
