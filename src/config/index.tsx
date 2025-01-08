@@ -133,7 +133,7 @@ export const listItems: ListItem[] = [
   {
     id: 1,
     icon: <FaCode className="code-color text-2xl" />,
-    text: "Passionate Web Developer turning creative ideas into effective solutions.",
+    text: "Passionate Full Stack Web Developer turning creative ideas into effective solutions.",
   },
   {
     id: 2,
@@ -142,6 +142,11 @@ export const listItems: ListItem[] = [
   },
   {
     id: 3,
+    icon: <CiFileOn className="experience-color text-2xl" />,
+    text: "I interned at Prixa and Treeleaf Technologies, and worked as a React Developer at Varicon(Digital Anka).",
+  },
+  {
+    id: 4,
     icon: (
       <span>
         <FaBook className="book-color text-2xl" />{" "}
@@ -151,7 +156,7 @@ export const listItems: ListItem[] = [
     text: "Avid reader of novels, movie enthusiast, and curious about emerging technologies when I’m not coding.",
   },
   {
-    id: 4,
+    id: 5,
     icon: <FaEnvelope className="envelope-color text-2xl" />,
     text: (
       <>
@@ -170,10 +175,10 @@ export const listItems: ListItem[] = [
 export const educationData: EducationItem[] = [
   {
     id: 1,
-    year: "upto 2015",
-    title: "School Level",
-    institution: "Daffodil Boarding School",
-    location: "Saraswatinagar, Kathmandu, Nepal",
+    year: "2017-2022",
+    title: "Bachelor's Of Science In Computer Science",
+    institution: "Kathmandu University",
+    location: "Dhulikhel, Kavre, Nepal",
   },
   {
     id: 2,
@@ -182,12 +187,13 @@ export const educationData: EducationItem[] = [
     institution: "National School of Sciences",
     location: "Lainchaur, Kathmandu, Nepal",
   },
+
   {
     id: 3,
-    year: "2017-2022",
-    title: "Bachelor's Of Science In Computer Science",
-    institution: "Kathmandu University",
-    location: "Dhulikhel, Kavre, Nepal",
+    year: "upto 2015",
+    title: "School Level",
+    institution: "Daffodil Boarding School",
+    location: "Saraswatinagar, Kathmandu, Nepal",
   },
 ];
 
@@ -205,6 +211,7 @@ export const experienceData: ExperienceItem[] = [
           "As a React developer at Varicon, I enhanced several critical modules, including Equipment, Daily Cost Tracking, and Subcontract. I implemented an Archive feature with advanced filtering, improved data visibility with unqualified equipment counts and status indicators, and streamlined navigation in the Daily Cost Tracking module. I also developed an automatic logout feature for security and designed the entire Subcontract module from scratch, incorporating features like contract management and claims linkage, all while ensuring seamless user experiences using React, Hooks, and Material UI.",
       },
     ],
+    credentialLink: "/Shruti_Dhungana_experience_letter_Varicon.pdf"
   },
   {
     id: 2,
@@ -234,6 +241,7 @@ export const experienceData: ExperienceItem[] = [
           "During my React developer internship, I worked on the Laxmi Bank App, which featured a splash page, calculator, custom keyboard, and bank statement section, helping me grasp React fundamentals and improve my CSS skills. I also created the Movie-Mania website using the Opendb API and a weather app with real-time data. These projects allowed me to enhance my skills in API integration, state management, and UI development, making the internship a highly valuable learning experience.",
       },
     ],
+    credentialLink:"/Shruti_Dhungana_experience_letter_prixa.pdf"
   },
 ];
 

@@ -15,6 +15,10 @@ const Experience: React.FC = () => {
     setExpandedIndex(expandedIndex === index ? null : index); // Toggle the expansion
   };
 
+  const openCredential = (credentialLink: string) => {
+    window.open(credentialLink, "_blank");
+  };
+
   return (
     <PortfolioLayout>
       {/* Gradient Background */}
@@ -85,13 +89,23 @@ const Experience: React.FC = () => {
                       📍 {exp.location}
                     </p>
 
-                    {/* View Details Button */}
+                    {/* View Details and View Credential Buttons */}
                     {expandedIndex !== index && (
-                      <Button
-                        text="View Details"
-                        onClick={() => toggleDetails(index)}
-                        className="mt-4"
-                      />
+                      <div className="flex space-x-4 justify-between">
+                        <Button
+                          text="View Details"
+                          onClick={() => toggleDetails(index)}
+                          className="mt-4 "
+                        />
+                        {/* Only show View Credential button for first and third experience */}
+                        {(index === 0 || index === 2) && (
+                          <Button
+                            text="View Credential"
+                            onClick={() => openCredential(exp.credentialLink)}
+                            className="mt-4 "
+                          />
+                        )}
+                      </div>
                     )}
 
                     {/* Details Section */}

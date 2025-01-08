@@ -41,7 +41,8 @@ export type ExperienceItem = {
   title: string;
   institution: string;
   location: string;
-  details: Array<ExperienceDetails>
+  details: Array<ExperienceDetails>;
+  credentialLink?: string;
 };
 
 export type SkillItem = {
