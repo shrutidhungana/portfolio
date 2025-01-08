@@ -6,6 +6,7 @@ const MongoDB: React.FC<{ className?: string }> = ({ className }) => (
     viewBox="0 0 48 48"
     width="48px"
     height="48px"
+    className={className}
   >
     <path
       fill="#5d4037"
