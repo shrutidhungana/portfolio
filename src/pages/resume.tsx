@@ -22,7 +22,7 @@ const Resume: React.FC<ProjectsProps> = () => {
             </motion.h1>
 
             <motion.a
-              href="/Shruti_Dhungana_Full_Stack_Developer.pdf"
+              href="/Shruti_Dhungana_Resume.pdf"
               download
               className="flex items-center bg-[#7a3bdb] text-[#FDEBD0] hover:bg-[#333333] hover:text-white py-2 px-6 rounded-lg shadow-lg transition"
               initial={{ opacity: 0 }}
@@ -43,13 +43,13 @@ const Resume: React.FC<ProjectsProps> = () => {
             >
               {/* Full-page PDF Display without the viewer */}
               <object
-                data="/Shruti_Dhungana_Full_Stack_Developer.pdf"
+                data="/Shruti_Dhungana_Resume.pdf"
                 type="application/pdf"
                 className="w-full h-full"
               >
                 <p>
                   Your browser does not support PDFs.{" "}
-                  <a href="/Shruti_Dhungana_Full_Stack_Developer.pdf">
+                  <a href="/Shruti_Dhungana_Resume.pdf">
                     Download the PDF
                   </a>
                   .
