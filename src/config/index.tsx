@@ -15,6 +15,7 @@ import {
   MdCastForEducation,
   MdDescription,
   MdLightbulbOutline,
+  MdLogin,
 } from "react-icons/md";
 import {
   FaRegUser,
@@ -59,6 +60,7 @@ import Typescript from "@/components/SVG/Skills/ts";
 import Express from "@/components/SVG/Skills/express";
 import { FcDecision } from "react-icons/fc";
 import { IoShareSocial } from "react-icons/io5";
+import { RiRemixRunFill } from "react-icons/ri";
 
 export const links: NavLink[] = [
   {
@@ -279,6 +281,10 @@ export const skillsData: SkillSection[] = [
       {
         name: "Next",
         icon: <Next className="text-2xl" />,
+      },
+      {
+        name: "Remix",
+        icon: <RiRemixRunFill className="text-2xl mb-4 mt-2" />,
       },
       {
         name: "Material UI",
@@ -556,6 +562,43 @@ export const projectData: ProjectsData[] = [
   },
   {
     id: 5,
+    title: "Remix Login",
+    image: "/projects/remix-login.png",
+    github: "https://github.com/shrutidhungana/remix-login",
+    website: "https://remix-login-kappa.vercel.app/",
+    details: [
+      {
+        icon: <MdLogin className="text-2xl" />,
+        text: "A simple login app made on top of remix  for understanding basics of remix.",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "A simple login app using Remix JS where you can enter Name, Email and Password after which you will be redirected to profile where you can logout or delete profile",
+      },
+      {
+        icon: <FaCode className="text-2xl" />,
+        text: "It is built in following tools and languages:",
+      },
+      {
+        icon: <RiRemixRunFill className="text-xl" />,
+        text: "Remix",
+      },
+      {
+        icon: <ReactSVG className="text-xl" />,
+        text: "React",
+      },
+      {
+        icon: <Javascript className="text-xl" />,
+        text: "JavaScript",
+      },
+      {
+        icon: <Tailwind className="text-xl" />,
+        text: "Tailwind",
+      },
+    ],
+  },
+  {
+    id: 6,
     title: "Movie Mania",
     image: "/projects/movie-mania.png",
     github: "https://github.com/shrutidhungana/Movie-Mania",
@@ -588,7 +631,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Dream Home ",
     image: "/projects/dream-home.png",
     github: "https://github.com/shrutidhungana/dream-home",
@@ -637,7 +680,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Khana Sansar",
     image: "/projects/khana-sansar.png",
     github: "https://github.com/shrutidhungana/khanasansar",
@@ -670,7 +713,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Calculator",
     image: "/projects/calculator.png",
     github: "https://github.com/shrutidhungana/calculator",
@@ -703,7 +746,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Indecision App",
     image: "/projects/indecision-app.png",
     github: "https://github.com/shrutidhungana/indecision-app",
@@ -740,7 +783,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: "Sociopedia",
     image: "/projects/sociopedia.png",
     github: "https://github.com/shrutidhungana/sociopedia",
@@ -785,7 +828,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     title: "React Theme",
     image: "/projects/react-theme.png",
     github: "https://github.com/shrutidhungana/react-theme",
