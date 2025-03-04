@@ -1,7 +1,7 @@
 # Portfolio
 
 Welcome to my digital portfolio—a comprehensive showcase of my skills, experiences, and projects as a passionate and dedicated full-stack developer. This website is built using 
-# Next.js, TypeScript, Tailwind CSS, and Material-UI (MUI), 
+ Next.js, TypeScript, Tailwind CSS, and Material-UI (MUI), 
 ensuring a sleek, responsive, and interactive user experience. It reflects not only my technical proficiency but also my attention to detail and design aesthetics.
 
 # Homepage
