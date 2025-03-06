@@ -66,4 +66,4 @@ Visitors can access my resume directly through the Download Resume button, which
 
 To explore my portfolio and learn more about me, visit the website:
 
-https://portfolio-9xsa.vercel.app/
+https://www.shrutidhungana.com.np/
