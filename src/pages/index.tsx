@@ -17,7 +17,7 @@ import { FaDownload } from "react-icons/fa";
 export default function Home() {
    const handleResumeDownload = () => {
      const link = document.createElement("a");
-     link.href = "/Shruti_Dhungana_Full_Stack_Developer.pdf"; 
+     link.href = "/Shruti_Dhungana_Resume.pdf"; 
      link.target = "_blank"
      link.click();
    };

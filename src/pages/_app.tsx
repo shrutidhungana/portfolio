@@ -8,11 +8,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Portfolio</title>
+        <title>SHRUTI DHUNGANA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="One store for men, women and children"
+          content="my Portfolio"
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
