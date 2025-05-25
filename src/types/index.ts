@@ -83,5 +83,6 @@ export type ProjectsData = {
   image: string;
   github: string;
   website: string;
+  status: string,
   details: Array<Details>
 };

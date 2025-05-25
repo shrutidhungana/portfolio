@@ -399,9 +399,20 @@ export const contactFormData: ContactFormData[] = [
 ];
 
 export const projectData: ProjectsData[] = [
-  {
+   {
     id: 1,
+    title: "Learn Loom",
+    status: "Ongoing",
+    image: "", // Provide empty strings to avoid runtime errors
+    github: "",
+    website: "",
+    details: [],
+  
+  },
+  {
+    id: 2,
     title: "Trend Hive",
+    status: "Completed",
     image: "/projects/trendhive.png",
     github: "https://github.com/shrutidhungana/trendhive",
     website: "https://e-commerce-hazel-iota-68.vercel.app/",
@@ -445,8 +456,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Leet Clone",
+    status: "Completed",
     image: "/projects/leetclone.png",
     github: "https://github.com/shrutidhungana/leetclone",
     website: "https://leetcode-clone-ashen.vercel.app/",
@@ -486,8 +498,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Tic Tac Toe",
+    status: "Completed",
     image: "/projects/tic-tac-toe.png",
     github: "https://github.com/shrutidhungana/tic-tac-toe",
     website: "https://shrutidhungana.github.io/tic-tac-toe",
@@ -524,8 +537,9 @@ export const projectData: ProjectsData[] = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Shopping Cart",
+    status: "Completed",
     image: "/projects/shopping-cart.png",
     github: "https://github.com/shrutidhungana/shopping-cart",
     website: "https://shrutidhungana.github.io/shopping-cart/",
@@ -561,8 +575,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Remix Login",
+    status: "Completed",
     image: "/projects/remix-login.png",
     github: "https://github.com/shrutidhungana/remix-login",
     website: "https://remix-login-kappa.vercel.app/",
@@ -598,8 +613,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Movie Mania",
+    status: "Completed",
     image: "/projects/movie-mania.png",
     github: "https://github.com/shrutidhungana/Movie-Mania",
     website: "https://shrutidhungana.github.io/Movie-Mania/",
@@ -631,8 +647,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Dream Home ",
+    status: "Completed",
     image: "/projects/dream-home.png",
     github: "https://github.com/shrutidhungana/dream-home",
     website: "https://dream-home-gamma.vercel.app/",
@@ -680,8 +697,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Khana Sansar",
+    status: "Completed",
     image: "/projects/khana-sansar.png",
     github: "https://github.com/shrutidhungana/khanasansar",
     website: "https://khanasansar.vercel.app/",
@@ -713,8 +731,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Calculator",
+    status: "Completed",
     image: "/projects/calculator.png",
     github: "https://github.com/shrutidhungana/calculator",
     website: "https://shrutidhungana.github.io/calculator/",
@@ -746,8 +765,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: "Indecision App",
+    status: "Completed",
     image: "/projects/indecision-app.png",
     github: "https://github.com/shrutidhungana/indecision-app",
     website: "https://shrutidhungana.github.io/indecision-app/",
@@ -783,8 +803,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     title: "Sociopedia",
+    status: "Completed",
     image: "/projects/sociopedia.png",
     github: "https://github.com/shrutidhungana/sociopedia",
     website: "https://social-media-gamma-six.vercel.app/",
@@ -828,8 +849,9 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     title: "React Theme",
+    status: "Completed",
     image: "/projects/react-theme.png",
     github: "https://github.com/shrutidhungana/react-theme",
     website: "https://shrutidhungana.github.io/react-theme/",

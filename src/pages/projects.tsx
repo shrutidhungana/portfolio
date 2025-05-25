@@ -27,6 +27,7 @@ const Projects: React.FC = () => {
             <ProjectCard
               key={project.id}
               title={project.title}
+              status={project.status}
               image={project.image}
               github={project.github}
               website={project.website}
