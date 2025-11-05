@@ -61,6 +61,7 @@ import Express from "@/components/SVG/Skills/express";
 import { FcDecision } from "react-icons/fc";
 import { IoShareSocial } from "react-icons/io5";
 import { RiRemixRunFill } from "react-icons/ri";
+import { GrCompliance } from "react-icons/gr";
 
 export const links: NavLink[] = [
   {
@@ -399,15 +400,14 @@ export const contactFormData: ContactFormData[] = [
 ];
 
 export const projectData: ProjectsData[] = [
-   {
+  {
     id: 1,
-    title: "Learn Loom",
+    title: "Academia Next",
     status: "Ongoing",
     image: "", // Provide empty strings to avoid runtime errors
     github: "",
     website: "",
     details: [],
-  
   },
   {
     id: 2,
@@ -455,50 +455,9 @@ export const projectData: ProjectsData[] = [
       },
     ],
   },
+
   {
     id: 3,
-    title: "Leet Clone",
-    status: "Completed",
-    image: "/projects/leetclone.png",
-    github: "https://github.com/shrutidhungana/leetclone",
-    website: "https://leetcode-clone-ashen.vercel.app/",
-    details: [
-      {
-        icon: <FaClone className="text-2xl" />,
-        text: "Clone of Leetcode, a popular platform for practicing coding problems and preparing for interviews.",
-      },
-      {
-        icon: <MdDescription className="text-2xl" />,
-        text: "In the homepage it has 10 problems that are in the leetcode. Once you click on any of problems you go inside the solving area where there are two split sections. In the left side there are description,examples, constrains etc. While in the right there is a code editor and test cases. Run, and Submit button constitute the footer. Talking about header there is Problem List in the center and on clicking these button you can go to next or previous problems. ",
-      },
-      {
-        icon: <FaCode className="text-2xl" />,
-        text: "It is built in following tools and languages:",
-      },
-      {
-        icon: <Next className="text-xl" />,
-        text: "Next.js",
-      },
-      {
-        icon: <Tailwind className="text-xl" />,
-        text: "Tailwind CSS",
-      },
-      {
-        icon: <Typescript className="text-xl" />,
-        text: "TypeScript",
-      },
-      {
-        icon: <Firebase className="text-xl" />,
-        text: "Firebase",
-      },
-      {
-        icon: <SiShadcnui className="text-xl" />,
-        text: "ShadCN",
-      },
-    ],
-  },
-  {
-    id: 4,
     title: "Tic Tac Toe",
     status: "Completed",
     image: "/projects/tic-tac-toe.png",
@@ -537,7 +496,7 @@ export const projectData: ProjectsData[] = [
   },
 
   {
-    id: 5,
+    id: 4,
     title: "Shopping Cart",
     status: "Completed",
     image: "/projects/shopping-cart.png",
@@ -575,79 +534,100 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 6,
-    title: "Remix Login",
+    id: 5,
+    title: "To-do full stack",
     status: "Completed",
-    image: "/projects/remix-login.png",
-    github: "https://github.com/shrutidhungana/remix-login",
-    website: "https://remix-login-kappa.vercel.app/",
+    image: "/projects/to-do.png",
+    github: "https://github.com/shrutidhungana/to-do-full-stack",
+    website: "https://to-do-full-stack-one.vercel.app/todo",
     details: [
       {
-        icon: <MdLogin className="text-2xl" />,
-        text: "A simple login app made on top of remix  for understanding basics of remix.",
+        icon: <GrCompliance className="text-2xl" />,
+        text: "A simple to-do-app made in MERN stack with tailwind where you can view,add, edit and delete to-dos.",
       },
       {
         icon: <MdDescription className="text-2xl" />,
-        text: "A simple login app using Remix JS where you can enter Name, Email and Password after which you will be redirected to profile where you can logout or delete profile",
+        text: "This is a app with filtering (All, Done, Upcoming), pagination, and CRUD functionality, featuring a drawer-based form for adding, editing, and deleting tasks with validation and due-date management .",
       },
       {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
-      {
-        icon: <RiRemixRunFill className="text-xl" />,
-        text: "Remix",
-      },
-      {
-        icon: <ReactSVG className="text-xl" />,
-        text: "React",
-      },
+
       {
         icon: <Javascript className="text-xl" />,
         text: "JavaScript",
       },
       {
-        icon: <Tailwind className="text-xl" />,
-        text: "Tailwind",
+        icon: <ReactSVG className="text-xl" />,
+        text: "React",
+      },
+
+      {
+        icon: <SiVite className="text-xl" />,
+        text: "Vite",
+      },
+      {
+        icon: <MongoDB className="text-xl" />,
+        text: "MongoDB",
+      },
+      {
+        icon: <Express className="text-xl" />,
+        text: "Express",
+      },
+      {
+        icon: <Node className="text-xl" />,
+        text: "Node.js",
+      },
+      {
+        icon: <Material className="text-xl" />,
+        text: "Material UI",
+      },
+      {
+        icon: <Tailwind className="text-2xl" />,
+        text: "tailwind CSS",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Movie-App",
+    status: "Completed",
+    image: "/projects/movie-app.png",
+    github: "https://github.com/shrutidhungana/movie-app",
+    website: "https://movie-app-theta-lovat.vercel.app/",
+    details: [
+      {
+        icon: <FaFilm className="text-2xl" />,
+        text: "A simple movie dashboard app made with full stack Next and typescript with tailwind for styling and react-query and zustand for data fetching and state management respectivelys.",
+      },
+      {
+        icon: <MdDescription className="text-2xl" />,
+        text: "This is a intractive movie dashboard app with search, filter, sorting features which also give users chance to view details, review, rate them including adminfunctionalities for adding, editing, deleting, and exporting movie data via a secure login-enabled Admin Panel",
+      },
+        {
+        icon: <FaCode className="text-2xl" />,
+        text: "It is built in following tools and languages:",
+      },
+
+      {
+        icon: <Typescript className="text-xl" />,
+        text: "TypeScript",
+      },
+      {
+        icon: <Next className="text-xl" />,
+        text: "Next.js",
+      },
+
+      
+      {
+        icon: <Tailwind className="text-2xl" />,
+        text: "tailwind CSS",
       },
     ],
   },
   {
     id: 7,
-    title: "Movie Mania",
-    status: "Completed",
-    image: "/projects/movie-mania.png",
-    github: "https://github.com/shrutidhungana/Movie-Mania",
-    website: "https://shrutidhungana.github.io/Movie-Mania/",
-    details: [
-      {
-        icon: <FaFilm className="text-2xl" />,
-        text: "A movie search app that allows users to search and explore movies.",
-      },
-      {
-        icon: <MdDescription className="text-2xl" />,
-        text: "A movie app where you can search for different movies and series in different languages. On clicking each movies, you get IMDB Rating, year the movie released, language, Rated, Release date, run time, Genre, Director, Actors and plot.",
-      },
-      {
-        icon: <FaCode className="text-2xl" />,
-        text: "It is built in following tools and languages:",
-      },
-      {
-        icon: <ReactSVG className="text-xl" />,
-        text: "React",
-      },
-      {
-        icon: <Javascript className="text-xl" />,
-        text: "JavaScript",
-      },
-      {
-        icon: <SiStyledcomponents className="text-xl" />,
-        text: "Styled Components",
-      },
-    ],
-  },
-  {
-    id: 8,
     title: "Dream Home ",
     status: "Completed",
     image: "/projects/dream-home.png",
@@ -697,7 +677,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 9,
+    id: 8,
     title: "Khana Sansar",
     status: "Completed",
     image: "/projects/khana-sansar.png",
@@ -731,7 +711,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 10,
+    id: 9,
     title: "Calculator",
     status: "Completed",
     image: "/projects/calculator.png",
@@ -765,7 +745,7 @@ export const projectData: ProjectsData[] = [
     ],
   },
   {
-    id: 11,
+    id: 10,
     title: "Indecision App",
     status: "Completed",
     image: "/projects/indecision-app.png",
@@ -802,88 +782,5 @@ export const projectData: ProjectsData[] = [
       },
     ],
   },
-  {
-    id: 12,
-    title: "Sociopedia",
-    status: "Completed",
-    image: "/projects/sociopedia.png",
-    github: "https://github.com/shrutidhungana/sociopedia",
-    website: "https://social-media-gamma-six.vercel.app/",
-    details: [
-      {
-        icon: <IoShareSocial className="text-2xl" />,
-        text: "A full-stack social media app to post your thoughts, make friends etc..",
-      },
-      {
-        icon: <MdDescription className="text-2xl" />,
-        text: "This is a simple social media app built using the MERN stack (MongoDB, Express, React, Node) with Material UI V5 for styling. The app features a login page where users can register or log in with a username and password. Upon login, users are taken to the home page, which includes a header with a title, a placeholder search bar, and a theme toggle for dark and light modes. The left side displays profile information (profile picture, username, and friends count), and users can visit their profile page to manage friends. The central area allows users to create posts with images, and the right side shows sponsors and a friend list. The app also allows liking posts, with additional features disabled for now.",
-      },
-      {
-        icon: <FaCode className="text-2xl" />,
-        text: "It is built in following tools and languages:",
-      },
-      {
-        icon: <MongoDB className="text-xl" />,
-        text: "MongoDB",
-      },
-      {
-        icon: <Express className="text-xl" />,
-        text: "Express",
-      },
-      {
-        icon: <ReactSVG className="text-xl" />,
-        text: "React",
-      },
-      {
-        icon: <Node className="text-xl" />,
-        text: "Node.js",
-      },
-      {
-        icon: <Material className="text-xl" />,
-        text: "Material UI",
-      },
-      {
-        icon: <Javascript className="text-xl" />,
-        text: "JavaScript",
-      },
-    ],
-  },
-  {
-    id: 13,
-    title: "React Theme",
-    status: "Completed",
-    image: "/projects/react-theme.png",
-    github: "https://github.com/shrutidhungana/react-theme",
-    website: "https://shrutidhungana.github.io/react-theme/",
-    details: [
-      {
-        icon: <FaAffiliatetheme className="text-2xl" />,
-        text: "An app to toggle between light and dark theme.",
-      },
-      {
-        icon: <MdDescription className="text-2xl" />,
-        text: "A simple app build with react.js and simple CSS. Here in the right, we have a sun like icon and if you click on the icon, you can see the theme of the page being changed. For the light theme we have filled icon and white background color with text written in black and for dark theme we have sun icon and black background color with text written in white also the space containing the icon has gray color in the darker theme.",
-      },
-      {
-        icon: <FaCode className="text-2xl" />,
-        text: "It is built in following tools and languages:",
-      },
-      {
-        icon: <ReactSVG className="text-xl" />,
-        text: "React",
-      },
-      {
-        icon: <Javascript className="text-xl" />,
-        text: "JavaScript",
-      },
-      {
-        icon: <SiCreatereactapp className="text-xl" />,
-        text: "Create React App",
-      },
-      {
-        icon: <CSS className="text-xl" />,
-        text: "CSS",
-      },
-    ],
-  },
+  
 ];
