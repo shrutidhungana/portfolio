@@ -7,7 +7,7 @@ import {
   ContactData,
   ContactFormData,
   ProjectsData,
-  ExperienceItem
+  ExperienceItem,
 } from "@/types";
 import { CiFileOn, CiMail } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
@@ -166,8 +166,7 @@ export const listItems: ListItem[] = [
         To contact me, hit me up at{" "}
         <a
           href="mailto:shrutidhungana123@gmail.com"
-          className="text-[#7a3bdb] email hover:text-[#E91E63] transition"
-        >
+          className="text-[#7a3bdb] email hover:text-[#E91E63] transition">
           shrutidhungana123@gmail.com
         </a>
       </>
@@ -203,6 +202,21 @@ export const educationData: EducationItem[] = [
 export const experienceData: ExperienceItem[] = [
   {
     id: 1,
+    year: "Nov 2025-Present",
+    title: "Software Engineer",
+    institution: "LeftclickTech",
+    location: "Maitidevi, Kathmandu, Nepal (Quakers Hills, NSW, Australia)",
+    details: [
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "I have been working as a Full Stack Software Engineer building web applications using TanStack, TanStack Query, Hono, Zod, Drizzle, TypeScript, and Tailwind CSS.",
+      },
+    ],
+  },
+
+  {
+    id: 2,
     year: "Feb 2023-July 2024",
     title: "Frontend (React) Developer",
     institution: "Digital Anka Pvt ltd (Varicon)",
@@ -214,10 +228,10 @@ export const experienceData: ExperienceItem[] = [
           "As a React developer at Varicon, I enhanced several critical modules, including Equipment, Daily Cost Tracking, and Subcontract. I implemented an Archive feature with advanced filtering, improved data visibility with unqualified equipment counts and status indicators, and streamlined navigation in the Daily Cost Tracking module. I also developed an automatic logout feature for security and designed the entire Subcontract module from scratch, incorporating features like contract management and claims linkage, all while ensuring seamless user experiences using React, Hooks, and Material UI.",
       },
     ],
-    credentialLink: "/Shruti_Dhungana_experience_letter_Varicon.pdf"
+    credentialLink: "/Shruti_Dhungana_experience_letter_Varicon.pdf",
   },
   {
-    id: 2,
+    id: 3,
     year: "Nov 2022-Feb 2023",
     title: "Frontend Developer Intern",
     institution: "Treeleaf Technologies",
@@ -232,7 +246,7 @@ export const experienceData: ExperienceItem[] = [
   },
 
   {
-    id: 3,
+    id: 4,
     year: "Jan 2022-March 2022",
     title: "React Developer Intern",
     institution: "Prixa Technologies",
@@ -244,7 +258,7 @@ export const experienceData: ExperienceItem[] = [
           "During my React developer internship, I worked on the Laxmi Bank App, which featured a splash page, calculator, custom keyboard, and bank statement section, helping me grasp React fundamentals and improve my CSS skills. I also created the Movie-Mania website using the Opendb API and a weather app with real-time data. These projects allowed me to enhance my skills in API integration, state management, and UI development, making the internship a highly valuable learning experience.",
       },
     ],
-    credentialLink:"/Shruti_Dhungana_experience_letter_prixa.pdf"
+    credentialLink: "/Shruti_Dhungana_experience_letter_prixa.pdf",
   },
 ];
 
@@ -369,8 +383,7 @@ export const contactData: ContactData[] = [
     text: (
       <a
         href="mailto:shrutidhungana123@gmail.com"
-        className="email  transition"
-      >
+        className="email  transition">
         shrutidhungana123@gmail.com
       </a>
     ),
@@ -605,7 +618,7 @@ export const projectData: ProjectsData[] = [
         icon: <MdDescription className="text-2xl" />,
         text: "This is a intractive movie dashboard app with search, filter, sorting features which also give users chance to view details, review, rate them including adminfunctionalities for adding, editing, deleting, and exporting movie data via a secure login-enabled Admin Panel",
       },
-        {
+      {
         icon: <FaCode className="text-2xl" />,
         text: "It is built in following tools and languages:",
       },
@@ -619,7 +632,6 @@ export const projectData: ProjectsData[] = [
         text: "Next.js",
       },
 
-      
       {
         icon: <Tailwind className="text-2xl" />,
         text: "tailwind CSS",
@@ -782,5 +794,4 @@ export const projectData: ProjectsData[] = [
       },
     ],
   },
-  
 ];

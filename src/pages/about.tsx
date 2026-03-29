@@ -17,8 +17,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-3xl font-bold text-center mt-8 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]"
-        >
+          className="text-3xl font-bold text-center mt-8 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
           About Me
         </motion.h1>
         <div className="w-full border-t-2 border-white"></div>
@@ -32,8 +31,7 @@ const About: React.FC = () => {
               initial={{ scale: 0, rotate: 0 }}
               animate={{ scale: 1, rotate: 360 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-lg"
-            >
+              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-lg">
               <Image
                 src="/profile.png"
                 alt="Profile"
@@ -47,16 +45,14 @@ const About: React.FC = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="text-2xl sm:text-3xl tracking-wide font-bold"
-            >
+              className="text-2xl sm:text-3xl tracking-wide font-bold">
               Shruti Dhungana
             </motion.h1>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
-              className="text-lg sm:text-xl text-center mt-2 text-[#333333]"
-            >
+              className="text-lg sm:text-xl text-center mt-2 text-[#333333]">
               <Typewriter
                 options={{
                   strings: [
@@ -81,8 +77,7 @@ const About: React.FC = () => {
                   transition={{
                     duration: 0.8,
                     delay: index * 0.3,
-                  }}
-                >
+                  }}>
                   {item.icon}
                   <span>{item.text}</span>
                 </motion.li>
@@ -126,8 +121,7 @@ const About: React.FC = () => {
                 initial={{ scale: 0, rotate: 0 }}
                 animate={{ scale: 1, rotate: 360 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute left-[-10%] w-72 h-72 rounded-full overflow-hidden shadow-lg"
-              >
+                className="absolute left-[-10%] w-72 h-72 rounded-full overflow-hidden shadow-lg about-nesthub-fix">
                 <Image
                   src="/profile.png"
                   alt="Profile"
@@ -141,8 +135,7 @@ const About: React.FC = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="text-4xl font-bold wordArtText mb-6"
-              >
+                className="text-4xl font-bold wordArtText mb-6">
                 Shruti Dhungana
               </motion.h1>
 
@@ -157,8 +150,7 @@ const About: React.FC = () => {
                     transition={{
                       duration: 0.8,
                       delay: index * 0.3,
-                    }}
-                  >
+                    }}>
                     {item.icon}
                     <span>{item.text}</span>
                   </motion.li>

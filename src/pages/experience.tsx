@@ -29,8 +29,7 @@ const Experience: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
+              transition={{ duration: 1, delay: 0.5 }}>
               <Image
                 src="/experience.png" // Replace with your custom image
                 alt="Experience Illustration"
@@ -48,8 +47,7 @@ const Experience: React.FC = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-3xl font-bold text-center mt-2 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]"
-            >
+              className="text-3xl font-bold text-center mt-2 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
               Experience
             </motion.h1>
             <div className="w-full border-t-2 border-white mb-6"></div>
@@ -69,8 +67,7 @@ const Experience: React.FC = () => {
                     index % 2 === 0
                       ? "bg-[#CCCCFF] border-blue-400"
                       : "bg-[#F8C8DC] border-yellow-400"
-                  }`}
-                >
+                  }`}>
                   {/* Icon */}
                   <div className="flex-shrink-0 bg-[#7a3bdb] rounded-full p-3 text-white">
                     <Briefcase />
@@ -97,8 +94,8 @@ const Experience: React.FC = () => {
                           onClick={() => toggleDetails(index)}
                           className="mt-4 "
                         />
-                        {/* Only show View Credential button for first and third experience */}
-                        {(index === 0 || index === 2) && (
+                        {/* Only show View Credential button if credentialLink exists */}
+                        {exp.credentialLink && (
                           <Button
                             text="View Credential"
                             onClick={() => openCredential(exp.credentialLink)}
@@ -114,8 +111,7 @@ const Experience: React.FC = () => {
                         {exp.details?.map((detail, idx) => (
                           <div
                             key={idx}
-                            className="flex items-start mb-4 space-x-3"
-                          >
+                            className="flex items-start mb-4 space-x-3">
                             {/* Icon for detail */}
                             <div className="text-[#7a3bdb]">{detail.icon}</div>
                             <p className="text-gray-600 text-sm">
@@ -128,8 +124,7 @@ const Experience: React.FC = () => {
                         <div className="text-right">
                           <button
                             onClick={() => toggleDetails(index)}
-                            className="text-[#7a3bdb] text-sm"
-                          >
+                            className="text-[#7a3bdb] text-sm">
                             <FaTimes className="inline-block mr-2" />
                             Close
                           </button>

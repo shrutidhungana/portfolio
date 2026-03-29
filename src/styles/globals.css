@@ -7,7 +7,6 @@ html,
 body {
   height: 100%;
   margin: 0;
- 
 }
 
 .text-dark-gray {
@@ -131,8 +130,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-
-
 button {
   transition: all 0.3s ease-in-out;
 }
@@ -180,40 +177,40 @@ button {
   color: #ffffff; /* White on hover */
 }
 
-.social-media-hover-color:hover{
-  color: #1D4ED8
+.social-media-hover-color:hover {
+  color: #1d4ed8;
 }
 
-.code-color{
-  color:#7a3bdb
+.code-color {
+  color: #7a3bdb;
 }
 
-.lightbulb-color{
-  color: #ffcc00
+.lightbulb-color {
+  color: #ffcc00;
 }
 
-.book-color{
-color: #4CAF50
+.book-color {
+  color: #4caf50;
 }
 
-.movie-color{
-color: #E91E63
+.movie-color {
+  color: #e91e63;
 }
 
-.envelope-color{
-color: #FF00FF
+.envelope-color {
+  color: #ff00ff;
 }
 
-.experience-color{
-  color:#a16bda
+.experience-color {
+  color: #a16bda;
 }
 
-.email{
+.email {
   text-decoration: underline;
 }
 
-.email:hover{
-color: #B0E0E6
+.email:hover {
+  color: #b0e0e6;
 }
 
 @keyframes cardAnimation {
@@ -310,4 +307,13 @@ color: #B0E0E6
 
 .buttonMotion {
   animation: buttonMotion 1s ease-in-out infinite;
+}
+
+/* Nest Hub Max specific override (1280x800) ----------------------------------
+   This hides the profile image entirely on Nest Hub Max (1280x800)
+*/
+@media (max-width: 1280px) and (max-height: 800px) {
+  .about-nesthub-fix {
+    display: none !important;
+  }
 }
