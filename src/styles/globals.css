@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Design tokens - see CLAUDE.md "Design tokens" */
+:root {
+  --color-background: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-foreground: #171918;
+  --color-muted: #666c68;
+  --color-border: #d8d5cd;
+  --color-accent: #3f6654;
+  --radius: 9px;
+  --motion-fast: 150ms;
+  --motion-slow: 220ms;
+}
+
+html.dark {
+  --color-background: #121513;
+  --color-surface: #1c211d;
+  --color-foreground: #f2f1ec;
+  --color-muted: #9ca39d;
+  --color-border: #343a35;
+  --color-accent: #7fa88e;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Ensure the body and html fill the viewport and hide overflow */
 html,
 body {

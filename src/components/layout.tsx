@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./header";
 import { links } from "@/config";
 
 type PortfolioLayoutProps = {
@@ -8,7 +8,7 @@ type PortfolioLayoutProps = {
 
 const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({children}) => {
   return (
-    <div className="flex flex-col bg-white overflow-hidden">
+    <div className="flex flex-col bg-background overflow-hidden">
       <Header links={links} />
       <main className="flex flex-col w-full">{children}</main>
     </div>

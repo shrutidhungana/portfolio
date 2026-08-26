@@ -9,14 +9,9 @@ import {
   ProjectsData,
   ExperienceItem,
 } from "@/types";
-import { CiFileOn, CiMail } from "react-icons/ci";
+import { CiFileOn } from "react-icons/ci";
 import { GoProject } from "react-icons/go";
-import {
-  MdCastForEducation,
-  MdDescription,
-  MdLightbulbOutline,
-  MdLogin,
-} from "react-icons/md";
+import { MdDescription, MdLogin, MdArticle } from "react-icons/md";
 import {
   FaRegUser,
   FaCode,
@@ -43,21 +38,21 @@ import {
 } from "react-icons/si";
 import { FaAffiliatetheme, FaLocationDot } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
-import CSS from "@/components/SVG/Skills/css";
-import Firebase from "@/components/SVG/Skills/firebase";
-import Git from "@/components/SVG/Skills/git";
-import GitHub from "@/components/SVG/Skills/gitHub";
-import HTML from "@/components/SVG/Skills/html";
-import Jira from "@/components/SVG/Skills/jira";
-import Javascript from "@/components/SVG/Skills/js";
-import Material from "@/components/SVG/Skills/materialUI";
-import MongoDB from "@/components/SVG/Skills/mongoDB";
-import Next from "@/components/SVG/Skills/next";
-import Node from "@/components/SVG/Skills/node";
-import ReactSVG from "@/components/SVG/Skills/react";
-import Tailwind from "@/components/SVG/Skills/tailwind";
-import Typescript from "@/components/SVG/Skills/ts";
-import Express from "@/components/SVG/Skills/express";
+import CSS from "@/components/svg/skills/css";
+import Firebase from "@/components/svg/skills/firebase";
+import Git from "@/components/svg/skills/git";
+import GitHub from "@/components/svg/skills/git-hub";
+import HTML from "@/components/svg/skills/html";
+import Jira from "@/components/svg/skills/jira";
+import Javascript from "@/components/svg/skills/js";
+import Material from "@/components/svg/skills/material-ui";
+import MongoDB from "@/components/svg/skills/mongo-db";
+import Next from "@/components/svg/skills/next";
+import Node from "@/components/svg/skills/node";
+import ReactSVG from "@/components/svg/skills/react";
+import Tailwind from "@/components/svg/skills/tailwind";
+import Typescript from "@/components/svg/skills/ts";
+import Express from "@/components/svg/skills/express";
 import { FcDecision } from "react-icons/fc";
 import { IoShareSocial } from "react-icons/io5";
 import { RiRemixRunFill } from "react-icons/ri";
@@ -65,17 +60,10 @@ import { GrCompliance } from "react-icons/gr";
 
 export const links: NavLink[] = [
   {
-    name: "About",
-    href: "/about",
+    name: "Work",
+    href: "/projects",
     icon: (
-      <FaRegUser className="icon-color icon-hover-color transition duration-300" />
-    ),
-  },
-  {
-    name: "Education",
-    href: "/education",
-    icon: (
-      <MdCastForEducation className="icon-color icon-hover-color transition duration-300" />
+      <GoProject className="icon-color icon-hover-color transition duration-300" />
     ),
   },
   {
@@ -86,24 +74,17 @@ export const links: NavLink[] = [
     ),
   },
   {
-    name: "Skills",
-    href: "/skills",
+    name: "Writing",
+    href: "/writing",
     icon: (
-      <MdLightbulbOutline className="icon-color icon-hover-color transition duration-300" />
+      <MdArticle className="icon-color icon-hover-color transition duration-300" />
     ),
   },
   {
-    name: "Projects",
-    href: "/projects",
+    name: "About",
+    href: "/about",
     icon: (
-      <GoProject className="icon-color icon-hover-color transition duration-300" />
-    ),
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-    icon: (
-      <CiMail className="icon-color icon-hover-color transition duration-300" />
+      <FaRegUser className="icon-color icon-hover-color transition duration-300" />
     ),
   },
   {

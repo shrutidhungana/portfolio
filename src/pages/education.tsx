@@ -1,6 +1,6 @@
 import React from "react";
 import PortfolioLayout from "@/components/layout";
-import GraduationCap from "@/components/SVG/Education/graduationCap";
+import GraduationCap from "@/components/svg/education/graduation-cap";
 import { educationData } from "@/config";
 import { motion } from "framer-motion";
 import Image from "next/image";

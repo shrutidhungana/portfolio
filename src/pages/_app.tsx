@@ -3,10 +3,11 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeProvider } from "@/hooks/use-theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <title>SHRUTI DHUNGANA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,6 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ToastContainer />
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }

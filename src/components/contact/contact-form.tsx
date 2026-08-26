@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { ContactFormData } from "@/types";
 import emailjs from "@emailjs/browser";
-import useToast from "@/hooks/useToast"; 
-    import Button from "../Button";
+import useToast from "@/hooks/use-toast";
+import Button from "../button";
 
 type ContactFormProps = {
   data: ContactFormData[];

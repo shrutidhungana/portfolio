@@ -1,17 +1,17 @@
 
 import PortfolioLayout from "@/components/layout";
-import Cone from "@/components/SVG/Homepage/cone";
-import Cylinder from "@/components/SVG/Homepage/cylinder";
-import Ring from "@/components/SVG/Homepage/ring";
-import Icosahedron from "@/components/SVG/Homepage/icosahedron";
-import Cuboid from "@/components/SVG/Homepage/cuboid";
-import Prism from "@/components/SVG/Homepage/prism";
-import Sphere from "@/components/SVG/Homepage/sphere";
+import Cone from "@/components/svg/homepage/cone";
+import Cylinder from "@/components/svg/homepage/cylinder";
+import Ring from "@/components/svg/homepage/ring";
+import Icosahedron from "@/components/svg/homepage/icosahedron";
+import Cuboid from "@/components/svg/homepage/cuboid";
+import Prism from "@/components/svg/homepage/prism";
+import Sphere from "@/components/svg/homepage/sphere";
 import Typewriter from "typewriter-effect";
 import Link from "next/link"; 
 import { socialMediaLinks } from "@/config";
 import { motion } from 'framer-motion';
-import Button from "@/components/Button";
+import Button from "@/components/button";
 import { FaDownload } from "react-icons/fa";
 
 export default function Home() {

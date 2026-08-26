@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PortfolioLayout from "@/components/layout";
 import { projectData } from "@/config";
-import ProjectCard from "@/components/Card";
-import ProjectDetailsDialog from "@/components/Dialog";
+import ProjectCard from "@/components/card";
+import ProjectDetailsDialog from "@/components/dialog";
 
 
 const Projects: React.FC = () => {

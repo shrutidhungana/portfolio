@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PortfolioLayout from "@/components/layout";
-import Briefcase from "@/components/SVG/Experience/briefcase";
+import Briefcase from "@/components/svg/experience/briefcase";
 import { experienceData } from "@/config";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Button from "@/components/Button"; // Import Button component
+import Button from "@/components/button"; // Import Button component
 import { FaTimes } from "react-icons/fa"; // Import Close Icon
 
 const Experience: React.FC = () => {

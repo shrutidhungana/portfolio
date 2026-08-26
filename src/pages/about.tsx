@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { listItems } from "@/config";
-import Button from "@/components/Button";
+import Button from "@/components/button";
 
 const About: React.FC = () => {
   return (

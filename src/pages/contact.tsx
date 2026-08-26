@@ -1,8 +1,8 @@
 import React from "react";
 import PortfolioLayout from "@/components/layout";
 import { contactData, contactFormData, socialMediaLinks } from "@/config";
-import ContactData from "@/components/Contact/contactData";
-import ContactForm from "@/components/Contact/contactForm";
+import ContactData from "@/components/contact/contact-data";
+import ContactForm from "@/components/contact/contact-form";
 import Image from "next/image";
 import { motion } from "framer-motion"; // Import motion
 
