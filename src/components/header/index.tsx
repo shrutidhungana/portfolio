@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "@/components/theme-toggle";
@@ -9,28 +10,42 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useRouter();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="text-lg font-semibold text-foreground">
-          Shruti<span className="text-accent">.</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 items-center justify-center rounded-theme bg-accent text-sm font-semibold text-background">
+            S
+          </span>
+          <span className="text-lg font-semibold tracking-tight text-foreground">
+            Shruti<span className="text-accent">.</span>
+          </span>
         </Link>
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
           <ul className="flex items-center gap-8">
-            {links.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="text-sm text-muted transition-colors duration-fast hover:text-foreground"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className={`border-b-2 pb-1 text-sm transition-colors duration-fast ${
+                      isActive
+                        ? "border-accent text-foreground"
+                        : "border-transparent text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
+          <span aria-hidden="true" className="h-5 w-px bg-border" />
           <ThemeToggle />
         </nav>
 
@@ -43,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
       </div>
@@ -56,7 +71,11 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className="block py-2 text-sm text-muted transition-colors duration-fast hover:text-foreground"
+                  className={`block py-2.5 text-sm transition-colors duration-fast ${
+                    pathname === link.href
+                      ? "text-foreground"
+                      : "text-muted hover:text-foreground"
+                  }`}
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.name}

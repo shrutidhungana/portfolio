@@ -1,111 +1,134 @@
-
 import PortfolioLayout from "@/components/layout";
-import Cone from "@/components/svg/homepage/cone";
-import Cylinder from "@/components/svg/homepage/cylinder";
-import Ring from "@/components/svg/homepage/ring";
-import Icosahedron from "@/components/svg/homepage/icosahedron";
-import Cuboid from "@/components/svg/homepage/cuboid";
-import Prism from "@/components/svg/homepage/prism";
-import Sphere from "@/components/svg/homepage/sphere";
-import Typewriter from "typewriter-effect";
-import Link from "next/link"; 
+import Link from "next/link";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { IoMdDownload } from "react-icons/io";
+import { FiArrowUpRight } from "react-icons/fi";
 import { socialMediaLinks } from "@/config";
-import { motion } from 'framer-motion';
-import Button from "@/components/button";
-import { FaDownload } from "react-icons/fa";
+
+const STACK = ["TypeScript", "React", "Node", "Hono", "Drizzle"];
+
+const FACTS = [
+  { label: "Currently", value: "Software Engineer, LeftclickTech" },
+  { label: "Building software since", value: "2022" },
+];
+
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+};
 
 export default function Home() {
-   const handleResumeDownload = () => {
-     const link = document.createElement("a");
-     link.href = "/Shruti_Dhungana_Resume.pdf"; 
-     link.target = "_blank"
-     link.click();
-   };
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <PortfolioLayout>
-      <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3] pb-20">
-        {/* Animated SVGs */}
-        <Ring className="absolute top-5 left-5 w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-40 lg:h-40 animate-rotateSlow" />
-        <Prism className="absolute bottom-16 left-5 w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-40 lg:h-40 animate-rotateSlow" />
-        <Cone className="absolute top-5 right-5 w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-40 lg:h-40 animate-rotateSlow" />
-        <Cylinder className="absolute bottom-16 right-5 w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-40 lg:h-40 animate-rotateSlow" />
+      <section className="mx-auto grid w-full max-w-6xl gap-16 px-6 py-20 sm:py-28 lg:grid-cols-[1fr_320px] lg:items-center lg:px-8 lg:py-32">
+        <motion.div
+          variants={container}
+          initial={shouldReduceMotion ? "show" : "hidden"}
+          animate="show"
+        >
+          <motion.div
+            variants={item}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+              Full-Stack Software Engineer
+            </span>
+          </motion.div>
 
-        {/* These shapes will only appear on large screens (lg) */}
-        <Icosahedron className="hidden lg:block absolute top-5 left-1/2 transform -translate-x-1/2 w-40 h-40 animate-rotateSlow" />
-        <Cuboid className="hidden lg:block absolute bottom-16 left-1/2 transform -translate-x-1/2 w-40 h-40 animate-rotateSlow" />
-        <Sphere className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 animate-rotateSlow" />
+          <motion.h1
+            variants={item}
+            className="mt-6 max-w-3xl text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl"
+          >
+            I build full-stack products
+            <br className="hidden sm:block" /> from interfaces to the APIs and
+            data underneath.
+          </motion.h1>
 
-        {/* Main Content */}
-        <main className="flex flex-col items-center justify-center h-full text-center z-10 relative px-6 text-dark-gray">
-          <div className="text-dark-gray">
-            {/* "Hello there!" spin animation */}
-            <h1 className="text-4xl sm:text-3xl md:text-4xl font-bold mb-4 animate__animated animate__fadeInLeft animate__delay-0.5s">
-              Hello there!
-            </h1>
+          <motion.p
+            variants={item}
+            className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
+          >
+            I work across product interfaces, backend APIs, and the data
+            layer connecting them — taking features from first commit to what
+            ships to production. Outside of work, I build and deploy complete
+            projects the same way: end to end, not just demos.
+          </motion.p>
 
-            {/* "I’m Shruti Dhungana" broken glass effect */}
-            <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-6 brokenGlass">
-              I’m Shruti Dhungana.
-            </h2>
-
-            {/* WordArt with flower-like animation */}
-            <h3 className="text-5xl font-extrabold capitalize wordArtText mb-6 animate__animated animate__fadeIn animate__delay-2s flowerEffect">
-              Fullstack Developer
-            </h3>
-
-            {/* Typewriter effect for soft skills */}
-            <div className="text-2xl mb-6">
-              <Typewriter
-                options={{
-                  strings: [
-                    "Passionate Learner",
-                    "Problem Solver",
-                    "Team Player",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  delay: 100,
-                }}
-              />
-            </div>
-
-            {/* Social Media Links animated from right to left */}
-            <div className="flex justify-center space-x-8 animate__animated animate__fadeInUp animate__delay-3s">
-              {socialMediaLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center text-2xl text-dark-gray transition-transform duration-300 transform hover:scale-125 animate__fadeInRight"
-                >
-                  <span className="relative flex items-center space-x-2">
-                    {link.icon}
-                    <span
-                      className={`absolute left-10 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-base font-medium`}
-                    >
-                      {link.name}
-                    </span>
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="mt-8 flex justify-center space-x-4">
-            <Link href="/contact" passHref>
-              <Button
-                text="Contact"
-                className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
+          <motion.div
+            variants={item}
+            className="mt-10 flex flex-wrap items-center gap-4"
+          >
+            <Link
+              href="/projects"
+              className="group inline-flex items-center gap-2 rounded-theme bg-accent px-6 py-3 text-sm font-medium text-background transition-all duration-fast hover:-translate-y-0.5 hover:opacity-90"
+            >
+              View Work
+              <FiArrowUpRight
+                aria-hidden="true"
+                className="transition-transform duration-fast group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
-            <Button
-              text="Download Resume"
-              onClick={handleResumeDownload}
-              className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
-            />
+            <Link
+              href="/resume"
+              className="inline-flex items-center gap-2 rounded-theme border border-border px-6 py-3 text-sm font-medium text-foreground transition-all duration-fast hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+            >
+              Resume
+              <IoMdDownload aria-hidden="true" />
+            </Link>
+          </motion.div>
+
+          <motion.p
+            variants={item}
+            className="mt-14 text-xs font-medium uppercase tracking-[0.15em] text-muted"
+          >
+            {STACK.join(" · ")}
+          </motion.p>
+        </motion.div>
+
+        <motion.aside
+          variants={item}
+          initial={shouldReduceMotion ? "show" : "hidden"}
+          animate="show"
+          className="rounded-theme border border-border bg-surface p-6"
+        >
+          <dl className="space-y-5">
+            {FACTS.map((fact) => (
+              <div key={fact.label}>
+                <dt className="text-xs uppercase tracking-[0.15em] text-muted">
+                  {fact.label}
+                </dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-foreground">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-6 flex items-center gap-4 border-t border-border pt-5">
+            {socialMediaLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.name}
+                className="text-lg text-muted transition-colors duration-fast hover:text-accent"
+              >
+                {link.icon}
+              </a>
+            ))}
           </div>
-        </main>
-      </div>
+        </motion.aside>
+      </section>
     </PortfolioLayout>
   );
 }
