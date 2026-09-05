@@ -6,7 +6,11 @@ const noFlashThemeScript = `(function () {
     var theme = stored === "light" || stored === "dark"
       ? stored
       : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    if (theme === "dark") document.documentElement.classList.add("dark");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      var favicon = document.querySelector("link[rel='icon'][type='image/svg+xml']");
+      if (favicon) favicon.href = "/favicon-dark.svg";
+    }
   } catch (e) {}
 })();`;
 

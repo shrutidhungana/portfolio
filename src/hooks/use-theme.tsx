@@ -37,6 +37,13 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
     window.localStorage.setItem(STORAGE_KEY, theme);
+
+    const favicon = document.querySelector<HTMLLinkElement>(
+      "link[rel='icon'][type='image/svg+xml']"
+    );
+    if (favicon) {
+      favicon.href = theme === "dark" ? "/favicon-dark.svg" : "/favicon.svg";
+    }
   }, [theme]);
 
   const toggleTheme = () =>

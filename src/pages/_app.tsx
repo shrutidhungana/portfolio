@@ -9,13 +9,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <Head>
-        <title>SHRUTI DHUNGANA</title>
+        <title>Shruti Dhungana — Full-Stack Engineer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="my Portfolio"
+          content="Full-stack software engineer building product interfaces, APIs, and data systems end to end."
         />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.png" />
       </Head>
       <ToastContainer />
       <Component {...pageProps} />

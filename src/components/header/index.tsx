@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { IoMdDownload } from "react-icons/io";
 import ThemeToggle from "@/components/theme-toggle";
 
 type HeaderProps = {
@@ -33,13 +34,16 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className={`border-b-2 pb-1 text-sm transition-colors duration-fast ${
+                    className={`inline-flex items-center gap-1 border-b-2 pb-1 text-sm transition-colors duration-fast ${
                       isActive
                         ? "border-accent text-foreground"
                         : "border-transparent text-muted hover:text-foreground"
                     }`}
                   >
                     {link.name}
+                    {link.name === "Resume" && (
+                      <IoMdDownload aria-hidden="true" size={12} />
+                    )}
                   </Link>
                 </li>
               );

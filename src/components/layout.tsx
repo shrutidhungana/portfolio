@@ -8,9 +8,9 @@ type PortfolioLayoutProps = {
 
 const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({children}) => {
   return (
-    <div className="flex flex-col bg-background overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-background overflow-hidden">
       <Header links={links} />
-      <main className="flex flex-col w-full">{children}</main>
+      <main className="flex flex-1 flex-col w-full">{children}</main>
     </div>
   );
 };
