@@ -1,173 +1,112 @@
-import React from "react";
 import PortfolioLayout from "@/components/layout";
-import Image from "next/image";
-import Typewriter from "typewriter-effect";
-import { motion } from "framer-motion";
+import { educationData, socialMediaLinks } from "@/config";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Link from "next/link";
-import { listItems } from "@/config";
-import Button from "@/components/button";
+import { IoMdDownload } from "react-icons/io";
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+};
 
 const About: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <PortfolioLayout>
-      {/* Container */}
-      <div className="flex flex-col h-screen bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
-        {/* Animated Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-3xl font-bold text-center mt-8 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
-          About Me
-        </motion.h1>
-        <div className="w-full border-t-2 border-white"></div>
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+        <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
+          About
+        </h1>
+        <p className="mt-3 max-w-xl text-base text-muted">
+          Background, education, and a bit of what I do outside of code.
+        </p>
 
-        {/* Responsive Content */}
-        <div className="flex flex-grow flex-col lg:flex-row">
-          {/* Small and Medium Screens: Single-Column Layout */}
-          <div className="flex flex-col items-center justify-center lg:hidden px-4 py-8 space-y-4 text-[#333333] rounded-lg">
-            {/* Profile Image */}
-            <motion.div
-              initial={{ scale: 0, rotate: 0 }}
-              animate={{ scale: 1, rotate: 360 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-lg">
-              <Image
-                src="/profile.png"
-                alt="Profile"
-                layout="fill"
-                objectFit="cover"
-              />
-            </motion.div>
+        <motion.div
+          variants={container}
+          initial={shouldReduceMotion ? "show" : "hidden"}
+          animate="show"
+          className="mt-10 max-w-2xl"
+        >
+          <motion.div
+            variants={item}
+            className="space-y-4 text-base leading-relaxed text-foreground"
+          >
+            <p>
+              I&apos;m a full-stack developer based in Nepal, currently
+              working as a Software Engineer at LeftclickTech. I started in
+              frontend development, interning at Prixa Technologies and
+              Treeleaf Technologies, then worked as a React developer at
+              Digital Anka (Varicon) before moving into full-stack work
+              covering APIs, data models, and deployment.
+            </p>
+            <p>
+              Outside of work, I read novels, watch films, and spend time
+              trying out new tools and frameworks to see how they&apos;d fit
+              into a real project.
+            </p>
+          </motion.div>
 
-            {/* Name with Typewriter Effect */}
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="text-2xl sm:text-3xl tracking-wide font-bold">
-              Shruti Dhungana
-            </motion.h1>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-              className="text-lg sm:text-xl text-center mt-2 text-[#333333]">
-              <Typewriter
-                options={{
-                  strings: [
-                    "Web Developer",
-                    "Creative Designer",
-                    "Problem Solver",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </motion.div>
-
-            {/* Short Description */}
-            <ul className="text-sm text-[#333333] space-y-2">
-              {listItems.map((item, index) => (
-                <motion.li
-                  key={item.id}
-                  className="flex items-center gap-4"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.3,
-                  }}>
-                  {item.icon}
-                  <span>{item.text}</span>
-                </motion.li>
+          <motion.div
+            variants={item}
+            className="mt-6 flex items-center gap-5"
+          >
+            <div className="flex items-center gap-4">
+              {socialMediaLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                  className="text-lg text-muted transition-colors duration-fast hover:text-accent"
+                >
+                  {link.icon}
+                </a>
               ))}
-            </ul>
-
-            {/* Button */}
-            <Link href="/contact" passHref>
-              <Button
-                text="Contact Me"
-                className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
-                aria-label="Contact Me Button"
-              />
+            </div>
+            <Link
+              href="/resume"
+              className="inline-flex items-center gap-2 rounded-theme border border-border px-4 py-2 text-sm font-medium text-foreground transition-all duration-fast hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+            >
+              Resume
+              <IoMdDownload aria-hidden="true" />
             </Link>
-          </div>
+          </motion.div>
+        </motion.div>
 
-          {/* Large Screens: Two-Column Layout */}
-          <div className="hidden lg:flex w-full">
-            {/* Left Section */}
-            <div className="lg:w-1/3 h-full flex flex-col justify-center items-center bg-[#FDEBD0]">
-              <div className="text-center text-2xl font-semibold text-[#333333]">
-                <Typewriter
-                  options={{
-                    strings: [
-                      "Critical Thinker",
-                      "Detail-Oriented",
-                      "Effective Collaborator",
-                      "Adaptable and Quick Learner",
-                    ],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Right Section */}
-            <div className="lg:w-2/3 h-full flex justify-center items-center flex-col bg-[#F9D7E3] relative">
-              {/* Animated Image */}
-              <motion.div
-                initial={{ scale: 0, rotate: 0 }}
-                animate={{ scale: 1, rotate: 360 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute left-[-10%] w-72 h-72 rounded-full overflow-hidden shadow-lg about-nesthub-fix">
-                <Image
-                  src="/profile.png"
-                  alt="Profile"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </motion.div>
-
-              {/* Animated Heading */}
-              <motion.h1
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="text-4xl font-bold wordArtText mb-6">
-                Shruti Dhungana
-              </motion.h1>
-
-              {/* Animated List */}
-              <ul className="text-lg text-[#333333] space-y-6">
-                {listItems.map((item, index) => (
-                  <motion.li
-                    key={item.id}
-                    className="flex items-center gap-4"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: index * 0.3,
-                    }}>
-                    {item.icon}
-                    <span>{item.text}</span>
-                  </motion.li>
-                ))}
-              </ul>
-
-              {/* Animated Button */}
-              <Link href="/contact" passHref>
-                <Button
-                  text="Contact"
-                  className="mt-4 px-6 py-2 rounded-full text-[#FDEBD0] hover:bg-[#7a3bdb] hover:text-white transition"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+        <h2 className="mt-14 text-xs font-medium uppercase tracking-[0.15em] text-muted">
+          Education
+        </h2>
+        <motion.div
+          variants={container}
+          initial={shouldReduceMotion ? "show" : "hidden"}
+          animate="show"
+          className="mt-6 grid gap-4 sm:grid-cols-3"
+        >
+          {educationData.map((edu) => (
+            <motion.article
+              key={edu.id}
+              variants={item}
+              className="rounded-theme border border-border bg-surface p-5"
+            >
+              <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+                {edu.year}
+              </span>
+              <h3 className="mt-1 text-base font-semibold text-foreground">
+                {edu.title}
+              </h3>
+              <p className="text-sm text-muted">{edu.institution}</p>
+              <p className="mt-1 text-sm text-muted">{edu.location}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+      </section>
     </PortfolioLayout>
   );
 };

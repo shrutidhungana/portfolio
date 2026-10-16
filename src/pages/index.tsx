@@ -4,21 +4,32 @@ import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { IoMdDownload } from "react-icons/io";
 import { FiArrowUpRight } from "react-icons/fi";
-import { socialMediaLinks } from "@/config";
+import { socialMediaLinks, experienceData, skillGroups } from "@/config";
 
 const FACTS = [
   { label: "Currently", value: "Software Engineer, LeftclickTech" },
   { label: "Building for the web since", value: "2022" },
 ];
 
-const FLOW_STEPS = [
-  { label: "Interface", detail: "React · TypeScript" },
-  { label: "API", detail: "Node · Hono" },
-  { label: "Data", detail: "PostgreSQL" },
-  { label: "Infrastructure", detail: "Vercel · Docker" },
+const BUILD_PRINCIPLES = [
+  {
+    title: "API-first",
+    detail:
+      "Data model and API contract come before the UI, using Zod and Drizzle, so the frontend consumes a stable shape.",
+  },
+  {
+    title: "Typed boundaries",
+    detail:
+      "TypeScript end to end between client and server, so mismatches surface at build time, not in production.",
+  },
+  {
+    title: "Deploy early",
+    detail:
+      "Features go to Vercel or Docker early, so integration and environment issues show up before launch day.",
+  },
 ];
 
-const FLOW_ROW_HEIGHT = 32;
+const latestRole = experienceData[0];
 
 const container: Variants = {
   hidden: {},
@@ -39,7 +50,7 @@ export default function Home() {
     <PortfolioLayout>
       <BootSplash />
       <div className="relative flex flex-1 flex-col">
-        <section className="m-auto grid w-full max-w-6xl gap-10 px-6 py-10 sm:py-12 lg:grid-cols-[1fr_360px] lg:items-center lg:gap-20 lg:px-8 lg:py-10 [@media(min-height:850px)]:-translate-y-10">
+        <section className="m-auto grid w-full max-w-6xl gap-10 px-6 py-10 sm:py-12 lg:grid-cols-[1fr_360px] lg:items-center lg:gap-20 lg:px-8 lg:py-10 [@media(min-width:1024px)and(min-height:850px)]:-translate-y-10">
           <motion.div
             variants={container}
             initial={shouldReduceMotion ? "show" : "hidden"}
@@ -117,59 +128,7 @@ export default function Home() {
               ))}
             </dl>
 
-            <div className="mt-5 border-t border-border pt-5">
-              <p className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
-                What I Work Across
-              </p>
-              <div className="relative mt-3 pl-5">
-                <motion.span
-                  initial={shouldReduceMotion ? { scaleY: 1 } : { scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0 : 0.9,
-                    ease: "easeOut",
-                  }}
-                  style={{
-                    position: "absolute",
-                    left: 3,
-                    top: FLOW_ROW_HEIGHT / 2,
-                    height: (FLOW_STEPS.length - 1) * FLOW_ROW_HEIGHT,
-                    width: 1,
-                    transformOrigin: "top",
-                  }}
-                  className="bg-accent"
-                />
-                {FLOW_STEPS.map((step, i) => (
-                  <div
-                    key={step.label}
-                    className="relative flex items-center justify-between gap-3"
-                    style={{ height: FLOW_ROW_HEIGHT }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <motion.span
-                        initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{
-                          delay: shouldReduceMotion
-                            ? 0
-                            : (i / (FLOW_STEPS.length - 1)) * 0.9,
-                          duration: 0.15,
-                        }}
-                        className="h-2 w-2 shrink-0 rounded-full bg-accent"
-                      />
-                      <span className="text-sm font-medium text-foreground">
-                        {step.label}
-                      </span>
-                    </div>
-                    <span className="text-xs text-foreground">
-                      {step.detail}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
+            <div className="mt-5 flex items-center gap-4 border-t border-border pt-5">
               {socialMediaLinks.map((link) => (
                 <a
                   key={link.name}
@@ -184,6 +143,146 @@ export default function Home() {
               ))}
             </div>
           </motion.aside>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-6 pb-16 lg:px-8">
+          <motion.div
+            initial={shouldReduceMotion ? "show" : "hidden"}
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-xs font-medium uppercase tracking-[0.15em] text-muted"
+            >
+              Skills
+            </motion.h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {skillGroups.map((group) => (
+                <motion.div key={group.id} variants={item}>
+                  <h3 className="text-sm font-semibold text-foreground">
+                    {group.title}
+                  </h3>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-border px-3 py-1 text-xs text-muted"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+          <motion.div
+            initial={shouldReduceMotion ? "show" : "hidden"}
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-xs font-medium uppercase tracking-[0.15em] text-muted"
+            >
+              How I Build
+            </motion.h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+              {BUILD_PRINCIPLES.map((principle) => (
+                <motion.div key={principle.title} variants={item}>
+                  <h3 className="text-base font-semibold text-foreground">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {principle.detail}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-6 pb-16 lg:px-8">
+          <motion.div
+            initial={shouldReduceMotion ? "show" : "hidden"}
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={container}
+            className="grid gap-6 sm:grid-cols-3"
+          >
+            <motion.div
+              variants={item}
+              className="rounded-theme border border-border bg-surface p-6"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+                Experience
+              </p>
+              <h3 className="mt-2 text-base font-semibold text-foreground">
+                {latestRole.title}, {latestRole.institution}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {latestRole.details[0]?.description}
+              </p>
+              <Link
+                href="/experience"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors duration-fast hover:opacity-80"
+              >
+                View experience
+                <FiArrowUpRight aria-hidden="true" size={14} />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={item}
+              className="rounded-theme border border-border bg-surface p-6"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+                Writing
+              </p>
+              <h3 className="mt-2 text-base font-semibold text-foreground">
+                Notes on engineering trade-offs
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                An index of real technical write-ups. Coming soon.
+              </p>
+              <Link
+                href="/writing"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors duration-fast hover:opacity-80"
+              >
+                View writing
+                <FiArrowUpRight aria-hidden="true" size={14} />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={item}
+              className="rounded-theme border border-border bg-surface p-6"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+                About
+              </p>
+              <h3 className="mt-2 text-base font-semibold text-foreground">
+                Background &amp; education
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                How I got into full-stack development, plus a short note on
+                what I do outside of it.
+              </p>
+              <Link
+                href="/about"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors duration-fast hover:opacity-80"
+              >
+                More about me
+                <FiArrowUpRight aria-hidden="true" size={14} />
+              </Link>
+            </motion.div>
+          </motion.div>
         </section>
       </div>
     </PortfolioLayout>

@@ -3,7 +3,7 @@ import {
   ListItem,
   SocialMediaLink,
   EducationItem,
-  SkillSection,
+  SkillGroup,
   ContactData,
   ContactFormData,
   ProjectsData,
@@ -32,18 +32,12 @@ import {
 } from "react-icons/fa";
 import {
   SiCreatereactapp,
-  SiShadcnui,
   SiStyledcomponents,
   SiVite,
 } from "react-icons/si";
 import { FaAffiliatetheme, FaLocationDot } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import CSS from "@/components/svg/skills/css";
-import Firebase from "@/components/svg/skills/firebase";
-import Git from "@/components/svg/skills/git";
-import GitHub from "@/components/svg/skills/git-hub";
-import HTML from "@/components/svg/skills/html";
-import Jira from "@/components/svg/skills/jira";
 import Javascript from "@/components/svg/skills/js";
 import Material from "@/components/svg/skills/material-ui";
 import MongoDB from "@/components/svg/skills/mongo-db";
@@ -55,7 +49,6 @@ import Typescript from "@/components/svg/skills/ts";
 import Express from "@/components/svg/skills/express";
 import { FcDecision } from "react-icons/fc";
 import { IoShareSocial } from "react-icons/io5";
-import { RiRemixRunFill } from "react-icons/ri";
 import { GrCompliance } from "react-icons/gr";
 
 export const links: NavLink[] = [
@@ -183,7 +176,7 @@ export const educationData: EducationItem[] = [
 export const experienceData: ExperienceItem[] = [
   {
     id: 1,
-    year: "Nov 2025-Present",
+    year: "Nov 2025 - Present",
     title: "Software Engineer",
     institution: "LeftclickTech",
     location: "Maitidevi, Kathmandu, Nepal (Quakers Hills, NSW, Australia)",
@@ -191,44 +184,69 @@ export const experienceData: ExperienceItem[] = [
       {
         icon: <FaLaptopCode />,
         description:
-          "I have been working as a Full Stack Software Engineer building web applications using TanStack, TanStack Query, Hono, Zod, Drizzle, TypeScript, and Tailwind CSS.",
+          "Build full-stack web applications end to end with TypeScript, TanStack Query, Hono, Zod, and Drizzle.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Own features from API and data model through to the React interface, styled with Tailwind CSS.",
       },
     ],
   },
 
   {
     id: 2,
-    year: "Feb 2023-July 2024",
+    year: "Feb 2023 - Jul 2024",
     title: "Frontend (React) Developer",
-    institution: "Digital Anka Pvt ltd (Varicon)",
+    institution: "Digital Anka Pvt Ltd (Varicon)",
     location: "Pulchowk, Lalitpur, Nepal (Australia)",
     details: [
       {
         icon: <FaLaptopCode />,
         description:
-          "As a React developer at Varicon, I enhanced several critical modules, including Equipment, Daily Cost Tracking, and Subcontract. I implemented an Archive feature with advanced filtering, improved data visibility with unqualified equipment counts and status indicators, and streamlined navigation in the Daily Cost Tracking module. I also developed an automatic logout feature for security and designed the entire Subcontract module from scratch, incorporating features like contract management and claims linkage, all while ensuring seamless user experiences using React, Hooks, and Material UI.",
+          "Designed and built the Subcontract module from scratch, including contract management and claims linkage.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Shipped an Archive feature with advanced filtering across the Equipment and Daily Cost Tracking modules.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Added status indicators and qualification counts to improve data visibility for equipment tracking.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Implemented automatic session logout for security, using React, Hooks, and Material UI throughout.",
       },
     ],
     credentialLink: "/Shruti_Dhungana_experience_letter_Varicon.pdf",
   },
   {
     id: 3,
-    year: "Nov 2022-Feb 2023",
+    year: "Nov 2022 - Feb 2023",
     title: "Frontend Developer Intern",
     institution: "Treeleaf Technologies",
-    location: "Sankhamul, Kathmandu,Nepal",
+    location: "Sankhamul, Kathmandu, Nepal",
     details: [
       {
         icon: <FaLaptopCode />,
         description:
-          "During my frontend internship, I gained hands-on experience with HTML, CSS, JavaScript, and React, working on projects like splash pages, to-do apps, task managers, and quiz applications. This allowed me to learn the fundamentals of web development and understand how these technologies come together to create dynamic, interactive user interfaces.",
+          "Built UI for splash pages, a to-do app, a task manager, and a quiz application using HTML, CSS, JavaScript, and React.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Learned core frontend fundamentals and how component-based UIs are structured in practice.",
       },
     ],
   },
 
   {
     id: 4,
-    year: "Jan 2022-March 2022",
+    year: "Jan 2022 - Mar 2022",
     title: "React Developer Intern",
     institution: "Prixa Technologies",
     location: "Jawalakhel, Lalitpur, Nepal",
@@ -236,106 +254,49 @@ export const experienceData: ExperienceItem[] = [
       {
         icon: <FaLaptopCode />,
         description:
-          "During my React developer internship, I worked on the Laxmi Bank App, which featured a splash page, calculator, custom keyboard, and bank statement section, helping me grasp React fundamentals and improve my CSS skills. I also created the Movie-Mania website using the Opendb API and a weather app with real-time data. These projects allowed me to enhance my skills in API integration, state management, and UI development, making the internship a highly valuable learning experience.",
+          "Built screens for a banking app prototype, including a splash page, calculator, and custom keyboard.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Built a movie browser using the OMDb API and a weather app consuming a real-time weather API.",
       },
     ],
     credentialLink: "/Shruti_Dhungana_experience_letter_prixa.pdf",
   },
 ];
 
-export const skillsData: SkillSection[] = [
+export const skillGroups: SkillGroup[] = [
   {
     id: 1,
-    sectionTitle: "Languages",
-    items: [
-      {
-        name: "HTML",
-        icon: <HTML className="text-2xl" />,
-      },
-      {
-        name: "CSS",
-        icon: <CSS className="text-2xl mb-2 mt-2" />,
-      },
-      {
-        name: "JavaScript",
-        icon: <Javascript className="text-2xl" />,
-      },
-      {
-        name: "TypeScript",
-        icon: <Typescript className="text-2xl" />,
-      },
+    title: "Frontend",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Remix",
+      "Tailwind CSS",
+      "Material UI",
+      "ShadCN",
     ],
   },
   {
     id: 2,
-    sectionTitle: "Libraries and Frameworks",
-    items: [
-      {
-        name: "React",
-        icon: <ReactSVG className="text-2xl" />,
-      },
-      {
-        name: "Next",
-        icon: <Next className="text-2xl" />,
-      },
-      {
-        name: "Remix",
-        icon: <RiRemixRunFill className="text-2xl mb-4 mt-2" />,
-      },
-      {
-        name: "Material UI",
-        icon: <Material className="text-2xl" />,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: <Tailwind className="text-2xl" />,
-      },
-      {
-        name: "ShadCN",
-        icon: <SiShadcnui className="text-2xl mb-4 mt-2" />,
-      },
-
-      {
-        name: "Express",
-        icon: <Express className="text-2xl" />,
-      },
-    ],
+    title: "Backend",
+    skills: ["Node.js", "Express", "Hono", "Zod"],
   },
   {
     id: 3,
-    sectionTitle: "Version Controls",
-    items: [
-      {
-        name: "Git",
-        icon: <Git className="text-2xl" />,
-      },
-      {
-        name: "GitHub",
-        icon: <GitHub className="text-2xl" />,
-      },
-    ],
+    title: "Data",
+    skills: ["MongoDB", "PostgreSQL", "Drizzle"],
   },
   {
     id: 4,
-    sectionTitle: "Tools",
-    items: [
-      {
-        name: "Firebase",
-        icon: <Firebase className="text-2xl" />,
-      },
-      {
-        name: "Jira",
-        icon: <Jira className="text-2xl" />,
-      },
-      {
-        name: "MongoDB",
-        icon: <MongoDB className="text-2xl" />,
-      },
-      {
-        name: "Node",
-        icon: <Node className="text-2xl" />,
-      },
-    ],
+    title: "Cloud & Tooling",
+    skills: ["Git", "GitHub", "Firebase", "Jira", "Vercel", "Docker"],
   },
 ];
 

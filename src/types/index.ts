@@ -45,16 +45,10 @@ export type ExperienceItem = {
   credentialLink?: string;
 };
 
-export type SkillItem = {
-  name: string;
-  icon: ReactNode;
-
-};
-
-export type SkillSection = {
+export type SkillGroup = {
   id: number;
-  sectionTitle: string;
-  items: SkillItem[];
+  title: string;
+  skills: string[];
 };
 
 export type ContactData = {

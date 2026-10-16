@@ -1,143 +1,127 @@
-import React, { useState } from "react";
 import PortfolioLayout from "@/components/layout";
-import Briefcase from "@/components/svg/experience/briefcase";
 import { experienceData } from "@/config";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Button from "@/components/button"; // Import Button component
-import { FaTimes } from "react-icons/fa"; // Import Close Icon
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+};
 
 const Experience: React.FC = () => {
-  // State to track which experience details are expanded
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const toggleDetails = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index); // Toggle the expansion
-  };
-
-  const openCredential = (credentialLink: string) => {
-    window.open(credentialLink, "_blank");
-  };
+  const shouldReduceMotion = useReducedMotion();
+  const [current, ...past] = experienceData;
 
   return (
     <PortfolioLayout>
-      {/* Gradient Background */}
-      <div className="min-h-screen py-10 bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
-        <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
-          {/* Left Section: Image */}
-          <div className="hidden lg:block lg:w-1/3 lg:mr-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}>
-              <Image
-                src="/experience.png" // Replace with your custom image
-                alt="Experience Illustration"
-                width={500}
-                height={500}
-                className="rounded-lg shadow-lg flowerEffect"
-              />
-            </motion.div>
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+        <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
+          Experience
+        </h1>
+        <p className="mt-3 max-w-xl text-base text-muted">
+          A timeline of roles, from early internships to full-stack work
+          today.
+        </p>
+
+        <motion.article
+          initial={shouldReduceMotion ? "show" : "hidden"}
+          animate="show"
+          variants={item}
+          className="mt-10 rounded-theme border border-border bg-surface p-6 sm:p-8"
+        >
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.15em] text-accent">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              Current
+            </span>
+            <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+              {current.year}
+            </span>
           </div>
 
-          {/* Right Section: Header and Cards */}
-          <div className="w-full">
-            {/* Header */}
-            <motion.h1
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="text-3xl font-bold text-center mt-2 text-[#7a3bdb] wordArtText bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3]">
-              Experience
-            </motion.h1>
-            <div className="w-full border-t-2 border-white mb-6"></div>
+          <h2 className="mt-3 text-xl font-semibold text-foreground">
+            {current.title}
+          </h2>
+          <p className="mt-1 text-sm text-muted">
+            {current.institution} &middot; {current.location}
+          </p>
 
-            {/* Cards */}
-            <div className="space-y-6">
-              {experienceData?.map((exp, index) => (
-                <motion.div
-                  key={exp.id}
-                  initial={{
-                    x: index % 2 === 0 ? "100%" : "-100%", // Right-to-left and left-to-right alternation
-                    opacity: 0,
-                  }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 * index, duration: 0.8 }}
-                  className={`p-6 rounded-lg shadow-md border-l-4 flex items-center ${
-                    index % 2 === 0
-                      ? "bg-[#CCCCFF] border-blue-400"
-                      : "bg-[#F8C8DC] border-yellow-400"
-                  }`}>
-                  {/* Icon */}
-                  <div className="flex-shrink-0 bg-[#7a3bdb] rounded-full p-3 text-white">
-                    <Briefcase />
-                  </div>
+          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+            {current.details.map((detail, idx) => (
+              <li
+                key={idx}
+                className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                />
+                {detail.description}
+              </li>
+            ))}
+          </ul>
+        </motion.article>
 
-                  {/* Text Content */}
-                  <div className="ml-4 w-full">
-                    <p className="text-sm text-[#7a3bdb] font-semibold">
-                      {exp.year}
-                    </p>
-                    <h2 className="text-xl font-bold text-gray-800">
-                      {exp.title}
-                    </h2>
-                    <p className="text-gray-600">{exp.institution}</p>
-                    <p className="text-gray-500 italic text-sm mt-1">
-                      📍 {exp.location}
-                    </p>
+        <h2 className="mt-14 text-xs font-medium uppercase tracking-[0.15em] text-muted">
+          Earlier Roles
+        </h2>
+        <motion.div
+          variants={container}
+          initial={shouldReduceMotion ? "show" : "hidden"}
+          animate="show"
+          className="mt-6 grid gap-6 sm:grid-cols-2"
+        >
+          {past.map((exp) => (
+            <motion.article
+              key={exp.id}
+              variants={item}
+              className="group rounded-theme border border-border bg-surface p-6 transition-all duration-fast hover:-translate-y-0.5 hover:border-accent/40"
+            >
+              <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+                {exp.year}
+              </span>
+              <h3 className="mt-1 text-base font-semibold text-foreground">
+                {exp.title}
+              </h3>
+              <p className="text-sm text-muted">
+                {exp.institution} &middot; {exp.location}
+              </p>
 
-                    {/* View Details and View Credential Buttons */}
-                    {expandedIndex !== index && (
-                      <div className="flex space-x-4 justify-between">
-                        <Button
-                          text="View Details"
-                          onClick={() => toggleDetails(index)}
-                          className="mt-4 "
-                        />
-                        {/* Only show View Credential button if credentialLink exists */}
-                        {exp.credentialLink && (
-                          <Button
-                            text="View Credential"
-                            onClick={() => openCredential(exp.credentialLink)}
-                            className="mt-4 "
-                          />
-                        )}
-                      </div>
-                    )}
+              <ul className="mt-4 space-y-2 border-t border-border pt-4">
+                {exp.details.map((detail, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                    />
+                    {detail.description}
+                  </li>
+                ))}
+              </ul>
 
-                    {/* Details Section */}
-                    {expandedIndex === index && (
-                      <div className="mt-4 space-y-4">
-                        {exp.details?.map((detail, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-start mb-4 space-x-3">
-                            {/* Icon for detail */}
-                            <div className="text-[#7a3bdb]">{detail.icon}</div>
-                            <p className="text-gray-600 text-sm">
-                              {detail.description}
-                            </p>
-                          </div>
-                        ))}
-
-                        {/* Close Icon */}
-                        <div className="text-right">
-                          <button
-                            onClick={() => toggleDetails(index)}
-                            className="text-[#7a3bdb] text-sm">
-                            <FaTimes className="inline-block mr-2" />
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+              {exp.credentialLink && (
+                <a
+                  href={exp.credentialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors duration-fast hover:opacity-80"
+                >
+                  View credential
+                  <FiDownload aria-hidden="true" size={14} />
+                </a>
+              )}
+            </motion.article>
+          ))}
+        </motion.div>
+      </section>
     </PortfolioLayout>
   );
 };
