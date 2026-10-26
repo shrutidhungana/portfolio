@@ -87,7 +87,7 @@ const About: React.FC = () => {
           variants={container}
           initial={shouldReduceMotion ? "show" : "hidden"}
           animate="show"
-          className="mt-6 grid gap-4 sm:grid-cols-3"
+          className="mt-6 grid gap-4 md:grid-cols-3"
         >
           {educationData.map((edu) => (
             <motion.article

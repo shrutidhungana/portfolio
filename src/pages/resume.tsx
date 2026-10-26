@@ -1,64 +1,85 @@
-import React from "react";
 import PortfolioLayout from "@/components/layout";
-import { motion } from "framer-motion"; // For animations
-import { FaDownload } from "react-icons/fa";
+import Image from "next/image";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { IoMdDownload } from "react-icons/io";
 
-type ProjectsProps = {};
+const PAGES = [
+  { src: "/resume-preview-1.png", page: 1 },
+  { src: "/resume-preview-2.png", page: 2 },
+];
 
-const Resume: React.FC<ProjectsProps> = () => {
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+};
+
+const Resume: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <PortfolioLayout>
-      <div className="min-h-screen bg-gradient-to-r from-[#FDEBD0] to-[#F9D7E3] text-[#333333]">
-        <div className="flex flex-col items-center justify-center py-16">
-          {/* Header Section */}
-          <div className="flex items-center justify-between w-full max-w-4xl mb-6">
-            <motion.h1
-              className="text-4xl font-semibold text-center text-[#7a3bdb] wordArtText"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
+      <motion.section
+        variants={container}
+        initial={shouldReduceMotion ? "show" : "hidden"}
+        animate="show"
+        className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8"
+      >
+        <motion.div
+          variants={item}
+          className="flex flex-wrap items-center justify-between gap-4"
+        >
+          <div>
+            <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
               Resume
-            </motion.h1>
-
-            <motion.a
-              href="/Shruti_Dhungana_Resume.pdf"
-              download
-              className="flex items-center bg-[#7a3bdb] text-[#FDEBD0] hover:bg-[#333333] hover:text-white py-2 px-6 rounded-lg shadow-lg transition"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <FaDownload className="mr-2" /> Download
-            </motion.a>
+            </h1>
+            <p className="mt-2 text-base text-muted">
+              Experience, projects, and skills in one document.
+            </p>
           </div>
+          <a
+            href="/Shruti_Dhungana_Resume.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-theme bg-accent px-6 py-3 text-sm font-medium text-background transition-all duration-fast hover:-translate-y-0.5 hover:opacity-90"
+          >
+            Download
+            <IoMdDownload aria-hidden="true" />
+          </a>
+        </motion.div>
 
-          {/* Full-Page PDF Display */}
-          <div className="w-full h-screen mb-8">
+        <motion.div variants={container} className="mt-8 space-y-6">
+          {PAGES.map(({ src, page }) => (
             <motion.div
-              className="mb-8 w-full h-full"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              key={page}
+              variants={item}
+              className="overflow-hidden rounded-theme border border-border bg-surface"
             >
-              {/* Full-page PDF Display without the viewer */}
-              <object
-                data="/Shruti_Dhungana_Resume.pdf"
-                type="application/pdf"
-                className="w-full h-full"
-              >
-                <p>
-                  Your browser does not support PDFs.{" "}
-                  <a href="/Shruti_Dhungana_Resume.pdf">
-                    Download the PDF
-                  </a>
-                  .
-                </p>
-              </object>
+              <Image
+                src={src}
+                alt={`Resume, page ${page}`}
+                width={1275}
+                height={1650}
+                className="w-full"
+              />
             </motion.div>
-          </div>
-        </div>
-      </div>
+          ))}
+        </motion.div>
+
+        <motion.p variants={item} className="mt-4 text-sm text-muted">
+          Can&apos;t see the pages above?{" "}
+          <a
+            href="/Shruti_Dhungana_Resume.pdf"
+            className="text-accent transition-colors duration-fast hover:opacity-80"
+          >
+            Download the PDF
+          </a>{" "}
+          instead.
+        </motion.p>
+      </motion.section>
     </PortfolioLayout>
   );
 };

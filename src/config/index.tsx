@@ -278,6 +278,8 @@ export const skillGroups: SkillGroup[] = [
       "React",
       "Next.js",
       "Remix",
+      "TanStack Query",
+      "TanStack Start",
       "Tailwind CSS",
       "Material UI",
       "ShadCN",
@@ -296,7 +298,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: 4,
     title: "Cloud & Tooling",
-    skills: ["Git", "GitHub", "Firebase", "Jira", "Vercel", "Docker"],
+    skills: ["Git", "GitHub", "AWS Bedrock", "Jira", "Vercel", "Docker"],
   },
 ];
 
@@ -363,6 +365,31 @@ export const projectData: ProjectsData[] = [
     github: "",
     website: "",
     details: [],
+  },
+  {
+    id: 11,
+    title: "AI Workforce OS",
+    status: "Ongoing",
+    image: "",
+    github: "",
+    website: "",
+    details: [
+      {
+        icon: <FaLaptopCode className="text-2xl" />,
+        text: "A multi-tenant workforce management platform bringing authentication and RBAC, employees, projects and Kanban tasks, attendance, leave, a finance mini-workflow, documents, notifications, AI-assisted features, audit logging, reports, and a mobile app into one place.",
+      },
+      {
+        icon: <FaLaptopCode className="text-2xl" />,
+        text: "Built incrementally, feature by feature, with each one tracked explicitly as implemented or deferred rather than presented as finished.",
+      },
+      { icon: null, text: "TypeScript" },
+      { icon: null, text: "Hono/tRPC" },
+      { icon: null, text: "Drizzle/PostgreSQL" },
+      { icon: null, text: "TanStack Query/Table" },
+      { icon: null, text: "Better Auth" },
+      { icon: null, text: "shadcn/ui + Tailwind" },
+      { icon: null, text: "Terraform + GitHub Actions" },
+    ],
   },
   {
     id: 2,
