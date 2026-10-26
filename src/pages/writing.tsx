@@ -1,5 +1,6 @@
 import PortfolioLayout from "@/components/layout";
 import Seo from "@/components/seo";
+import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import type { GetStaticProps } from "next";
@@ -73,25 +74,36 @@ const Writing: React.FC<WritingProps> = ({ posts }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={item}
-                className="block rounded-theme border border-border bg-surface p-6 transition-all duration-fast hover:-translate-y-0.5 hover:border-accent/40"
+                className="flex flex-col gap-5 rounded-theme border border-border bg-surface p-6 transition-all duration-fast hover:-translate-y-0.5 hover:border-accent/40 sm:flex-row sm:items-start"
               >
-                {post.pubDate && (
-                  <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
-                    {formatDate(post.pubDate)}
+                {post.thumbnail && (
+                  <Image
+                    src={post.thumbnail}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="h-28 w-full shrink-0 rounded-theme border border-border object-cover sm:h-24 sm:w-32"
+                  />
+                )}
+                <div className="min-w-0 flex-1">
+                  {post.pubDate && (
+                    <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
+                      {formatDate(post.pubDate)}
+                    </span>
+                  )}
+                  <h2 className="mt-1 text-lg font-semibold text-foreground">
+                    {post.title}
+                  </h2>
+                  {post.summary && (
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      {post.summary}
+                    </p>
+                  )}
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
+                    Read article
+                    <FiExternalLink aria-hidden="true" size={14} />
                   </span>
-                )}
-                <h2 className="mt-1 text-lg font-semibold text-foreground">
-                  {post.title}
-                </h2>
-                {post.summary && (
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {post.summary}
-                  </p>
-                )}
-                <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
-                  Read article
-                  <FiExternalLink aria-hidden="true" size={14} />
-                </span>
+                </div>
               </motion.a>
             ))}
           </motion.div>

@@ -7,6 +7,7 @@ export type WritingPost = {
   link: string;
   pubDate: string;
   summary: string;
+  thumbnail: string | null;
 };
 
 export async function fetchMediumPosts(): Promise<WritingPost[]> {
@@ -27,11 +28,24 @@ export async function fetchMediumPosts(): Promise<WritingPost[]> {
           ? cleaned.slice(normalizedTitle.length).trim()
           : cleaned;
 
+        const html = (item as Record<string, string>)["content:encoded"] ?? "";
+        const imgMatches = [...html.matchAll(/<img[^>]+src="([^"]+)"/g)];
+        const thumbnail =
+          imgMatches
+            .map((m) => m[1])
+            .find(
+              (src) =>
+                /^https:\/\/(miro\.medium\.com|cdn-images-1\.medium\.com)\//.test(
+                  src
+                )
+            ) ?? null;
+
         return {
           title,
           link: item.link ?? "",
           pubDate: item.pubDate ?? "",
           summary: summary.slice(0, 220),
+          thumbnail,
         };
       })
       .filter((post) => post.link);

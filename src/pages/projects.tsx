@@ -17,7 +17,7 @@ const findProject = (title: string) =>
   projectData.find((p) => p.title.trim() === title)!;
 
 const aiOs = findProject("AI Workforce OS");
-const flagship = findProject("Movie-App");
+const flagships = [findProject("Trend Hive"), findProject("Movie-App")];
 const earlyWork = [findProject("Shopping Cart"), findProject("Calculator")];
 
 const container: Variants = {
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
           Work
         </h1>
         <p className="mt-3 max-w-xl text-base text-muted">
-          The flagship build first, then projects in order of depth.
+          Flagship builds first, then projects in order of depth.
         </p>
 
         <motion.article
@@ -126,68 +126,71 @@ const Projects: React.FC = () => {
           </div>
         </motion.article>
 
-        <motion.div
-          initial={shouldReduceMotion ? "show" : "hidden"}
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={container}
-          className="mt-10 overflow-hidden rounded-theme border border-border bg-surface"
-        >
-          <motion.div variants={item}>
-            <Image
-              src={flagship.image}
-              alt={flagship.title}
-              width={1200}
-              height={675}
-              className="w-full border-b border-border object-cover"
-            />
+        {flagships.map((flagship) => (
+          <motion.div
+            key={flagship.id}
+            initial={shouldReduceMotion ? "show" : "hidden"}
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={container}
+            className="mt-10 overflow-hidden rounded-theme border border-border bg-surface"
+          >
+            <motion.div variants={item}>
+              <Image
+                src={flagship.image}
+                alt={flagship.title}
+                width={1200}
+                height={675}
+                className="w-full border-b border-border object-cover"
+              />
+            </motion.div>
+            <motion.div variants={item} className="p-6 sm:p-8">
+              <h2 className="text-xl font-semibold text-foreground">
+                {flagship.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {flagship.details[0]?.text}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {flagship.details[1]?.text}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {flagship.details.slice(3).map((detail, idx) => (
+                  <span
+                    key={idx}
+                    className="rounded-full border border-border px-3 py-1 text-xs text-muted"
+                  >
+                    {detail.text}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 flex flex-wrap items-center gap-4">
+                {flagship.github && (
+                  <a
+                    href={flagship.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors duration-fast hover:text-accent"
+                  >
+                    <FiGithub aria-hidden="true" size={14} />
+                    Code
+                  </a>
+                )}
+                {flagship.website && (
+                  <a
+                    href={flagship.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors duration-fast hover:text-accent"
+                  >
+                    <FiExternalLink aria-hidden="true" size={14} />
+                    Live site
+                  </a>
+                )}
+              </div>
+            </motion.div>
           </motion.div>
-          <motion.div variants={item} className="p-6 sm:p-8">
-            <h2 className="text-xl font-semibold text-foreground">
-              {flagship.title}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {flagship.details[0]?.text}
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {flagship.details[1]?.text}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {flagship.details.slice(3).map((detail, idx) => (
-                <span
-                  key={idx}
-                  className="rounded-full border border-border px-3 py-1 text-xs text-muted"
-                >
-                  {detail.text}
-                </span>
-              ))}
-            </div>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              {flagship.github && (
-                <a
-                  href={flagship.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors duration-fast hover:text-accent"
-                >
-                  <FiGithub aria-hidden="true" size={14} />
-                  Code
-                </a>
-              )}
-              {flagship.website && (
-                <a
-                  href={flagship.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors duration-fast hover:text-accent"
-                >
-                  <FiExternalLink aria-hidden="true" size={14} />
-                  Live site
-                </a>
-              )}
-            </div>
-          </motion.div>
-        </motion.div>
+        ))}
 
         <h2 className="mt-14 text-xs font-medium uppercase tracking-[0.15em] text-muted">
           Early Work
@@ -203,15 +206,25 @@ const Projects: React.FC = () => {
             <motion.div
               key={project.id}
               variants={item}
-              className="rounded-theme border border-border bg-surface p-6"
+              className="overflow-hidden rounded-theme border border-border bg-surface"
             >
-              <h3 className="text-base font-semibold text-foreground">
-                {project.title.trim()}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {project.details[0]?.text}
-              </p>
-              <div className="mt-4 flex flex-wrap items-center gap-4">
+              {project.image && (
+                <Image
+                  src={project.image}
+                  alt={project.title.trim()}
+                  width={800}
+                  height={450}
+                  className="w-full border-b border-border object-cover"
+                />
+              )}
+              <div className="p-6">
+                <h3 className="text-base font-semibold text-foreground">
+                  {project.title.trim()}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {project.details[0]?.text}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-4">
                 {project.github && (
                   <a
                     href={project.github}
@@ -234,6 +247,7 @@ const Projects: React.FC = () => {
                     Live site
                   </a>
                 )}
+                </div>
               </div>
             </motion.div>
           ))}
