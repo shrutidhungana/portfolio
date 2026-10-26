@@ -1,53 +1,17 @@
 import PortfolioLayout from "@/components/layout";
+import Seo from "@/components/seo";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import type { GetStaticProps } from "next";
-import Parser from "rss-parser";
-
-const MEDIUM_FEED_URL = "https://medium.com/feed/@shrutidhungana123";
-
-type WritingPost = {
-  title: string;
-  link: string;
-  pubDate: string;
-  summary: string;
-};
+import { fetchMediumPosts, type WritingPost } from "@/lib/medium";
 
 type WritingProps = {
   posts: WritingPost[];
 };
 
 export const getStaticProps: GetStaticProps<WritingProps> = async () => {
-  try {
-    const parser = new Parser();
-    const feed = await parser.parseURL(MEDIUM_FEED_URL);
-    const posts: WritingPost[] = (feed.items ?? [])
-      .map((item) => {
-        const title = item.title ?? "Untitled";
-        const rawSnippet =
-          (item as Record<string, string>)["content:encodedSnippet"] ??
-          item.contentSnippet ??
-          "";
-        const cleaned = rawSnippet.replace(/\s+/g, " ").trim();
-        const normalize = (s: string) => s.replace(/\s+/g, " ").trim();
-        const normalizedTitle = normalize(title);
-        const summary = normalize(cleaned).startsWith(normalizedTitle)
-          ? cleaned.slice(normalizedTitle.length).trim()
-          : cleaned;
-
-        return {
-          title,
-          link: item.link ?? "",
-          pubDate: item.pubDate ?? "",
-          summary: summary.slice(0, 220),
-        };
-      })
-      .filter((post) => post.link);
-
-    return { props: { posts }, revalidate: 3600 };
-  } catch {
-    return { props: { posts: [] }, revalidate: 3600 };
-  }
+  const posts = await fetchMediumPosts();
+  return { props: { posts }, revalidate: 3600 };
 };
 
 const container: Variants = {
@@ -75,6 +39,11 @@ const Writing: React.FC<WritingProps> = ({ posts }) => {
 
   return (
     <PortfolioLayout>
+      <Seo
+        title="Writing — Shruti Dhungana"
+        description="Technical articles on full-stack engineering: API design, authentication, and architecture trade-offs."
+        path="/writing"
+      />
       <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
         <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
           Writing

@@ -1,5 +1,7 @@
 import PortfolioLayout from "@/components/layout";
+import Seo from "@/components/seo";
 import Image from "next/image";
+import { useState } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { IoMdDownload } from "react-icons/io";
 
@@ -20,9 +22,16 @@ const item: Variants = {
 
 const Resume: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
+  const [failedPages, setFailedPages] = useState<number[]>([]);
+  const hasFailure = failedPages.length > 0;
 
   return (
     <PortfolioLayout>
+      <Seo
+        title="Resume — Shruti Dhungana"
+        description="Download or view Shruti Dhungana's full-stack software engineer resume."
+        path="/resume"
+      />
       <motion.section
         variants={container}
         initial={shouldReduceMotion ? "show" : "hidden"}
@@ -64,21 +73,28 @@ const Resume: React.FC = () => {
                 width={1275}
                 height={1650}
                 className="w-full"
+                onError={() =>
+                  setFailedPages((prev) =>
+                    prev.includes(page) ? prev : [...prev, page]
+                  )
+                }
               />
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.p variants={item} className="mt-4 text-sm text-muted">
-          Can&apos;t see the pages above?{" "}
-          <a
-            href="/Shruti_Dhungana_Resume.pdf"
-            className="text-accent transition-colors duration-fast hover:opacity-80"
-          >
-            Download the PDF
-          </a>{" "}
-          instead.
-        </motion.p>
+        {hasFailure && (
+          <motion.p variants={item} className="mt-4 text-sm text-muted">
+            Can&apos;t see the pages above?{" "}
+            <a
+              href="/Shruti_Dhungana_Resume.pdf"
+              className="text-accent transition-colors duration-fast hover:opacity-80"
+            >
+              Download the PDF
+            </a>{" "}
+            instead.
+          </motion.p>
+        )}
       </motion.section>
     </PortfolioLayout>
   );

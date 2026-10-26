@@ -1,7 +1,8 @@
 import PortfolioLayout from "@/components/layout";
+import Seo from "@/components/seo";
 import { experienceData } from "@/config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { FiDownload } from "react-icons/fi";
+import { FiDownload, FiExternalLink } from "react-icons/fi";
 
 const container: Variants = {
   hidden: {},
@@ -19,6 +20,11 @@ const Experience: React.FC = () => {
 
   return (
     <PortfolioLayout>
+      <Seo
+        title="Experience — Shruti Dhungana"
+        description="Professional experience across full-stack engineering roles, from early internships to building NDIS compliance software."
+        path="/experience"
+      />
       <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
         <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
           Experience
@@ -48,7 +54,20 @@ const Experience: React.FC = () => {
             {current.title}
           </h2>
           <p className="mt-1 text-sm text-muted">
-            {current.institution} &middot; {current.location}
+            {current.institutionLink ? (
+              <a
+                href={current.institutionLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 transition-colors duration-fast hover:text-accent"
+              >
+                {current.institution}
+                <FiExternalLink aria-hidden="true" size={12} />
+              </a>
+            ) : (
+              current.institution
+            )}{" "}
+            &middot; {current.location}
           </p>
 
           <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
@@ -89,7 +108,20 @@ const Experience: React.FC = () => {
                 {exp.title}
               </h3>
               <p className="text-sm text-muted">
-                {exp.institution} &middot; {exp.location}
+                {exp.institutionLink ? (
+                  <a
+                    href={exp.institutionLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 transition-colors duration-fast hover:text-accent"
+                  >
+                    {exp.institution}
+                    <FiExternalLink aria-hidden="true" size={12} />
+                  </a>
+                ) : (
+                  exp.institution
+                )}{" "}
+                &middot; {exp.location}
               </p>
 
               <ul className="mt-4 space-y-2 border-t border-border pt-4">

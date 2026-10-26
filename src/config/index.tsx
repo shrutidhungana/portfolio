@@ -4,8 +4,6 @@ import {
   SocialMediaLink,
   EducationItem,
   SkillGroup,
-  ContactData,
-  ContactFormData,
   ProjectsData,
   ExperienceItem,
 } from "@/types";
@@ -21,7 +19,6 @@ import {
   FaLightbulb,
   FaLinkedin,
   FaGithub,
-  FaPhoneAlt,
   FaShoppingCart,
   FaGamepad,
   FaClone,
@@ -35,7 +32,7 @@ import {
   SiStyledcomponents,
   SiVite,
 } from "react-icons/si";
-import { FaAffiliatetheme, FaLocationDot } from "react-icons/fa6";
+import { FaAffiliatetheme } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import CSS from "@/components/svg/skills/css";
 import Javascript from "@/components/svg/skills/js";
@@ -179,17 +176,28 @@ export const experienceData: ExperienceItem[] = [
     year: "Nov 2025 - Present",
     title: "Software Engineer",
     institution: "LeftclickTech",
+    institutionLink: "https://leftclicktech.ai/",
     location: "Maitidevi, Kathmandu, Nepal (Quakers Hills, NSW, Australia)",
     details: [
       {
         icon: <FaLaptopCode />,
         description:
-          "Build full-stack web applications end to end with TypeScript, TanStack Query, Hono, Zod, and Drizzle.",
+          "Build EterNex, an NDIS (National Disability Insurance Scheme) compliance platform, including a corrective action register, Business Improvement Plan generator, and root cause analysis tools (5 Whys, Fishbone).",
       },
       {
         icon: <FaLaptopCode />,
         description:
-          "Own features from API and data model through to the React interface, styled with Tailwind CSS.",
+          "Audited the platform's forms library against NDIS requirements, identifying missing forms across Intake, Care Planning, Clinical, Risk, Allied Health, and Assistive Technology modules.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Implemented Supported Independent Living (SIL) modification request workflows, including supporting charts and forms.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Build full-stack features end to end — data model, API, and React interface — using TypeScript, TanStack Query, Hono, Zod, Drizzle, and Tailwind CSS.",
       },
     ],
   },
@@ -199,6 +207,7 @@ export const experienceData: ExperienceItem[] = [
     year: "Feb 2023 - Jul 2024",
     title: "Frontend (React) Developer",
     institution: "Digital Anka Pvt Ltd (Varicon)",
+    institutionLink: "https://varicon.com.au/",
     location: "Pulchowk, Lalitpur, Nepal (Australia)",
     details: [
       {
@@ -229,6 +238,7 @@ export const experienceData: ExperienceItem[] = [
     year: "Nov 2022 - Feb 2023",
     title: "Frontend Developer Intern",
     institution: "Treeleaf Technologies",
+    institutionLink: "https://treeleaf.ai/",
     location: "Sankhamul, Kathmandu, Nepal",
     details: [
       {
@@ -249,6 +259,7 @@ export const experienceData: ExperienceItem[] = [
     year: "Jan 2022 - Mar 2022",
     title: "React Developer Intern",
     institution: "Prixa Technologies",
+    institutionLink: "https://prixa.org/",
     location: "Jawalakhel, Lalitpur, Nepal",
     details: [
       {
@@ -302,60 +313,6 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-export const contactData: ContactData[] = [
-  {
-    id: 1,
-    icon: <FaLocationDot />,
-    name: "Location",
-    text: [
-      "6, Nagarkot, Changunarayan, Bhaktapur",
-      "8, Guheshwori, Kathmandu, Nepal",
-    ], // Using an array for multiple locations
-    iconColor: "#F39C12",
-  },
-  {
-    id: 2,
-    icon: <FaPhoneAlt />,
-    name: "Phone",
-    text: "+977-9861495261",
-    iconColor: "#E74C3C",
-  },
-  {
-    id: 3,
-    icon: <FaEnvelope />,
-    name: "Email",
-    text: (
-      <a
-        href="mailto:shrutidhungana123@gmail.com"
-        className="email  transition">
-        shrutidhungana123@gmail.com
-      </a>
-    ),
-    iconColor: "#2980B9",
-  },
-];
-
-export const contactFormData: ContactFormData[] = [
-  {
-    id: 1,
-    name: "name",
-    label: "Name",
-    placeholder: "Your Name",
-  },
-  {
-    id: 2,
-    name: "email",
-    label: "E-mail",
-    placeholder: "Your E-mail",
-  },
-  {
-    id: 3,
-    name: "message",
-    label: "Message",
-    placeholder: "Type your Message",
-  },
-];
-
 export const projectData: ProjectsData[] = [
   {
     id: 1,
@@ -371,12 +328,16 @@ export const projectData: ProjectsData[] = [
     title: "AI Workforce OS",
     status: "Ongoing",
     image: "",
-    github: "",
+    github: "https://github.com/shrutidhungana/ai-workforce-os",
     website: "",
     details: [
       {
         icon: <FaLaptopCode className="text-2xl" />,
         text: "A multi-tenant workforce management platform bringing authentication and RBAC, employees, projects and Kanban tasks, attendance, leave, a finance mini-workflow, documents, notifications, AI-assisted features, audit logging, reports, and a mobile app into one place.",
+      },
+      {
+        icon: <FaLaptopCode className="text-2xl" />,
+        text: "Uses AWS Bedrock for AI-assisted features and Docker to run PostgreSQL locally during development.",
       },
       {
         icon: <FaLaptopCode className="text-2xl" />,
@@ -388,6 +349,8 @@ export const projectData: ProjectsData[] = [
       { icon: null, text: "TanStack Query/Table" },
       { icon: null, text: "Better Auth" },
       { icon: null, text: "shadcn/ui + Tailwind" },
+      { icon: null, text: "AWS Bedrock" },
+      { icon: null, text: "Docker" },
       { icon: null, text: "Terraform + GitHub Actions" },
     ],
   },
@@ -581,11 +544,11 @@ export const projectData: ProjectsData[] = [
     details: [
       {
         icon: <FaFilm className="text-2xl" />,
-        text: "A simple movie dashboard app made with full stack Next and typescript with tailwind for styling and react-query and zustand for data fetching and state management respectivelys.",
+        text: "A full-stack movie dashboard built with Next.js and TypeScript, styled with Tailwind CSS, using React Query and Zustand for data fetching and state management.",
       },
       {
         icon: <MdDescription className="text-2xl" />,
-        text: "This is a intractive movie dashboard app with search, filter, sorting features which also give users chance to view details, review, rate them including adminfunctionalities for adding, editing, deleting, and exporting movie data via a secure login-enabled Admin Panel",
+        text: "An interactive dashboard with search, filtering, and sorting, where users can view details and rate movies. Includes an admin panel, behind a secure login, for adding, editing, deleting, and exporting movie data.",
       },
       {
         icon: <FaCode className="text-2xl" />,

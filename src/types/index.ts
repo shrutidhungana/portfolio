@@ -40,6 +40,7 @@ export type ExperienceItem = {
   year: string;
   title: string;
   institution: string;
+  institutionLink?: string;
   location: string;
   details: Array<ExperienceDetails>;
   credentialLink?: string;
@@ -50,21 +51,6 @@ export type SkillGroup = {
   title: string;
   skills: string[];
 };
-
-export type ContactData = {
-  id: number;
-  icon: ReactNode;
-  name: string;
-  text: string | string[]| ReactNode;
-  iconColor: string;
-};
-
-export type ContactFormData = {
-  id: number;
-  name: string;
-  label: string;
-  placeholder: string;
-}
 
 export type Details = {
   icon: ReactNode;

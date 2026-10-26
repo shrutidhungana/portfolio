@@ -1,4 +1,5 @@
 import PortfolioLayout from "@/components/layout";
+import Seo from "@/components/seo";
 import { educationData, socialMediaLinks } from "@/config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Link from "next/link";
@@ -19,6 +20,11 @@ const About: React.FC = () => {
 
   return (
     <PortfolioLayout>
+      <Seo
+        title="About — Shruti Dhungana"
+        description="Background, education, and what I work on outside of code."
+        path="/about"
+      />
       <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
         <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
           About

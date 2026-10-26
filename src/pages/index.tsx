@@ -1,10 +1,22 @@
 import PortfolioLayout from "@/components/layout";
 import BootSplash from "@/components/boot-splash";
+import Seo from "@/components/seo";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { IoMdDownload } from "react-icons/io";
 import { FiArrowUpRight } from "react-icons/fi";
+import type { GetStaticProps } from "next";
 import { socialMediaLinks, experienceData, skillGroups } from "@/config";
+import { fetchMediumPosts, type WritingPost } from "@/lib/medium";
+
+type HomeProps = {
+  latestPost: WritingPost | null;
+};
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const posts = await fetchMediumPosts();
+  return { props: { latestPost: posts[0] ?? null }, revalidate: 3600 };
+};
 
 const FACTS = [
   { label: "Currently", value: "Software Engineer, LeftclickTech" },
@@ -30,6 +42,10 @@ const BUILD_PRINCIPLES = [
 ];
 
 const latestRole = experienceData[0];
+const latestRoleSummary = (() => {
+  const desc = latestRole.details[0]?.description ?? "";
+  return desc.length > 110 ? `${desc.slice(0, 110).trim()}…` : desc;
+})();
 
 const container: Variants = {
   hidden: {},
@@ -43,11 +59,16 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
 };
 
-export default function Home() {
+export default function Home({ latestPost }: HomeProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <PortfolioLayout>
+      <Seo
+        title="Shruti Dhungana — Full-Stack Software Engineer"
+        description="Full-stack software engineer building product interfaces, APIs, and data systems end to end."
+        path="/"
+      />
       <BootSplash />
       <div className="relative flex flex-1 flex-col">
         <section className="m-auto grid w-full max-w-6xl gap-10 px-6 py-10 sm:py-12 lg:grid-cols-[1fr_360px] lg:items-center lg:gap-20 lg:px-8 lg:py-10 [@media(min-width:1024px)and(min-height:850px)]:-translate-y-10">
@@ -227,7 +248,7 @@ export default function Home() {
                 {latestRole.title}, {latestRole.institution}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                {latestRole.details[0]?.description}
+                {latestRoleSummary}
               </p>
               <Link
                 href="/experience"
@@ -246,10 +267,16 @@ export default function Home() {
                 Writing
               </p>
               <h3 className="mt-2 text-base font-semibold text-foreground">
-                Notes on engineering trade-offs
+                {latestPost
+                  ? latestPost.title.length > 64
+                    ? `${latestPost.title.slice(0, 64).trim()}…`
+                    : latestPost.title
+                  : "Notes on engineering trade-offs"}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                An index of real technical write-ups. Coming soon.
+                {latestPost
+                  ? `${(latestPost.summary || "Read the latest write-up.").slice(0, 110).trim()}…`
+                  : "An index of real technical write-ups. Coming soon."}
               </p>
               <Link
                 href="/writing"
