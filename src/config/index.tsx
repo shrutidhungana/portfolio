@@ -187,6 +187,11 @@ export const experienceData: ExperienceItem[] = [
       {
         icon: <FaLaptopCode />,
         description:
+          "Implemented review meeting scheduling and predictive analytics features, and designed the data flows connecting them to related compliance modules.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
           "Audited the platform's forms library against NDIS requirements, identifying missing forms across Intake, Care Planning, Clinical, Risk, Allied Health, and Assistive Technology modules.",
       },
       {
@@ -198,6 +203,54 @@ export const experienceData: ExperienceItem[] = [
         icon: <FaLaptopCode />,
         description:
           "Build full-stack features end to end — data model, API, and React interface — using TypeScript, TanStack Query, Hono, Zod, Drizzle, and Tailwind CSS.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Translate business and regulatory requirements into technical tasks tracked in Jira.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Use Claude Code and Atlassian MCP integration in the development workflow for well-scoped and repetitive tasks.",
+      },
+    ],
+  },
+
+  {
+    id: 5,
+    year: "Nov 2024 - Oct 2025",
+    title: "Learning and Building Projects",
+    institution: "Independent Development",
+    location: "Kathmandu, Nepal",
+    details: [
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Expanded from frontend into full-stack development, learning Node.js, Express, REST API design, PostgreSQL, MongoDB, and Drizzle ORM.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Built and deployed full-stack projects with Next.js, TypeScript, TanStack Query, and the MERN stack, including search, filtering, admin panels, and CRUD workflows.",
+      },
+      {
+        icon: <FaLaptopCode />,
+        description:
+          "Studied authentication, role-based access control (RBAC), and type-safe APIs (Zod, tRPC), and published technical articles on these topics on Medium.",
+      },
+    ],
+  },
+  {
+    id: 6,
+    year: "Aug 2024 - Oct 2024",
+    title: "Family Responsibilities",
+    institution: "Career Break",
+    location: "Kathmandu, Nepal",
+    details: [
+      {
+        icon: <FaLaptopCode />,
+        description: "Took time away from work to manage family responsibilities.",
       },
     ],
   },
@@ -213,22 +266,22 @@ export const experienceData: ExperienceItem[] = [
       {
         icon: <FaLaptopCode />,
         description:
-          "Designed and built the Subcontract module from scratch, including contract management and claims linkage.",
+          "Led the Subcontract module from planning through deployment, proposing UI improvements and building the core features.",
       },
       {
         icon: <FaLaptopCode />,
         description:
-          "Shipped an Archive feature with advanced filtering across the Equipment and Daily Cost Tracking modules.",
+          "Added an Archive feature and advanced filtering to the Equipment and Employee modules, reducing the steps needed to find a record.",
       },
       {
         icon: <FaLaptopCode />,
         description:
-          "Added status indicators and qualification counts to improve data visibility for equipment tracking.",
+          "Optimised the Daily Cost Tracking and Docket modules for faster load and smoother navigation.",
       },
       {
         icon: <FaLaptopCode />,
         description:
-          "Implemented automatic session logout for security, using React, Hooks, and Material UI throughout.",
+          "Implemented a 1-hour automatic logout to strengthen session security.",
       },
     ],
     credentialLink: "/Shruti_Dhungana_experience_letter_Varicon.pdf",
@@ -249,7 +302,7 @@ export const experienceData: ExperienceItem[] = [
       {
         icon: <FaLaptopCode />,
         description:
-          "Learned core frontend fundamentals and how component-based UIs are structured in practice.",
+          "Wrote unit and integration tests to improve code reliability.",
       },
     ],
   },
