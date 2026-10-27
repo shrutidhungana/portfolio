@@ -17,8 +17,12 @@ const findProject = (title: string) =>
   projectData.find((p) => p.title.trim() === title)!;
 
 const aiOs = findProject("AI Workforce OS");
-const flagships = [findProject("Trend Hive"), findProject("Movie-App")];
-const earlyWork = [findProject("Shopping Cart"), findProject("Calculator")];
+const flagships = [findProject("Trend Hive"), findProject("To-do full stack")];
+const earlyWork = [
+  findProject("Movie-App"),
+  findProject("Shopping Cart"),
+  findProject("Calculator"),
+];
 
 const container: Variants = {
   hidden: {},
