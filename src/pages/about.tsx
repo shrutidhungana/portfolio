@@ -4,6 +4,7 @@ import { educationData, socialMediaLinks } from "@/config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Link from "next/link";
 import { IoMdDownload } from "react-icons/io";
+import TickRingMark from "@/components/svg/tick-ring-mark";
 
 const container: Variants = {
   hidden: {},
@@ -25,13 +26,21 @@ const About: React.FC = () => {
         description="Background, education, and what I work on outside of code."
         path="/about"
       />
-      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
-        <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
-          About
-        </h1>
-        <p className="mt-3 max-w-xl text-base text-muted">
-          Background, education, and a bit of what I do outside of code.
-        </p>
+      <section className="relative mx-auto w-full max-w-6xl overflow-hidden px-6 py-16 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="dot-grid pointer-events-none absolute inset-x-0 top-0 h-64"
+        />
+        <TickRingMark className="pointer-events-none absolute -top-2 right-0 hidden h-12 w-12 text-accent/50 sm:block" />
+        <div className="relative">
+          <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
+            About
+          </h1>
+          <p className="mt-3 max-w-xl text-base text-muted">
+            Background, education, and a bit of what I do{" "}
+            <span className="text-gradient-accent">outside of code</span>.
+          </p>
+        </div>
 
         <motion.div
           variants={container}
@@ -93,13 +102,13 @@ const About: React.FC = () => {
           variants={container}
           initial={shouldReduceMotion ? "show" : "hidden"}
           animate="show"
-          className="mt-6 grid gap-4 md:grid-cols-3"
+          className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
         >
           {educationData.map((edu) => (
             <motion.article
               key={edu.id}
               variants={item}
-              className="rounded-theme border border-border bg-surface p-5"
+              className="w-[80%] shrink-0 snap-start rounded-theme border border-border bg-surface p-5 shadow-theme-sm transition-shadow duration-slow hover:shadow-theme-md sm:w-[60%] md:w-auto md:shrink"
             >
               <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
                 {edu.year}

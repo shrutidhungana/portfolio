@@ -4,6 +4,7 @@ import Image from "next/image";
 import { projectData } from "@/config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import OrbitMark from "@/components/svg/orbit-mark";
 
 const ARCHITECTURE_STEPS = [
   "Auth & RBAC",
@@ -44,19 +45,27 @@ const Projects: React.FC = () => {
         description="Full-stack projects, from an in-progress workforce management platform to shipped MERN and Next.js applications."
         path="/projects"
       />
-      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
-        <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
-          Work
-        </h1>
-        <p className="mt-3 max-w-xl text-base text-muted">
-          Flagship builds first, then projects in order of depth.
-        </p>
+      <section className="relative mx-auto w-full max-w-6xl overflow-hidden px-6 py-16 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="dot-grid pointer-events-none absolute inset-x-0 top-0 h-64"
+        />
+        <OrbitMark className="pointer-events-none absolute -top-2 right-0 hidden h-12 w-12 text-accent/50 sm:block" />
+        <div className="relative">
+          <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
+            Work
+          </h1>
+          <p className="mt-3 max-w-xl text-base text-muted">
+            <span className="text-gradient-accent">Flagship builds</span>{" "}
+            first, then projects in order of depth.
+          </p>
+        </div>
 
         <motion.article
           initial={shouldReduceMotion ? "show" : "hidden"}
           animate="show"
           variants={item}
-          className="mt-10 overflow-hidden rounded-theme border border-border bg-surface"
+          className="mt-10 overflow-hidden rounded-theme border border-border bg-surface shadow-theme-sm transition-shadow duration-slow hover:shadow-theme-md"
         >
           <div className="flex h-48 items-center justify-center border-b border-border bg-background px-6">
             <div className="relative pl-5">
@@ -89,7 +98,7 @@ const Projects: React.FC = () => {
           </div>
           <div className="p-6 sm:p-8">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.15em] text-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="live-dot h-1.5 w-1.5 rounded-full bg-accent text-accent" />
               Currently building
             </span>
             <h2 className="mt-3 text-xl font-semibold text-foreground">
@@ -137,7 +146,7 @@ const Projects: React.FC = () => {
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             variants={container}
-            className="mt-10 overflow-hidden rounded-theme border border-border bg-surface"
+            className="mt-10 overflow-hidden rounded-theme border border-border bg-surface shadow-theme-sm transition-all duration-slow hover:-translate-y-1 hover:shadow-theme-md"
           >
             <motion.div variants={item}>
               <Image
@@ -210,7 +219,7 @@ const Projects: React.FC = () => {
             <motion.div
               key={project.id}
               variants={item}
-              className="overflow-hidden rounded-theme border border-border bg-surface"
+              className="overflow-hidden rounded-theme border border-border bg-surface shadow-theme-sm transition-all duration-slow hover:-translate-y-1 hover:shadow-theme-md"
             >
               {project.image && (
                 <Image

@@ -3,6 +3,7 @@ import Seo from "@/components/seo";
 import { experienceData } from "@/config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { FiDownload, FiExternalLink } from "react-icons/fi";
+import DiamondMark from "@/components/svg/diamond-mark";
 
 const container: Variants = {
   hidden: {},
@@ -25,24 +26,32 @@ const Experience: React.FC = () => {
         description="Professional experience across full-stack engineering roles, from early internships to building NDIS compliance software."
         path="/experience"
       />
-      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
-        <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
-          Experience
-        </h1>
-        <p className="mt-3 max-w-xl text-base text-muted">
-          A timeline of roles, from early internships to full-stack work
-          today.
-        </p>
+      <section className="relative mx-auto w-full max-w-6xl overflow-hidden px-6 py-16 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="dot-grid pointer-events-none absolute inset-x-0 top-0 h-64"
+        />
+        <DiamondMark className="animate-rotate-reverse-slow pointer-events-none absolute -top-2 right-0 hidden h-12 w-12 text-accent/50 sm:block" />
+        <div className="relative">
+          <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
+            Experience
+          </h1>
+          <p className="mt-3 max-w-xl text-base text-muted">
+            A timeline of roles, from early internships to{" "}
+            <span className="text-gradient-accent">full-stack</span> work
+            today.
+          </p>
+        </div>
 
         <motion.article
           initial={shouldReduceMotion ? "show" : "hidden"}
           animate="show"
           variants={item}
-          className="mt-10 rounded-theme border border-border bg-surface p-6 sm:p-8"
+          className="mt-10 rounded-theme border border-border bg-surface p-6 shadow-theme-sm transition-shadow duration-slow hover:shadow-theme-md sm:p-8"
         >
           <div className="flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.15em] text-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="live-dot h-1.5 w-1.5 rounded-full bg-accent text-accent" />
               Current
             </span>
             <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
@@ -92,14 +101,15 @@ const Experience: React.FC = () => {
         <motion.div
           variants={container}
           initial={shouldReduceMotion ? "show" : "hidden"}
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
           className="mt-6 grid gap-6 sm:grid-cols-2"
         >
           {past.map((exp) => (
             <motion.article
               key={exp.id}
               variants={item}
-              className="group rounded-theme border border-border bg-surface p-6 transition-all duration-fast hover:-translate-y-0.5 hover:border-accent/40"
+              className="group rounded-theme border border-border bg-surface p-6 shadow-theme-sm transition-all duration-slow hover:-translate-y-1 hover:border-accent/40 hover:shadow-theme-md"
             >
               <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">
                 {exp.year}

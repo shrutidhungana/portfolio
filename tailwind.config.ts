@@ -16,6 +16,9 @@ export default {
         muted: "var(--color-muted)",
         border: "var(--color-border)",
         accent: "var(--color-accent)",
+        "on-accent": "var(--color-on-accent)",
+        chip: "var(--color-chip)",
+        "accent-soft": "var(--color-accent-soft)",
       },
       borderRadius: {
         theme: "var(--radius)",
@@ -23,6 +26,14 @@ export default {
       transitionDuration: {
         fast: "var(--motion-fast)",
         slow: "var(--motion-slow)",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        "theme-sm": "var(--shadow-sm)",
+        "theme-md": "var(--shadow-md)",
       },
     },
   },

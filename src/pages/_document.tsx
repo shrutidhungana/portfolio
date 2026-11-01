@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { bodyFont, headingFont } from "@/lib/fonts";
 
 const noFlashThemeScript = `(function () {
   try {
@@ -16,7 +17,7 @@ const noFlashThemeScript = `(function () {
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" className={`${bodyFont.variable} ${headingFont.variable}`}>
       <Head>
         <script dangerouslySetInnerHTML={{ __html: noFlashThemeScript }} />
       </Head>

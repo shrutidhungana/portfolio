@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         <Link href="/" className="flex items-center gap-2.5">
           <span
             aria-hidden="true"
-            className="flex h-8 w-8 items-center justify-center rounded-theme bg-accent text-sm font-semibold text-background"
+            className="flex h-8 w-8 items-center justify-center rounded-theme bg-accent text-sm font-semibold text-on-accent"
           >
             S
           </span>

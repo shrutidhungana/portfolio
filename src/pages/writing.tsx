@@ -3,6 +3,7 @@ import Seo from "@/components/seo";
 import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
+import PulseMark from "@/components/svg/pulse-mark";
 import type { GetStaticProps } from "next";
 import { fetchMediumPosts, type WritingPost } from "@/lib/medium";
 
@@ -45,13 +46,21 @@ const Writing: React.FC<WritingProps> = ({ posts }) => {
         description="Technical articles on full-stack engineering: API design, authentication, and architecture trade-offs."
         path="/writing"
       />
-      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
-        <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
-          Writing
-        </h1>
-        <p className="mt-3 max-w-xl text-base text-muted">
-          Blogs and articles on engineering topics I&apos;ve worked through.
-        </p>
+      <section className="relative mx-auto w-full max-w-6xl overflow-hidden px-6 py-16 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="dot-grid pointer-events-none absolute inset-x-0 top-0 h-64"
+        />
+        <PulseMark className="pointer-events-none absolute -top-2 right-0 hidden h-12 w-12 text-accent sm:block" />
+        <div className="relative">
+          <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
+            Writing
+          </h1>
+          <p className="mt-3 max-w-xl text-base text-muted">
+            <span className="text-gradient-accent">Engineering trade-offs</span>{" "}
+            I&apos;ve worked through, written up.
+          </p>
+        </div>
 
         {posts.length === 0 ? (
           <div className="mt-10 rounded-theme border border-border bg-surface p-6 sm:p-8">

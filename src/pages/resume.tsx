@@ -36,11 +36,15 @@ const Resume: React.FC = () => {
         variants={container}
         initial={shouldReduceMotion ? "show" : "hidden"}
         animate="show"
-        className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8"
+        className="relative mx-auto w-full max-w-6xl overflow-hidden px-6 py-16 lg:px-8"
       >
+        <div
+          aria-hidden="true"
+          className="dot-grid pointer-events-none absolute inset-x-0 top-0 h-64"
+        />
         <motion.div
           variants={item}
-          className="flex flex-wrap items-center justify-between gap-4"
+          className="relative flex flex-wrap items-center justify-between gap-4"
         >
           <div>
             <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
@@ -53,10 +57,10 @@ const Resume: React.FC = () => {
           <a
             href="/Shruti_Dhungana_Resume.pdf"
             download
-            className="inline-flex items-center gap-2 rounded-theme bg-accent px-6 py-3 text-sm font-medium text-background transition-all duration-fast hover:-translate-y-0.5 hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-theme bg-accent px-6 py-3 text-sm font-medium text-on-accent transition-all duration-fast hover:-translate-y-0.5 hover:opacity-90"
           >
             Download
-            <IoMdDownload aria-hidden="true" />
+            <IoMdDownload aria-hidden="true" className="animate-bounce-soft" />
           </a>
         </motion.div>
 
