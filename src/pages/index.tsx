@@ -151,17 +151,22 @@ export default function Home({ latestPost }: HomeProps) {
                 <span className="ml-2 text-xs text-muted">profile.ts</span>
               </div>
 
-              <pre className="overflow-x-auto px-5 py-5 font-mono text-[12.5px] leading-relaxed">
-                <code>
+              <pre className="overflow-hidden px-5 py-5 font-mono text-[12.5px] leading-relaxed">
+                <code className="block whitespace-pre-wrap break-words">
                   <span className="text-muted">const</span>{" "}
-                  <span className="text-accent">engineer</span>{" "}
+                  <span className="text-accent">engineer</span>
+                  <span className="text-muted">:</span>{" "}
+                  <span className="text-muted">Engineer</span>{" "}
                   <span className="text-muted">= {"{"}</span>
                   {FACTS.map((fact) => (
-                    <div key={fact.label} className="flex gap-2 pl-4">
+                    <div
+                      key={fact.label}
+                      className="flex flex-wrap items-baseline gap-x-1.5 py-0.5 pl-4"
+                    >
                       <span className="text-foreground">
                         {fact.label.toLowerCase().replace(/[^a-z]+/g, "_")}:
                       </span>
-                      <span className="text-accent">
+                      <span className="break-words text-accent">
                         &quot;{fact.value}&quot;
                       </span>
                       <span className="text-muted">,</span>
