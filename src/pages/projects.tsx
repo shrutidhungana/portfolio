@@ -19,11 +19,7 @@ const findProject = (title: string) =>
 
 const aiOs = findProject("AI Workforce OS");
 const flagships = [findProject("Trend Hive"), findProject("To-do full stack")];
-const earlyWork = [
-  findProject("Movie-App"),
-  findProject("Shopping Cart"),
-  findProject("Calculator"),
-];
+const earlyWork = [findProject("Movie-App"), findProject("Shopping Cart")];
 
 const container: Variants = {
   hidden: {},

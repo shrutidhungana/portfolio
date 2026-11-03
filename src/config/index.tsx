@@ -177,7 +177,7 @@ export const experienceData: ExperienceItem[] = [
     title: "Software Engineer",
     institution: "LeftclickTech",
     institutionLink: "https://leftclicktech.ai/",
-    location: "Maitidevi, Kathmandu, Nepal (Quakers Hills, NSW, Australia)",
+    location: "Maitidevi, Kathmandu, Nepal (Quakers Hill, NSW, Australia)",
     details: [
       {
         icon: <FaLaptopCode />,
@@ -352,7 +352,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: 2,
     title: "Backend",
-    skills: ["Node.js", "Express", "Hono", "Zod"],
+    skills: ["Node.js", "Express", "Hono", "tRPC", "Zod", "Better Auth"],
   },
   {
     id: 3,
@@ -362,7 +362,17 @@ export const skillGroups: SkillGroup[] = [
   {
     id: 4,
     title: "Cloud & Tooling",
-    skills: ["Git", "GitHub", "AWS Bedrock", "Jira", "Vercel", "Docker"],
+    skills: [
+      "Git",
+      "GitHub",
+      "GitHub Actions",
+      "AWS Bedrock",
+      "Terraform",
+      "Jira",
+      "Vercel",
+      "Docker",
+      "Vitest",
+    ],
   },
 ];
 
@@ -421,7 +431,7 @@ export const projectData: ProjectsData[] = [
       },
       {
         icon: <MdDescription className="text-2xl" />,
-        text: "It has two sections user and admin. Both have their own features. While user can buy, review and add any products, admin can add, edit, delete products and feature image. Also, a particular user can see particular order while admin can see all products. ",
+        text: "It has two sections: user and admin. Both have their own features. While a user can buy, review, and add any products, an admin can add, edit, delete products and feature images. Also, a particular user can see their own orders while an admin can see all orders.",
       },
       {
         icon: <FaCode className="text-2xl" />,
@@ -541,11 +551,11 @@ export const projectData: ProjectsData[] = [
     details: [
       {
         icon: <GrCompliance className="text-2xl" />,
-        text: "A simple to-do-app made in MERN stack with tailwind where you can view,add, edit and delete to-dos.",
+        text: "A simple to-do app made in the MERN stack with Tailwind where you can view, add, edit and delete to-dos.",
       },
       {
         icon: <MdDescription className="text-2xl" />,
-        text: "This is a app with filtering (All, Done, Upcoming), pagination, and CRUD functionality, featuring a drawer-based form for adding, editing, and deleting tasks with validation and due-date management .",
+        text: "This is an app with filtering (All, Done, Upcoming), pagination, and CRUD functionality, featuring a drawer-based form for adding, editing, and deleting tasks with validation and due-date management.",
       },
       {
         icon: <FaCode className="text-2xl" />,

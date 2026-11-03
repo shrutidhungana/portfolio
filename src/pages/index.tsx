@@ -354,9 +354,15 @@ export default function Home({ latestPost }: HomeProps) {
                 Get In Touch
               </h2>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
-                Open to full-stack roles and interesting projects. The
-                quickest way to reach me is email.
+                Open to mid-level full-stack roles in Kathmandu. The quickest
+                way to reach me is email.
               </p>
+              <a
+                href="mailto:shrutidhungana123@gmail.com"
+                className="mt-2 inline-block text-sm text-muted transition-colors duration-fast hover:text-accent"
+              >
+                shrutidhungana123@gmail.com
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
